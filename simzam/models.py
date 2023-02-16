@@ -89,17 +89,16 @@ class Project(models.Model):
 #         return self.title
 
 
-# class Drawing(models.Model):
-#     """ A drawing contains a drawing in jpg format."""
+class Drawing(models.Model):
+    """ A drawing contains a drawing in jpg format."""
 
-#     title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
 
-#     published_date = models.DateField("date published", default=now)
-#     drawing = models.ImageField(upload_to='dd')
-#     thumbnail = models.ImageField(upload_to='')
+    published_date = models.DateField("date published", default=now)
+    drawing = models.ImageField(upload_to='drawing')
 
-#     class Meta:
-#         db_table = 'drawing'
+    class Meta:
+        db_table = 'drawing'
 #         ordering =
 
 #     @property

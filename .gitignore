@@ -8,3 +8,4 @@
 /simzam/__pycache__/*.pyc
 /simzam/migrations/
 **/__pycache__/
+*.env
