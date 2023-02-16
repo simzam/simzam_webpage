@@ -10,9 +10,12 @@ All tables are explictly named.
 
 from django.db import models
 # from django.db.models.signals import pre_save
-# from django.utils.encoding import smart_text
+# from django.utils.encoding import smart_tex
+#
+from django.contrib.admin.decorators import display
 from django.utils.text import slugify
 from django.utils.timezone import now
+from django.template.loader import get_template
 from tinymce import models as tinymce_models
 # from django.utils.html import mark_safe
 
@@ -33,8 +36,8 @@ class Project(models.Model):
     title = models.CharField('tittel', unique=True, primary_key=True, max_length=255)
     description = tinymce_models.HTMLField('beskrivelse')
 
-    created_date = models.DateField('dato opprettet', default=now)
-    updated_date = models.DateField('dato oppdatert', default=now)
+    created_date = models.DateField('opprettet', default=now)
+    updated_date = models.DateField('oppdatert', default=now)
 
     project_states = (("SKETCHED", "På tapetet"),
                       ("TODO", "På bordet"),
@@ -51,6 +54,13 @@ class Project(models.Model):
 
         db_table = 'project'
         # TODO: ordering = ['dato oppdatert']
+
+    @display(description='Preview')
+    def show_drawing_thumbnail(self):
+        return get_template('drawing_thumbnail_template.html').render({
+            'field_name': 'logo',
+            'src': self.logo.url if self.logo else None,
+        })
 
     def save(self, *args, **kwargs):
         # TODO: unique? UTF or unicode or ASCII?
