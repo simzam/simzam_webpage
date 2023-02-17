@@ -6,28 +6,12 @@ crossing files and lowers the complexities regarding migrating the database.
 All tables are explictly named.
 
 """
-
-
 from django.db import models
-# from django.db.models.signals import pre_save
-# from django.utils.encoding import smart_tex
-#
 from django.contrib.admin.decorators import display
 from django.utils.text import slugify
 from django.utils.timezone import now
 from django.template.loader import get_template
 from tinymce import models as tinymce_models
-# from django.utils.html import mark_safe
-
-# class SlugMixin:
-#     def create_slug(instance, new_slug=None, field="name"):
-#         slug = slugify(instance.title)
-#         return slug
-
-#     def save(self, *args, **kwargs):
-#         if self.pk is None:
-#             self.slug = self.create_slug(self)
-#         super().save()
 
 
 class Project(models.Model):
@@ -48,16 +32,18 @@ class Project(models.Model):
 
     slug = models.SlugField(max_length=255, blank=True, editable=False)
     logo = models.ImageField(upload_to='project_logos/', null=True, blank=True)
+    #logo_t = models.ImageField(upload_to='project_logos_thumbnails/', null=True, blank=True)
 
     class Meta:
         """Sort projects by last updated project."""
 
         db_table = 'project'
-        # TODO: ordering = ['dato oppdatert']
+        ordering = ['updated_date']
 
     @display(description='Preview')
-    def show_drawing_thumbnail(self):
-        return get_template('drawing_thumbnail_template.html').render({
+    def show_logo(self):
+        """Allow previewing of images on the admin page."""
+        return get_template('logo_thumbnail_template.html').render({
             'field_name': 'logo',
             'src': self.logo.url if self.logo else None,
         })
@@ -65,19 +51,12 @@ class Project(models.Model):
     def save(self, *args, **kwargs):
         # TODO: unique? UTF or unicode or ASCII?
         self.slug = slugify(self.title)
+
         super(Project, self).save(*args, **kwargs)
+
 
     def __str__(self):
         return self.title
-
-
-# TODO: For project title is unique,
-# def pre_save_slug(instance, sender, *args, **kwargs):
-#     """Automatically generate slug."""
-#     instance.slug = slugify(instance.title)
-
-
-# pre_save.connect(pre_save_slug, sender=Project)
 
 
 # class Entry(models.Model):
@@ -102,17 +81,32 @@ class Project(models.Model):
 class Drawing(models.Model):
     """ A drawing contains a drawing in jpg format."""
 
-    title = models.CharField(max_length=255)
+    title = models.CharField('tittel', max_length=255)
 
-    published_date = models.DateField("date published", default=now)
-    drawing = models.ImageField(upload_to='drawing')
+    published_date = models.DateField('publisert', default=now)
+    drawing = models.ImageField('Tegning', upload_to='drawing')
+
+    # Add validator
+    background_color = models.CharField(max_length=7, default="#FFFFFF")
+
+    @display(description='Preview')
+    def show_drawing(self):
+        """Allow previewing of images on the admin page."""
+
+        return get_template('drawing_thumbnail_template.html').render({
+            'field_name': 'drawing',
+            'background_color': self.background_color,
+            'src': self.drawing.url if self.drawing else None,
+        })
+
+    def __str__(self):
+        return self.title
 
     class Meta:
         db_table = 'drawing'
 #         ordering =
-
 #     @property
 #     def thumnbail_preview(self):
 #         if self.thumbnail:
 #             url_string = '<img src="{}" width="300" height="300"/>'
-#             return mark_safe.format(url_string.format(self.thumbnail.url))
+#             returni mark_safe.format(url_string.format(self.thumbnail.url))
