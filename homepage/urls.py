@@ -15,9 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import include
+from django.conf.urls import include#, static
+from django.views.generic.base import TemplateView
+# from . import settings
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tinymce/', include("tinymce.urls"))
+    path('tinymce/', include("tinymce.urls")),
+    path("robots.txt", TemplateView.as_view(template_name="robots.txt",
+                                            content_type="text/plain")),
+    path('', include('simzam.urls')),
+
 ]
+# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

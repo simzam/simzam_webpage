@@ -1,0 +1,26 @@
+{% load static %}
+{% load render_bundle from webpack_loader %}
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="utf=8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+        {% render_bundle 'main_style' 'css' %}
+        <title>simzam!</title>
+    </head>
+    <body>
+        <header>
+            {#% include 'navbar.html' %#}
+        </header>
+        <main id="homepage-content">
+            {% block content %}
+            {% endblock content %}
+        </main>
+        {% render_bundle 'principal' 'js' %}
+        {% render_bundle 'main_style' 'js' %}
+        <footer>
+            {#% include 'footer.html' %#}
+        </footer>
+    </body>
+</html>

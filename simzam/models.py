@@ -43,13 +43,12 @@ class Project(models.Model):
     @display(description='Preview')
     def show_logo(self):
         """Allow previewing of images on the admin page."""
-        return get_template('logo_thumbnail_template.html').render({
+        return get_template('admin/logo_thumbnail_template.html').render({
             'field_name': 'logo',
             'src': self.logo.url if self.logo else None,
         })
 
     def save(self, *args, **kwargs):
-        # TODO: unique? UTF or unicode or ASCII?
         self.slug = slugify(self.title)
 
         super(Project, self).save(*args, **kwargs)
@@ -93,7 +92,7 @@ class Drawing(models.Model):
     def show_drawing(self):
         """Allow previewing of images on the admin page."""
 
-        return get_template('drawing_thumbnail_template.html').render({
+        return get_template('admin/drawing_thumbnail_template.html').render({
             'field_name': 'drawing',
             'background_color': self.background_color,
             'src': self.drawing.url if self.drawing else None,
