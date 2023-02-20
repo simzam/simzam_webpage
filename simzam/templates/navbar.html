@@ -1,0 +1,45 @@
+{% load static %}
+<a id="Navbar-brand" href="{% url 'simzam:test' %}">
+    <span>
+        <object type="image/svg+xml"
+            id='dimzam-logo'
+            style="pointer-events: none;"
+            data="{% static 'images/dimzam.svg' %}">
+            hjem
+        </object>
+    </span>
+</a>
+
+<nav>
+  <div _="on htmx:beforeOnLoad take .active from .nav-item for event.target">
+    <ul>
+      <li>
+        <div class="nav-item"
+             hx-get="/drodler"
+             hx-target="#homepage-content"
+             hx-swap="innerHTML"
+             hx-push-url="true">
+          drodler
+        </div>
+      </li>
+      <li>
+        <div class="nav-item active"
+             hx-get="/tekster"
+             hx-target="#homepage-content"
+             hx-swap="innerHTML"
+             hx-push-url="true">
+          tekster
+        </div>
+      </li>
+      <li>
+        <div class="nav-item"
+             hx-get="/r"
+             hx-target="#homepage-content"
+             hx-swap="innerHTML"
+             hx-push-url="true">
+          sysler
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

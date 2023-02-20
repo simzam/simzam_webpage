@@ -1,4 +1,8 @@
-"""Django settings for homepage project."""
+"""Django settings for homepage project.
+
+Keys are extracted using django-environ. The .env files is stored at
+BASE_DIR.
+"""
 
 from pathlib import Path
 import os
@@ -70,14 +74,16 @@ DATABASES = {
     }
 }
 
-# Configuration of the python webpack loader installed through pip
+
 WEBPACK_LOADER = {
-  'DEFAULT': {
-    'CACHE': not DEBUG,
-    'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
-    'POLL_INTERVAL': 0.1,
-    'IGNORE': [r'.+\.hot-update.js', r'.+\.map'],
-  }
+    'DEFAULT': {
+        'CACHE': not DEBUG,
+        'BUNDLE_DIR_NAME': 'webpack_bundles/', # must end with slash
+        'STATS_FILE': str(BASE_DIR.joinpath('webpack-stats.json')),
+        'POLL_INTERVAL': 0.1,
+        'TIMEOUT': None,
+        'IGNORE': [r'.+\.hot-update.js', r'.+\.map'],
+    }
 }
 
 TINYMCE_DEFAULT_CONFIG = {
@@ -125,22 +131,19 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/4.1/topics/i18n/
-
 LANGUAGE_CODE = 'nb'
 TIME_ZONE = 'Europe/Berlin'
 USE_I18N = True
 USE_TZ = True
 
+
+# Set the proper settings for AWS
 if env.bool('USE_S3'):
-    # aws settings
     AWS_ACCESS_KEY_ID = env.str('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = env.str('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = env.str('AWS_STORAGE_BUCKET_NAME')
     AWS_DEFAULT_ACL = 'public-read'
-    AWS_S3_REGION = 'eu-north-1'
+    AWS_S3_REGION = env.str('AWS_S3_REGION')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
     # s3 static settings
@@ -149,10 +152,15 @@ if env.bool('USE_S3'):
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 else:
-    STATIC_URL = '/staticfiles/'
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    # THE URL FOR WHICH THE FILES SHOULD BE SERVED UNDER
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+    # where to fin static files
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+    STATIC_URL = '/static/'
+# TODO: clean up
+#STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 
 MEDIA_URL = '/mediafiles/'

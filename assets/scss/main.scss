@@ -1,3 +1,9 @@
-div {
-    background-color: 0xFFFFFF;
+$color-bg: #AAAAAA;
+
+body {
+    background-color: $color-bg;
+}
+
+.dimzam-logo {
+    background-color: #F00;
 }

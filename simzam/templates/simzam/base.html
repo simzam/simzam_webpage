@@ -5,22 +5,25 @@
     <head>
         <meta charset="utf=8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/x-icon" href="{% static 'favicon.png' %}">
+        <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
         {% render_bundle 'main_style' 'css' %}
         <title>simzam!</title>
     </head>
     <body>
         <header>
-            {#% include 'navbar.html' %#}
+            {% include 'navbar.html' %}
         </header>
         <main id="homepage-content">
             {% block content %}
+                block content
             {% endblock content %}
         </main>
-        {% render_bundle 'principal' 'js' %}
-        {% render_bundle 'main_style' 'js' %}
+        <div>
+        </div>
+            {% render_bundle 'principal' 'js' %}
+            {% render_bundle 'main_style' 'js' %}
         <footer>
-            {#% include 'footer.html' %#}
+            {% include 'footer.html' %}
         </footer>
     </body>
 </html>

@@ -6,8 +6,6 @@ from django.urls import reverse
 from datetime import datetime
 
 
-
-# TODO: remove slug from argument list.
 @require_GET
 def detail(request: HttpRequest) -> HttpResponse:
 
