@@ -1,12 +1,8 @@
 /node_modules/
-/package-lock.json
 /.venv/
-/db.sqlite3
-/package.json
-/webpack-stats.json
-/webpack.config.js
-/simzam/__pycache__/*.pyc
-/simzam/migrations/
+*.sqlite3
+*.pyc
+package-lock.json
 **/__pycache__/
 **/static/
 *.env
