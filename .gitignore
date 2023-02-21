@@ -1,6 +1,6 @@
 /node_modules/
 /package-lock.json
-/.homepage_venv/
+/.venv/
 /db.sqlite3
 /package.json
 /webpack-stats.json
@@ -8,4 +8,5 @@
 /simzam/__pycache__/*.pyc
 /simzam/migrations/
 **/__pycache__/
+**/static/
 *.env

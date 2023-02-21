@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'webpack_loader',
+    'webpack_loader',
     'tinymce',
     'storages',
 
@@ -70,16 +70,16 @@ DATABASES = {
     }
 }
 
-# WEBPACK_LOADER = {
-#     'DEFAULT': {
-#         'CACHE': not DEBUG,
-#         'BUNDLE_DIR_NAME': 'webpack_bundles/', # must end with slash
-#         'STATS_FILE': str(BASE_DIR.joinpath('webpack-stats.json')),
-#         'POLL_INTERVAL': 0.1,
-#         'TIMEOUT': None,
-#         'IGNORE': [r'.+\.hot-update.js', r'.+\.map'],
-#     }
-# }
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'CACHE': not DEBUG,
+        'BUNDLE_DIR_NAME': 'webpack_bundles/', # must end with slash
+        'STATS_FILE': str(BASE_DIR.joinpath('webpack-stats.json')),
+        'POLL_INTERVAL': 0.1,
+        'TIMEOUT': None,
+        'IGNORE': [r'.+\.hot-update.js', r'.+\.map'],
+    }
+}
 
 TINYMCE_DEFAULT_CONFIG = {
     'cleanup_on_startup': True,
