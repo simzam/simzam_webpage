@@ -7,7 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
         <title>simzam!</title>
-        <script type="module" src="{% static 'webpack_bundles/bundle.js' %}"></script>
+        {% render_bundle 'style' 'css' %}
+
     </head>
     <body>
         <header>
@@ -23,5 +24,7 @@
         <footer>
             {% include 'footer.html' %}
         </footer>
+        {% render_bundle 'style' 'js' %}
+        {% render_bundle 'bundle' 'js' %}
     </body>
 </html>
