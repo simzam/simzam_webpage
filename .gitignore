@@ -1,6 +1,5 @@
 /node_modules/
 /.venv/
-*.sqlite3
 *.pyc
 package-lock.json
 **/__pycache__/
