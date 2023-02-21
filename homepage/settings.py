@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'webpack_loader',
+    # 'webpack_loader',
     'tinymce',
     'storages',
 
@@ -63,10 +63,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'homepage.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -74,17 +70,16 @@ DATABASES = {
     }
 }
 
-
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'CACHE': not DEBUG,
-        'BUNDLE_DIR_NAME': 'webpack_bundles/', # must end with slash
-        'STATS_FILE': str(BASE_DIR.joinpath('webpack-stats.json')),
-        'POLL_INTERVAL': 0.1,
-        'TIMEOUT': None,
-        'IGNORE': [r'.+\.hot-update.js', r'.+\.map'],
-    }
-}
+# WEBPACK_LOADER = {
+#     'DEFAULT': {
+#         'CACHE': not DEBUG,
+#         'BUNDLE_DIR_NAME': 'webpack_bundles/', # must end with slash
+#         'STATS_FILE': str(BASE_DIR.joinpath('webpack-stats.json')),
+#         'POLL_INTERVAL': 0.1,
+#         'TIMEOUT': None,
+#         'IGNORE': [r'.+\.hot-update.js', r'.+\.map'],
+#     }
+# }
 
 TINYMCE_DEFAULT_CONFIG = {
     'cleanup_on_startup': True,
@@ -112,9 +107,6 @@ TINYMCE_DEFAULT_CONFIG = {
     'menubar': True,
     'statusbar': True,
 }
-
-# Password validation
-# https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -154,9 +146,8 @@ if env.bool('USE_S3'):
 else:
     # THE URL FOR WHICH THE FILES SHOULD BE SERVED UNDER
 
-
     # where to fin static files
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
+    #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
     STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
     STATIC_URL = '/static/'
 # TODO: clean up
