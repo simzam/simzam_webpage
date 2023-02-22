@@ -1,21 +1,21 @@
 {% load static %}
-<a id="dimzam-logo" href="{% url 'simzam:test' %}">
-    <span>
-        <object type="image/png"
-            id='dimzam-logo'
-            style="pointer-events: none;"
-            data="{% static 'images/dimzam.png' %}">
-            hjem
-        </object>
-    </span>
-</a>
+<!-- <a href="{% url 'simzam:test' %}">
+     <span>
+     <object type="image/png"
+     id='dimzam-logo'
+     style="pointer-events: none;"
+     data="{% static 'images/dimzam.png' %}">
+     hjem
+     </object>
+     </span>
+     </a> -->
 
 <nav>
   <div _="on htmx:beforeOnLoad take .active from .nav-item for event.target">
     <ul>
       <li>
         <div class="nav-item"
-             hx-get="/drodler"
+             hx-get="{% url 'simzam:drawing_index'  %}"
              hx-target="#homepage-content"
              hx-swap="innerHTML"
              hx-push-url="true">

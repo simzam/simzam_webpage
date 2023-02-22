@@ -1,3 +1,5 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
 $color-bg: #FF0;
 $var: 43;
 $var3: 43;
@@ -6,9 +8,37 @@ body {
     background-color: $color-bg;
 }
 
-// commen
-.dimzam-logo {
-    background-color: #F00;
-    width: 50px;
-    height: 40px;
+header {
+    ul {
+        list-style: none;
+        font-size: 3vw;
+        font-weight: 600;
+    }
+
+    #dimzam-logo {
+        position: absolute;
+        right: 5vw;
+        margin-right: none;
+        max-height: 10vh;
+        max-width: 15vw;
+    }
+
+    li {
+        display: inline-block;
+        width: fit-content;
+        padding: 1vw;
+    }
+
+    li:hover {
+        font-size: 1.1em;
+        background-color: #EBA;
+        cursor: pointer;
+        transition: all 0.05s ease-in;
+    }
+
+}
+
+#drodlebox {
+    border: solid 4px;
+    background-color: blue;
 }

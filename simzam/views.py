@@ -10,5 +10,14 @@ from datetime import datetime
 def detail(request: HttpRequest) -> HttpResponse:
 
     template = 'simzam/base.html'
+    context = {}
 
-    return render(request, template)
+    return render(request, template, context)
+
+@require_GET
+def drawing_index(request: HttpRequest) -> HttpRequest:
+
+    template = 'simzam/drawing_index.html'
+    context = {}
+
+    return render(request, template, context)
