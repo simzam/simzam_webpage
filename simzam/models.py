@@ -43,7 +43,8 @@ class Project(models.Model):
     @display(description='Preview')
     def show_logo(self):
         """Allow previewing of images on the admin page."""
-        return get_template('admin/logo_thumbnail_template.html').render({
+        return get_template('admin/drawing_thumbnail_template.html').render({
+
             'field_name': 'logo',
             'src': self.logo.url if self.logo else None,
         })
