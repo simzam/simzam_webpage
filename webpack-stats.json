@@ -1,79 +1,31 @@
 {
   "status": "done",
   "assets": {
-    "bundle-676b25181fa9ec9e3be1.js": {
-      "name": "bundle-676b25181fa9ec9e3be1.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-676b25181fa9ec9e3be1.js"
+    "bundle-a8c4f8cb7aa5a05a47b4.js": {
+      "name": "bundle-a8c4f8cb7aa5a05a47b4.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-a8c4f8cb7aa5a05a47b4.js"
     },
-    "bundle-74764900e302744d71b6.js": {
-      "name": "bundle-74764900e302744d71b6.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-74764900e302744d71b6.js"
+    "index.html": {
+      "name": "index.html",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/index.html"
     },
-    "bundle-7c527dff29c2bc4257c2.js": {
-      "name": "bundle-7c527dff29c2bc4257c2.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-7c527dff29c2bc4257c2.js"
+    "style-a8c4f8cb7aa5a05a47b4.js": {
+      "name": "style-a8c4f8cb7aa5a05a47b4.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-a8c4f8cb7aa5a05a47b4.js"
     },
-    "bundle-a8a6b86c888fa6b9edec.js": {
-      "name": "bundle-a8a6b86c888fa6b9edec.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-a8a6b86c888fa6b9edec.js"
-    },
-    "bundle-bf7be4b7d7c004279b22.js": {
-      "name": "bundle-bf7be4b7d7c004279b22.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-bf7be4b7d7c004279b22.js"
-    },
-    "bundle-d71c1f6f7928df3f0863.js": {
-      "name": "bundle-d71c1f6f7928df3f0863.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-d71c1f6f7928df3f0863.js"
-    },
-    "bundle-ec8d5c3b449f74db5627.js": {
-      "name": "bundle-ec8d5c3b449f74db5627.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-ec8d5c3b449f74db5627.js"
-    },
-    "bundle-f1713df69b5fed44045e.js": {
-      "name": "bundle-f1713df69b5fed44045e.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-f1713df69b5fed44045e.js"
-    },
-    "style-676b25181fa9ec9e3be1.js": {
-      "name": "style-676b25181fa9ec9e3be1.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-676b25181fa9ec9e3be1.js"
-    },
-    "style-74764900e302744d71b6.js": {
-      "name": "style-74764900e302744d71b6.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-74764900e302744d71b6.js"
-    },
-    "style-7c527dff29c2bc4257c2.js": {
-      "name": "style-7c527dff29c2bc4257c2.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-7c527dff29c2bc4257c2.js"
-    },
-    "style-a8a6b86c888fa6b9edec.js": {
-      "name": "style-a8a6b86c888fa6b9edec.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-a8a6b86c888fa6b9edec.js"
-    },
-    "style-bf7be4b7d7c004279b22.js": {
-      "name": "style-bf7be4b7d7c004279b22.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-bf7be4b7d7c004279b22.js"
-    },
-    "style-d71c1f6f7928df3f0863.js": {
-      "name": "style-d71c1f6f7928df3f0863.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-d71c1f6f7928df3f0863.js"
-    },
-    "style-ec8d5c3b449f74db5627.js": {
-      "name": "style-ec8d5c3b449f74db5627.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-ec8d5c3b449f74db5627.js"
-    },
-    "style-f1713df69b5fed44045e.js": {
-      "name": "style-f1713df69b5fed44045e.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-f1713df69b5fed44045e.js"
+    "vendors-a8c4f8cb7aa5a05a47b4.js": {
+      "name": "vendors-a8c4f8cb7aa5a05a47b4.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/vendors-a8c4f8cb7aa5a05a47b4.js"
     }
   },
   "chunks": {
     "bundle": [
-      "bundle-676b25181fa9ec9e3be1.js"
+      "vendors-a8c4f8cb7aa5a05a47b4.js",
+      "bundle-a8c4f8cb7aa5a05a47b4.js"
     ],
     "style": [
-      "style-676b25181fa9ec9e3be1.js"
+      "vendors-a8c4f8cb7aa5a05a47b4.js",
+      "style-a8c4f8cb7aa5a05a47b4.js"
     ]
-  },
-  "error": "ModuleNotFoundError",
-  "message": "Module not found: SyntaxError: /home/sim/Desktop/simzam_webpage/package.json (directory description file): SyntaxError: Unexpected token i in JSON at position 153"
+  }
 }

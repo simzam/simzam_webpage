@@ -4,15 +4,18 @@ const webpack = require('webpack');
 const BundleTracker = require('webpack-bundle-tracker');
 
 module.exports = {
-  mode: "none",
+  context: __dirname,
+  mode: "development",
   entry: {
-    bundle: "./assets/js/index.js",
+    bundle: ["./assets/js/index.js"],
     style: "./assets/scss/main.scss",
   },
   output: {
     path: path.resolve(__dirname, "simzam", "static", "webpack_bundles"),
-    filename: "[name]-[fullhash].js",
-    clean: true,
+
+    filename: "[name]-[hash].js",
+    chunkFilename: "[name]-[hash]",
+    clean: true
   },
   module: {
     rules: [
@@ -33,6 +36,25 @@ module.exports = {
     new BundleTracker({filename:"./webpack-stats.json"}),
     new HtmlWebpackPlugin({
       title: 'Output Management',
+      inject: false
     })
   ],
+  watchOptions: {
+    aggregateTimeout: 200,
+    poll: 1000,
+    ignored: /node_modules/,
+  },
+  optimization: {
+    // TODO: for some reason the line below creates a lot of uneccessary loading
+    // runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        },
+      },
+    }
+  }
 };
