@@ -16,9 +16,11 @@ admin.site.register(Project,
 class ProjectAdmin(admin.ModelAdmin):
     exclude = ("slug",)
 
-#@admin.register(Drawing)
+# @admin.register(Drawing)
 class DrawingAdmin(admin.ModelAdmin):
     form = DrawingModelForm
+
+
 admin.site.register(Drawing,
                     DrawingAdmin,
                     fields=('title',

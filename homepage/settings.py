@@ -3,7 +3,6 @@
 Keys are extracted using django-environ. The .env files is stored at
 BASE_DIR.
 """
-
 from pathlib import Path
 import os
 import environ
@@ -71,10 +70,12 @@ DATABASES = {
     }
 }
 
+# Configuration for "django-webpack-loader". Used to solve live reloading of
+# hashed WebPack-bundles.
 WEBPACK_LOADER = {
     'DEFAULT': {
         'CACHE': not DEBUG,
-        'BUNDLE_DIR_NAME': 'webpack_bundles/', # must end with slash
+        'BUNDLE_DIR_NAME': 'webpack_bundles/',
         'STATS_FILE': str(BASE_DIR.joinpath('webpack-stats.json')),
         'POLL_INTERVAL': 0.1,
         'TIMEOUT': None,
@@ -82,7 +83,8 @@ WEBPACK_LOADER = {
     }
 }
 
-# TODO: comfigure TINYMCE
+# Configuration for "django-tinymce". TinyMCE provides a richer text editing
+# experience.
 TINYMCE_DEFAULT_CONFIG = {
     'cleanup_on_startup': True,
     'custom_undo_redo_levels': 20,
@@ -127,7 +129,6 @@ TIME_ZONE = 'Europe/Berlin'
 USE_I18N = True
 USE_TZ = True
 
-
 # Set the proper settings for AWS
 if env.bool('USE_S3'):
     AWS_ACCESS_KEY_ID = env.str('AWS_ACCESS_KEY_ID')
@@ -143,28 +144,11 @@ if env.bool('USE_S3'):
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 else:
-    # THE URL FOR WHICH THE FILES SHOULD BE SERVED UNDER
 
-    # where to fin static files
-    #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     STATIC_URL = '/static/'
-# TODO: clean up
-#STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
-MEDIA_URL = '/mediafiles/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
-
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.1/howto/static-files/
-
-#STATIC_URL = 'static/'
-#STATICFILES_DIRS = (os.path.join(BASE_DIR, "/dist/"),)
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+    MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

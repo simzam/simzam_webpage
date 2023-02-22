@@ -104,9 +104,3 @@ class Drawing(models.Model):
 
     class Meta:
         db_table = 'drawing'
-#         ordering =
-#     @property
-#     def thumnbail_preview(self):
-#         if self.thumbnail:
-#             url_string = '<img src="{}" width="300" height="300"/>'
-#             returni mark_safe.format(url_string.format(self.thumbnail.url))
