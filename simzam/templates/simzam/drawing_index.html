@@ -1,12 +1,10 @@
 {% block content %}
     <div class='container-lg'>
         <div class='row'>
-
-            <div id='drodlebox' class='col-3'>
-                HEI SENORITAS
-            </div>
-            <div id='drodlebox' class='col-9'>
-                HEI SENORES
+            <div id='drodlebox' class='col-12'>
+                {% for item in drawings %}
+                    {{ item.get_absolute_url }}
+                {% endfor %}
             </div>
         </div>
     </div>

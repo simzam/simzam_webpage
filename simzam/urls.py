@@ -5,10 +5,11 @@ from django.conf.urls.static import static
 from . import views
 
 app_name = 'simzam'
-
 urlpatterns = [
-    path('', views.detail, name='test'),
+    path('drodler/<slug:slug>/', views.drawing_detail, name='drawing_detail'),
     path('drodler', views.drawing_index, name='drawing_index'),
+    path('', views.detail, name='test'),
+]
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -8,6 +8,7 @@ All tables are explictly named.
 """
 from django.db import models
 from django.contrib.admin.decorators import display
+from django.urls import reverse
 from django.utils.text import slugify
 from django.utils.timezone import now
 from django.template.loader import get_template
@@ -82,6 +83,7 @@ class Drawing(models.Model):
     """ A drawing contains a drawing in jpg format."""
 
     title = models.CharField('tittel', max_length=255)
+    slug = models.SlugField(max_length=255, editable=True, blank=True)
 
     published_date = models.DateField('publisert', default=now)
     drawing = models.ImageField('Tegning', upload_to='drawing')
@@ -104,3 +106,11 @@ class Drawing(models.Model):
 
     class Meta:
         db_table = 'drawing'
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Drawing, self).save(*args, **kwargs)
+
+
+    def get_absolute_url(self):
+        return reverse('simzam:drawing_detail', kwargs={'slug': self.slug})
