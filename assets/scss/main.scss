@@ -42,3 +42,20 @@ header {
     border: solid 4px;
     background-color: whitesmoke;
 }
+
+div {
+    #logo {
+        float: right;
+        max-width: 12vw;
+        max-height: 12vw;
+        padding: 0.4vw;
+        margin: 0.8vw;
+
+        &:hover {
+            cursor: pointer;
+            max-width: 20vw;
+            max-height: 20vw;
+            transition: all 3s eade-in-out;
+        }
+    }
+}

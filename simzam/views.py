@@ -34,3 +34,8 @@ def drawing_detail(request: HttpRequest, slug: str) -> HttpRequest:
     context = {'drawing': drawing}
 
     return render(request, template, context)
+
+
+@require_GET
+def memo(request: HttpRequest) -> HttpRequest:
+    return render(request, './simzam/memo.html')

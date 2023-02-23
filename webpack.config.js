@@ -8,7 +8,8 @@ module.exports = {
   mode: "development",
   entry: {
     bundle: ["./assets/js/index.js"],
-    style: "./assets/scss/main.scss",
+    style: ["./assets/scss/main.scss"],
+    memo: ["./assets/js/memo.js"]
   },
   output: {
     path: path.resolve(__dirname, "simzam", "static", "webpack_bundles"),
@@ -30,7 +31,15 @@ module.exports = {
           "sass-loader",
         ],
       },
+      {
+        test: /\.ts(x)?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/
+      }
     ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [
     new BundleTracker({filename:"./webpack-stats.json"}),

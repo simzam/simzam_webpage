@@ -1,32 +1,39 @@
+{% load static %}
 <nav>
-  <div>
+    <div id='logo-div'>
+        {% include 'logo.html' %}
+    </div>
+
     <ul>
-      <li>
-        <div class="nav-item"
-             hx-get="{% url 'simzam:drawing_index' %}"
-             hx-target="#homepage-content"
-             hx-swap="innerHTML"
-            <!-- hx-push-url="true" -->
-          > drodler
-        </div>
-      </li>
-      <li>
-        <div class="nav-item"
-             hx-get="/tekster"
-             hx-target="#homepage-content"
-             hx-swap="innerHTML">
-           tekster
-        </div>
-      </li>
-      <li>
-        <div class="nav-item"
-             hx-get="/r"
-             hx-target="#homepage-content"
-             hx-swap="innerHTML"
-             hx-push-url="true">
-          sysler
-        </div>
-      </li>
+        <
+        <li>
+
+            <div class="nav-item"
+                 hx-get="{% url 'simzam:drawing_index' %}"
+                 hx-target="#homepage-content"
+                 hx-swap="innerHTML"
+                <!-- hx-push-url="true" -->
+                drodler
+            </div>
+        </li>
+        <li>
+            <div class="nav-item"
+                 hx-get="{% url 'simzam:memo' %}"
+                 hx-target="#homepage-content"
+                 hx-swap="innerHTML">
+                memo
+            </div>
+        </li>
+        <li>
+            <div class="nav-item"
+                 hx-get="/r"
+                 hx-target="#homepage-content"
+                 hx-swap="innerHTML"
+                 hx-push-url="true">
+                sysler
+            </div>
+        </li>
+        >
     </ul>
-  </div>
+    </div>
 </nav>

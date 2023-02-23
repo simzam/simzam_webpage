@@ -8,6 +8,7 @@ app_name = 'simzam'
 urlpatterns = [
     path('drodler/<slug:slug>/', views.drawing_detail, name='drawing_detail'),
     path('drodler', views.drawing_index, name='drawing_index'),
+    path('memo/', views.memo, name='memo'),
     path('', views.detail, name='test'),
 ]
 

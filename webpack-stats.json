@@ -1,31 +1,38 @@
 {
   "status": "done",
   "assets": {
-    "bundle-13569d8b02d1436ef16b.js": {
-      "name": "bundle-13569d8b02d1436ef16b.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-13569d8b02d1436ef16b.js"
+    "bundle-0d829033f53fcd420b8a.js": {
+      "name": "bundle-0d829033f53fcd420b8a.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-0d829033f53fcd420b8a.js"
     },
     "index.html": {
       "name": "index.html",
       "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/index.html"
     },
-    "style-13569d8b02d1436ef16b.js": {
-      "name": "style-13569d8b02d1436ef16b.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-13569d8b02d1436ef16b.js"
+    "memo-0d829033f53fcd420b8a.js": {
+      "name": "memo-0d829033f53fcd420b8a.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/memo-0d829033f53fcd420b8a.js"
     },
-    "vendors-13569d8b02d1436ef16b.js": {
-      "name": "vendors-13569d8b02d1436ef16b.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/vendors-13569d8b02d1436ef16b.js"
+    "style-0d829033f53fcd420b8a.js": {
+      "name": "style-0d829033f53fcd420b8a.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-0d829033f53fcd420b8a.js"
+    },
+    "vendors-0d829033f53fcd420b8a.js": {
+      "name": "vendors-0d829033f53fcd420b8a.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/vendors-0d829033f53fcd420b8a.js"
     }
   },
   "chunks": {
     "bundle": [
-      "vendors-13569d8b02d1436ef16b.js",
-      "bundle-13569d8b02d1436ef16b.js"
+      "vendors-0d829033f53fcd420b8a.js",
+      "bundle-0d829033f53fcd420b8a.js"
+    ],
+    "memo": [
+      "memo-0d829033f53fcd420b8a.js"
     ],
     "style": [
-      "vendors-13569d8b02d1436ef16b.js",
-      "style-13569d8b02d1436ef16b.js"
+      "vendors-0d829033f53fcd420b8a.js",
+      "style-0d829033f53fcd420b8a.js"
     ]
   }
 }
