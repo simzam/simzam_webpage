@@ -2,34 +2,52 @@
 
 // creating a light and a dark theme on html level
 // TODO: setup color theme
-$color-text-dark: hsl(125, 20%, 80%);
-$color-background-dark: hsl(210, 50%, 19%);
-$color-misc-dark: hsl(0, 100%, 50%);
+// $color-text-dark: hsl(125, 20%, 80%);
+// $color-background-dark: hsl(210, 50%, 19%);
+// $color-misc-dark: hsl(0, 100%, 50%);
 
-$color-text-light: black;
-$color-background-light: whitesmoke;
-$color-misc-light: lightgreen;
+// $color-text-light: black;
+// $color-background-light: whitesmoke;
+// $color-misc-light: lightgreen;
+
+
+$color-black: rgb(0,0,0);
+$color-white: rgb(255,255,255);
+$color-gray-light: rgba($color-white, .15);
+$color-gray-dark: rgba($color-black, .15);
 
 :root {
-  --color-page-background: #{$color-background-light};
-  --color-text: #{$color-text-light};
+    --color-page-background: whitesmoke;
+    --color-text: #{$color-black};
+    --color-border: pink;
+    --color-article-background: #{$color-white};
+    --color-article-shadow: #{$color-gray-dark};
 }
-
 
 .dark {
-  --color-page-background: #{$color-background-dark};
-  --color-text: #{$color-text-dark};
+    --color-page-background: hsl(210, 50%, 20%);
+    --color-text: #{$color-white};
+    --color-border: hsl(20, 80%, 10%);
+    --color-article-background: #{$color-gray-light};
+    --color-article-shadow: #{$color-gray-dark};
 }
 
-
 * {
-  transition: all .15s ease;
+    transition: all .15s ease;
 }
 
 body {
-  background-color: var(--color-page-background);
-  color: var(--color-text-light);
+    background-color: var(--color-page-background);
+    font: 1.1em/1.4 Dosis;
+    color: var(--color-text);
 }
+
+main {
+    max-width: 120rem;
+    margin: auto;
+    padding: 1rem;
+}
+
 
 header {
     margin-bottom: 5vh;
@@ -49,7 +67,7 @@ header {
 
         &:hover {
             font-size: 1.1em;
-            background-color: #EBA;
+            background-color: var(--color-border);
             cursor: pointer;
             transition: all 0.1s ease-in;
         }
@@ -57,50 +75,48 @@ header {
 
 }
 
-.nav-item {
-    height: fit-content;
-    width: fit-content;
-}
 
 article {
-  padding: 2rem;
-  background-color: pink;
-  box-shadow: 12px 12px 0 0 grey;
+    padding: 2rem;
+    background-color: var(--color-border);
+    box-shadow: 12px 12px 0 0 grey;
 }
 
 #logo {
-    cursor: pointer;
-    float: right;
-    width: 400px;
-    height: 400px;
+    // float: right;
+    $lt: 1vh;
+    width: $lt * 12;
+    height: $lt * 12;
+    $cx: $lt * 6;
+    $cy: $lt * 6;
+    cy: $cy;
     #outer_circle {
-        cx: 200px;
-        cy: 200px;
-        r: 180px;
-        fill: var(--color-text-dark);
+        r: $lt * 6;
+        fill: var(--color-text);
+        cx: $cx;
+        cy: $cy;
     }
     #middle_circle {
-        cx: 200px;
-        cy: 200px;
-        r: 140px;
-        fill: whitesmoke;
+        r: $lt * 4;
+        fill: var(--color-page-background);
+        cx: $cx;
+        cy: $cy;
     }
     #inner_circle {
-        cx: 200px;
-        cy: 200px;
-        r: 70px;
-        fill: lime;
+        r: $lt * 2;
+        fill: var(--color-border);
+        cx: $cx;
+        cy: $cy;
     }
 }
 
 .switch {
-  position: fixed;
-  right: 2rem;
-  top: 2rem;
-  height: 3rem;
-  width: 3rem;
-  background-color: var(--color-black);
-  border: 1px solid  var(--color-text);
-  color: var(--color-text);
-  border-radius: 50%;
+    all: unset;
+    float: right;
+    cursor: pointer;
+    right: 2rem;
+    top: 2rem;
+    margin: 2vw;
+    // background-color: var(--color-black);
+    color: var(--color-text);
 }
