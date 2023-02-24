@@ -1,61 +1,106 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
-$color-bg: #FF0;
-$var: 43;
-$var3: 43;
+// creating a light and a dark theme on html level
+// TODO: setup color theme
+$color-text-dark: hsl(125, 20%, 80%);
+$color-background-dark: hsl(210, 50%, 19%);
+$color-misc-dark: hsl(0, 100%, 50%);
+
+$color-text-light: black;
+$color-background-light: whitesmoke;
+$color-misc-light: lightgreen;
+
+:root {
+  --color-page-background: #{$color-background-light};
+  --color-text: #{$color-text-light};
+}
+
+
+.dark {
+  --color-page-background: #{$color-background-dark};
+  --color-text: #{$color-text-dark};
+}
+
+
+* {
+  transition: all .15s ease;
+}
 
 body {
-    background-color: $color-bg;
+  background-color: var(--color-page-background);
+  color: var(--color-text-light);
 }
 
 header {
+    margin-bottom: 5vh;
+    // position: fixed;
     ul {
+        float: left;
         list-style: none;
         font-size: 3vw;
         font-weight: 600;
-    }
-
-    #dimzam-logo {
-        position: absolute;
-        right: 5vw;
-        margin-right: none;
-        max-height: 10vh;
-        max-width: 15vw;
+        height: 400;
     }
 
     li {
         display: inline-block;
         width: fit-content;
         padding: 1vw;
-    }
-
-    li:hover {
-        font-size: 1.1em;
-        background-color: #EBA;
-        cursor: pointer;
-        transition: all 0.1s ease-in;
-    }
-
-}
-
-#drodlebox {
-    border: solid 4px;
-    background-color: whitesmoke;
-}
-
-div {
-    #logo {
-        float: right;
-        max-width: 12vw;
-        max-height: 12vw;
-        padding: 0.4vw;
-        margin: 0.8vw;
 
         &:hover {
+            font-size: 1.1em;
+            background-color: #EBA;
             cursor: pointer;
-            max-width: 20vw;
-            max-height: 20vw;
-            transition: all 3s eade-in-out;
+            transition: all 0.1s ease-in;
         }
     }
+
+}
+
+.nav-item {
+    height: fit-content;
+    width: fit-content;
+}
+
+article {
+  padding: 2rem;
+  background-color: pink;
+  box-shadow: 12px 12px 0 0 grey;
+}
+
+#logo {
+    cursor: pointer;
+    float: right;
+    width: 400px;
+    height: 400px;
+    #outer_circle {
+        cx: 200px;
+        cy: 200px;
+        r: 180px;
+        fill: var(--color-text-dark);
+    }
+    #middle_circle {
+        cx: 200px;
+        cy: 200px;
+        r: 140px;
+        fill: whitesmoke;
+    }
+    #inner_circle {
+        cx: 200px;
+        cy: 200px;
+        r: 70px;
+        fill: lime;
+    }
+}
+
+.switch {
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  height: 3rem;
+  width: 3rem;
+  background-color: var(--color-black);
+  border: 1px solid  var(--color-text);
+  color: var(--color-text);
+  border-radius: 50%;
 }

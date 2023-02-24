@@ -1,19 +1,13 @@
 {% load static %}
-<nav>
-    <div id='logo-div'>
-        {% include 'logo.html' %}
-    </div>
-
+<nav id="main-header">
     <ul>
-        <
         <li>
-
             <div class="nav-item"
                  hx-get="{% url 'simzam:drawing_index' %}"
                  hx-target="#homepage-content"
                  hx-swap="innerHTML"
-                <!-- hx-push-url="true" -->
-                drodler
+                 hx-push-url="false">
+                 drodler
             </div>
         </li>
         <li>
@@ -26,14 +20,12 @@
         </li>
         <li>
             <div class="nav-item"
-                 hx-get="/r"
+                 hx-get="/"
                  hx-target="#homepage-content"
                  hx-swap="innerHTML"
                  hx-push-url="true">
                 sysler
             </div>
         </li>
-        >
     </ul>
-    </div>
 </nav>

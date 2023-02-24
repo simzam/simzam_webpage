@@ -1,11 +1,8 @@
+{% load static %}
 {% block content %}
-    <div class='container-lg'>
-        <div class='row'>
-            <div id='drodlebox' class='col-12'>
-                {% for item in drawings %}
-                    {{ item.get_absolute_url }}
-                {% endfor %}
-            </div>
-        </div>
+    <div class='container-sm'>
+        {% for item in drawings %}
+                <img src="{{ item.drawing.url }}" alt="" style="background-color: {{ item.background_color }};" />
+            {% endfor %}
     </div>
 {% endblock content %}

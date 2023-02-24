@@ -29,9 +29,10 @@ def drawing_index(request: HttpRequest) -> HttpRequest:
 @require_GET
 def drawing_detail(request: HttpRequest, slug: str) -> HttpRequest:
     """Show a drawing."""
-    template = './drawing_detail.html'
-    drawing = get_object_or_404(Drawing, slug=slug)
-    context = {'drawing': drawing}
+    template = 'simzam/drawing_detail.html'
+    selected = get_object_or_404(Drawing, slug=slug)
+    context = {'title': selected.title,
+               'url': selected.drawing.url}
 
     return render(request, template, context)
 

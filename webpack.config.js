@@ -7,6 +7,7 @@ module.exports = {
   context: __dirname,
   mode: "development",
   entry: {
+    ts: ["./assets/ts/index.ts"],
     bundle: ["./assets/js/index.js"],
     style: ["./assets/scss/main.scss"],
     memo: ["./assets/js/memo.js"]
@@ -39,7 +40,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.js', '.tsx', '.ts',],
   },
   plugins: [
     new BundleTracker({filename:"./webpack-stats.json"}),
