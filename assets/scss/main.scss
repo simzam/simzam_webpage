@@ -33,7 +33,6 @@ $color-gray-dark: rgba($color-black, .15);
 }
 
 * {
-    transition: all .15s ease;
 }
 
 body {
@@ -43,11 +42,14 @@ body {
 }
 
 main {
-    max-width: 120rem;
+    max-width: 60rem;
     margin: auto;
     padding: 1rem;
 }
 
+img {
+    width: 100%;
+}
 
 header {
     margin-bottom: 5vh;
@@ -55,7 +57,7 @@ header {
     ul {
         float: left;
         list-style: none;
-        font-size: 3vw;
+        font-size: 3vh;
         font-weight: 600;
         height: 400;
     }
@@ -84,7 +86,7 @@ article {
 
 #logo {
     // float: right;
-    $lt: 1vh;
+    $lt: 0.5vh;
     width: $lt * 12;
     height: $lt * 12;
     $cx: $lt * 6;
@@ -114,9 +116,6 @@ article {
     all: unset;
     float: right;
     cursor: pointer;
-    right: 2rem;
-    top: 2rem;
-    margin: 2vw;
-    // background-color: var(--color-black);
+    margin: 1vw;
     color: var(--color-text);
 }
