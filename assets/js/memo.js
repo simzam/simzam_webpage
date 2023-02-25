@@ -7,8 +7,7 @@ const app = new PIXI.Application({
     view: document.getElementById('pixi-canvas'),
     resolution: window.devicePixelRatio || 1,
     antialias: true,
-    backgroundAlpha: 0,
-    resizeTo: window
+    backgroundAlpha: 0
 });
 
 const graphics = new PIXI.Graphics();
