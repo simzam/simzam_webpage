@@ -1,31 +1,25 @@
 {% load static %}
-<nav id="main-header">
-    <ul>
-        <li>
-            <div class="nav-item"
-                 hx-get="{% url 'simzam:drawing_index' %}"
-                 hx-target="#homepage-content"
-                 hx-swap="innerHTML"
-                 hx-push-url="false">
-                 drodler
-            </div>
-        </li>
-        <li>
-            <div class="nav-item"
-                 hx-get="{% url 'simzam:memo' %}"
-                 hx-target="#homepage-content"
-                 hx-swap="innerHTML">
-                memo
-            </div>
-        </li>
-        <li>
-            <div class="nav-item"
-                 hx-get="/makesomething"
-                 hx-target="#"
-                 hx-swap="innerHTML"
-                 hx-push-url="true">
-                sysler
-            </div>
-        </li>
-    </ul>
-</nav>
+<ul class='navigation'>
+    <li class="nav-item"
+        hx-get="{% url 'simzam:drawing_index' %}"
+        hx-target="#homepage-content"
+        hx-swap="innerHTML"
+        hx-push-url="false">
+        drodler
+    </li>
+    <li class="nav-item"
+        hx-get="{% url 'simzam:memo' %}"
+        hx-target="#homepage-content"
+        hx-swap="innerHTML">
+        memo
+    </li>
+    <li class="nav-item"
+        hx-get="/makesomething"
+        hx-target="#"
+        hx-swap="innerHTML"
+        hx-push-url="true">
+        sysler
+    </li>
+</ul>
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger"></label>
