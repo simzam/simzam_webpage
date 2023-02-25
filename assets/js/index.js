@@ -7,7 +7,7 @@ window.htmx = require('htmx.org');
 window.Alpine = Alpine
 Alpine.start()
 
-import 'bootstrap';
+//import 'bootstrap';
 document.documentElement.setAttribute('data-theme', 'dark');
 
 document.querySelector('[data-switch-dark]').addEventListener('click', function() {

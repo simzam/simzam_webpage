@@ -1,11 +1,9 @@
 {% load static %}
-{% b
-    <div class='container-sm'>
-        {% for item in drawings %}
-            <img src="{{ item.drawing.url }}"
-                 alt=""
-                 style="background-color: {{ item.background_color }};">
+<div class='drawing-index'>
+    {% for item in drawings %}
+        <img src="{{ item.drawing.url }}"
+             alt=""
+             style="background-color: {{ item.background_color }};">
             </>
-        {% endfor %}
-    </div>
-{% endblock content %}
+    {% endfor %}
+</div>

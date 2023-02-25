@@ -16,8 +16,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "simzam", "static", "webpack_bundles"),
 
-    filename: "[name]-[hash].js",
-    chunkFilename: "[name]-[hash]",
+    filename: "[name]-[fullhash].js",
+    chunkFilename: "[name]-[fullhash]",
     clean: true
   },
   module: {
