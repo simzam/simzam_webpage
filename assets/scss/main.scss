@@ -1,16 +1,5 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
-// creating a light and a dark theme on html level
-// TODO: setup color theme
-// $color-text-dark: hsl(125, 20%, 80%);
-// $color-background-dark: hsl(210, 50%, 19%);
-// $color-misc-dark: hsl(0, 100%, 50%);
-
-// $color-text-light: black;
-// $color-background-light: whitesmoke;
-// $color-misc-light: lightgreen;
-
-
 $color-black: rgb(0,0,0);
 $color-white: rgb(255,255,255);
 $color-gray-light: rgba($color-white, .15);
@@ -27,7 +16,7 @@ $color-gray-dark: rgba($color-black, .15);
 .dark {
     --color-page-background: hsl(210, 50%, 20%);
     --color-text: #{$color-white};
-    --color-border: hsl(20, 80%, 10%);
+    --color-border: hsl(20, 80%, 30%);
     --color-article-background: #{$color-gray-light};
     --color-article-shadow: #{$color-gray-dark};
 }
@@ -52,7 +41,7 @@ img {
 }
 
 header {
-    margin-bottom: 5vh;
+    // margin-bottom: 5vh;
     // position: fixed;
     ul {
         float: left;
@@ -68,18 +57,16 @@ header {
         padding: 1vw;
 
         &:hover {
-            font-size: 1.1em;
+            font-size: 1.01em;
             background-color: var(--color-border);
             cursor: pointer;
             transition: all 0.1s ease-in;
         }
     }
-
 }
 
-
 article {
-    padding: 2rem;
+    padding: 0rem;
     background-color: var(--color-border);
     box-shadow: 12px 12px 0 0 grey;
 }
@@ -117,5 +104,11 @@ article {
     float: right;
     cursor: pointer;
     margin: 1vw;
-    color: var(--color-text);
+    // color: var(--color-text);
+}
+
+#pixi-content {
+    #pixi-canvas {
+        margin-bottom: 2vh;
+    }
 }

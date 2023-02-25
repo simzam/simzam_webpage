@@ -2,7 +2,7 @@
   "compilerOptions": {
     "typeRoots": ["./node_modules"],
     "types": ["pixi.js"],
-    "noImplicitAny": true,
+     "noImplicitAny": true,
     "module": "es6",
     "target": "es5",
     "jsx": "react",
