@@ -7,8 +7,12 @@ const app = new PIXI.Application({
     view: document.getElementById('pixi-canvas'),
     resolution: window.devicePixelRatio || 1,
     antialias: true,
-    backgroundAlpha: 0
+    backgroundAlpha: 0,
+    width: self.innerWidth,
+    height: parent.innerHeight,
+    // resizeTo: window
 });
+console.log(window.innerHeight, parent.height, parent.innerHeight, window.innerWidth, self.innerHeight);
 
 const graphics = new PIXI.Graphics();
 

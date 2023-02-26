@@ -1,3 +1,5 @@
+@use 'navbar';
+
 $color-black: rgb(0,0,0);
 $color-white: rgb(255,255,255);
 $color-gray-light: rgba($color-white, .15);
@@ -28,10 +30,11 @@ body {
     background: var(--color-page-background);
     font: 1.1em/1.4 Dosis;
     color: var(--color-text);
+    overflow-x: hidden;
 }
 
 main {
-    max-width: 60rem;
+    // max-width: 60rem;
     margin: auto;
     padding: 1rem;
 }
@@ -48,12 +51,11 @@ article {
 }
 
 #logo {
-    $lt: 0.5vh;
+    $lt: 1vh;
     width: $lt * 12;
     height: $lt * 12;
     $cx: $lt * 6;
     $cy: $lt * 6;
-    cy: $cy;
     #outer_circle {
         r: $lt * 6;
         fill: var(--color-text);
@@ -74,7 +76,7 @@ article {
     }
 }
 
-#color-btn {
+.color-btn {
     margin: 0 auto;
     padding-top: 1 vh;
     text-align: center;
@@ -86,50 +88,12 @@ article {
 }
 
 #pixi-content {
-    max-width: 40vw;
+    max-width: 90vw;
+    max-heigth: 85vh;
     #pixi-canvas {
         background-color: pink;
         margin-bottom: 2vh;
     }
-}
-
-.navigation {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    list-style: none;
-    background-color:lime;
-}
-
-.nav-item {
-    width: 200px;
-    // border-top: 1px solid blue;
-    // border-bottom: 1px solid pink;
-    cursor:pointer;
-    font-size: 3rem;
-    font-weight: 500;
-    margin: 0.1vw;
-
-    &:hover {
-        font-size: 3.2rem;
-        background-color: var(--color-border);
-        cursor: pointer;
-        transition: all 0.1s ease-in;
-    }
-}
-
-.nav-item a {
-    display: block;;
-}
-
-.nav-item a:hover {
-    background: var(--color-border);
-    // background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
 }
 
 /* Site Wrapper - Everything that isn't navigation */
@@ -150,64 +114,13 @@ article {
     // background-size: 200%;
 }
 
-/* Nav Trigger */
-.nav-trigger {
-    /* critical styles - hide the checkbox input */
-    position: absolute;
-    clip: rect(0, 0, 0, 0);
-}
 
-label[for="nav-trigger"] {
-    /* critical positioning styles */
-    position: fixed;
-    left: 15px; top: 15px;
-    z-index: 2;
 
-    // non-critical apperance styles
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
-    background-size: contain;
-}
-
-/* Make the Magic Happen */
-.nav-trigger + label, .site-wrap {
-    transition: left 0.2s;
-}
-
-.nav-trigger:checked + label {
-    left: 215px;
-}
-
-.nav-trigger:checked ~ .site-wrap {
-    left: 200px;
-    //box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
-}
-
-body {
-    /* Without this, the body has excess horizontal scroll when the menu is open */
-    overflow-x: hidden;
-}
-
-/* Additional non-critical styles */
-
-// h1, h3, p {
-//   max-width: 600px;
-//   margin: 0 auto 1em;
-// }
-
-// code {
-//   padding: 2px;
-//   background: #ddd;
-// }
-
-/* Micro reset */
+/* TODO: how does this workMicro reset */
 *,*:before,*:after{
-    // -webkit-box-sizing:border-box;
-    // -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
-// html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }

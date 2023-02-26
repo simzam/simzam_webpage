@@ -1,0 +1,105 @@
+
+#hamburger-menu {
+    // background-size: contains;
+    background: var(--color-page-background);
+    width: 5vw;
+    height: 5vw;
+    box-shadow: 0px 0px 22px 22px var(--color-page-background);
+    // background-color: green;
+    #hamburger-line-1 {
+    }
+
+    #hamburger-line-2 {
+        y: 2.0vw;
+    }
+
+    #hamburger-line-3 {
+        y: 4vw;
+    }
+
+    .hamburger-line {
+        x: 0.2vw;
+        y: 0.2vw;
+        height: 1.0vw;
+        width: 9.6vw;
+        fill: var(--color-text);
+        siroke: var(--color-border);
+        stroke-width: 0.3vw;
+    }
+}
+
+.navigation {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    background-color:lime;
+}
+
+.nav-item {
+    width: 200px;
+    // border-top: 1px solid blue;
+    // border-bottom: 1px solid pink;
+    cursor:pointer;
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0.1vw;
+
+    &:hover {
+        font-size: 3.2rem;
+        background-color: var(--color-border);
+        cursor: pointer;
+        transition: all 0.1s ease-in;
+    }
+}
+
+.nav-item a {
+    display: block;;
+}
+
+.nav-item a:hover {
+    background: var(--color-border);
+    // background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+}
+
+
+
+/* Nav Trigger */
+.nav-trigger {
+    /* critical styles - hide the checkbox input */
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+    /* critical positioning styles */
+    position: fixed;
+    left: 15px; top: 15px;
+    z-index: 2;
+
+    // non-critical apperance styles
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    // background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+    background-size: contain;
+}
+
+/* Make the Magic Happen */
+.nav-trigger + label, .site-wrap {
+    transition: left 0.2s;
+}
+
+.nav-trigger:checked + label {
+    left: 215px;
+}
+
+.nav-trigger:checked ~ .site-wrap {
+    left: 200px;
+    //box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+}
