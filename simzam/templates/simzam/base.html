@@ -15,7 +15,9 @@
 
         <div class="site-wrap">
             <main id='homepage-content'>
-                {% include 'testtext.html' %}
+                {% block content %}
+                    {% include 'testtext.html' %}
+                {% endblock content %}
             </main>
         </div>
         <footer>

@@ -11,7 +11,7 @@ $color-gray-dark: rgba($color-black, .15);
     --color-border: pink;
     --color-article-background: #{$color-white};
     --color-article-shadow: #{$color-gray-dark};
-    // --offcanvas-width: 0;
+    --color-page-elements: #BFBFBF;
 }
 
 .dark {
@@ -20,6 +20,7 @@ $color-gray-dark: rgba($color-black, .15);
     --color-border: hsl(20, 80%, 30%);
     --color-article-background: #{$color-gray-light};
     --color-article-shadow: #{$color-gray-dark};
+    --color-page-elements: #A0AA31;
 }
 
 * {
@@ -88,11 +89,12 @@ article {
 }
 
 #pixi-content {
-    max-width: 90vw;
-    max-heigth: 85vh;
+    //max-width: 40vw;
+    //max-heigth: 40vh;
     #pixi-canvas {
-        background-color: pink;
-        margin-bottom: 2vh;
+        border: 12px solid;
+        background-color: var(--color-border);
+        // margin: 5vh;
     }
 }
 
@@ -100,7 +102,7 @@ article {
 .site-wrap {
     /* Critical position and size styles */
     min-height: 100%;
-    min-width: 100%;
+    //min-width: 100%;
     background-color: var(--color-page-background); /* Needs a background or else the nav will show through */
     position: relative;
     top: 0;

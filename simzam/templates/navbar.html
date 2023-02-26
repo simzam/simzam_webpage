@@ -4,13 +4,14 @@
         hx-get="{% url 'simzam:drawing_index' %}"
         hx-target="#homepage-content"
         hx-swap="innerHTML"
-        hx-push-url="false">
+        hx-push-url="true">
         drodler
     </li>
     <li class="nav-item"
         hx-get="{% url 'simzam:memo' %}"
         hx-target="#homepage-content"
-        hx-swap="innerHTML">
+        hx-swap="innerHTML"
+        hx-push-url="true">
         memo
     </li>
     <li class="nav-item"
