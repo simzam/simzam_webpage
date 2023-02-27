@@ -31,7 +31,7 @@ body {
     background: var(--color-page-background);
     font: 1.1em/1.4 Dosis;
     color: var(--color-text);
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 main {
@@ -79,7 +79,7 @@ article {
 
 .color-btn {
     margin: 0 auto;
-    padding-top: 1 vh;
+    padding-top: 1vh;
     text-align: center;
 }
 
@@ -89,11 +89,14 @@ article {
 }
 
 #pixi-content {
-    //max-width: 40vw;
-    //max-heigth: 40vh;
+    width: 100%;
+    // heigth: 100%;
+    overflow: hidden;
     #pixi-canvas {
+        overflow: hidden;
         border: 12px solid;
-        background-color: var(--color-border);
+        //margin: 3vw;
+        background-color: var(--color-page-background);
         // margin: 5vh;
     }
 }
@@ -101,8 +104,8 @@ article {
 /* Site Wrapper - Everything that isn't navigation */
 .site-wrap {
     /* Critical position and size styles */
-    min-height: 100%;
-    //min-width: 100%;
+    // min-height: 100%;
+    min-width: 100%;
     background-color: var(--color-page-background); /* Needs a background or else the nav will show through */
     position: relative;
     top: 0;
@@ -115,8 +118,6 @@ article {
     // background-image: linear-gradient(135deg, rgb(254,255,255) 0%,rgb(221,241,249) 35%,rgb(160,216,239) 100%);
     // background-size: 200%;
 }
-
-
 
 /* TODO: how does this workMicro reset */
 *,*:before,*:after{
