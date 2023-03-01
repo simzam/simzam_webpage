@@ -1,8 +1,5 @@
 import { Application, Container, Graphics} from 'pixi.js';
-
 // TODO: sizing?
-
-
 // The application will create a renderer using WebGL, if possible,
 // with a fallback to a canvas render. It will also setup the ticker
 // and the root stage PIXI.Container.
@@ -11,55 +8,98 @@ import { Application, Container, Graphics} from 'pixi.js';
 
 var parentElem = document.getElementById('pixi-content');
 
-
 const app = new Application({
     view: document.getElementById('pixi-canvas'),
     resolution: window.devicePixelRatio || 1,
     antialias: true,
     backgroundAlpha: 0,
-    width: window.innerWidth - 80,
-    height: window.innerHeight - 200, //parent.innerHeigth,
-
-    // resizeTo: window
+    // width: window.innerWidth - 20,
+    // height: window.innerHeight - 100, //parent.innerHeigth,
+    autoResize: true,
+    resizeTo: parent,
 });
 
+// ALL cards are represented
 class Game extends Container {
     constructor(screenWidth, screenHeight) {
         super();
         this.width = screenWidth;
-        this._height = screenHeight;
+        this.height = screenHeight;
 
+        this.cardSize = false;
         this.gridSize = this.setGridSize();
-        console.log(this.gridSize, screenWidth);
     }
-    setGridSize() {
-        console.log("Resolution is (width x height):", this.width, this._height);
 
+    setGridSize() {
+        var cols;
+        var rows;
+        if (this.width > this.heigth) {
+            cols = 4;
+            rows = 3;
+        } else {
+            cols = 3;
+            rows = 4;
+        }
         return 1;
     }
 }
 
-const card1 = new Graphics();
-card1.beginFill(0xFFFFFF);
-card1.lineStyle(12, 0x000000, 1);
-card1.drawRoundedRect(20, 20, 200, 320, 20);
-card1.lineStyle(6, 0x000000, 1);
-card1.beginFill(0x00F0F0)
-card1.drawEllipse(120, 80, 80, 40);
+function makeExampleCard(x1, y1, x2, y2) {
+    const ex = new Graphics();
 
-card1.beginFill(0xFF0FF0);
-card1.lineStyle(6, 0x000000, 1);
-card1.drawEllipse(120, 180, 80, 40);
+    ex.beginFill(0xFFFFFF);
+    ex.lineStyle(6, 0X000000, 1);
 
-card1.beginFill(0x0FAFF0);
-card1.lineStyle(6, 0x000000, 1);
-card1.drawEllipse(120, 280, 80, 40);
+    ex.drawRoundedRect(x1, y1, x2, y2, 20);
 
+    ex.endFill();
+    return ex
+}
 
+function drawGrid(width, height) {
+    const ex = new Graphics();
 
-card1.endFill();
-app.stage.addChild (card1);
+    let cols = 20;
+    let rows = 15;
+    if (width < height) {
+        tmp = cols;
+        cols = rows;
+        rows = tmp;
+    }
+    console.log("hei");
+    ex.lineStyle(5, 0x0F0FAA, 1);
+    let cardBoxWidth = width / cols;
+    let cardBoxHeight = height / rows;
 
-console.log(window.innerWidth, window.innerHeight);
+    let i = 1;
+    for (i = 1; i <= cols; i++) {
+        let x = i * cardBoxWidth;
+        ex.moveTo(x, 0);
+        ex.lineTo(x, height);
+    }
 
-const game = new Game(app.width, app.height);
+    for (let j = 1; j < rows; j++) {
+        let y = j * cardBoxHeight;
+        ex.moveTo(0, y);
+        ex.lineTo(width, y);
+    }
+    
+    console.log(cardBoxWidth, cardBoxHeight);
+    return ex;
+}
+
+//app.stage.addChild (makeExampleCard(240, 0, 160, 240));
+//app.stage.addChild (makeExampleCard(0, 280, 160, 240));
+
+//app.stage.addChild (makeExampleCard(240, 500, 160, 240));
+
+// console.log(app.screen.height, app.screen.width);
+
+let width = app.screen.width;
+let heigth = app.screen.height;
+
+app.stage.addChild(drawGrid(width, heigth));
+
+new Game(app.screen.width, app.screen.heigth);
+
+app.stage.addChild (makeExampleCard(200, 30, 120, 180));

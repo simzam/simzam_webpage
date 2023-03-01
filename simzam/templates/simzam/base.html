@@ -13,13 +13,15 @@
         {% include 'navbar.html' %}
         {% include 'logo.html' %}
 
+        {% block body-content %}
         <div class="site-wrap">
             <main id='homepage-content'>
-                {% block content %}
+                {% block main-content %}
                     {% include 'testtext.html' %}
-                {% endblock content %}
+                {% endblock main-content %}
             </main>
         </div>
+        {% endblock body-content %}
         <footer>
             {% include 'footer.html' %}
         </footer>

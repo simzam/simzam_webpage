@@ -31,13 +31,13 @@ body {
     background: var(--color-page-background);
     font: 1.1em/1.4 Dosis;
     color: var(--color-text);
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 main {
     // max-width: 60rem;
     margin: auto;
-    padding: 1rem;
+    // padding: 1rem;
 }
 
 img {
@@ -89,15 +89,15 @@ article {
 }
 
 #pixi-content {
-    width: 100%;
+    // width: 90%;
     // heigth: 100%;
-    overflow: hidden;
+    //overflow: hidden;
     #pixi-canvas {
-        overflow: hidden;
-        border: 12px solid;
-        //margin: 3vw;
+        // overflow: hidden;
+        // border: 12px solid;
+        // padding: 3vw;
         background-color: var(--color-page-background);
-        // margin: 5vh;
+        // width: 98%;
     }
 }
 
