@@ -32,7 +32,7 @@ const app = new Application({
 // }
 
 class Board extends Container {
-  private numberCards: number;
+  //private numberCards: number;
   // private tableCards: Graphics[];
   private deckCards: number[][] = [];
   // private colorShapes: Graphics[];
@@ -40,15 +40,12 @@ class Board extends Container {
   constructor() {
     super();
 
-    this.numberCards = 12;
+    //this.numberCards = 12;
+    let colors: number[] = [0xFF00AF, 0xAAFF00, 0x00AA03];
 
     this.makeDeckCards([], 4, 3);
     this.shuffleCards();
-
-    for (let i = 0; i < this.numberCards; i++) {
-
-    }
-    let colors: number[] = [0xFF00AF, 0xAAFF00, 0x00AA03];
+    console.log(this.deckCards);
     this.makeColorShapes(colors);
   }
 
@@ -57,17 +54,15 @@ class Board extends Container {
   }
 
   private shuffleCards(): void {
-    let currentIndex: number = this.numberCards;
-    let randomIndex: number;
-
-    while (currentIndex != 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-
-      [this.deckCards[currentIndex], this.deckCards[randomIndex]] = [
-        this.deckCards[randomIndex], this.deckCards[currentIndex]
-      ];
+    let i: number;
+    let tmp: number[];
+    for (i = this.deckCards.length - 1; i > 0; i--) {
+      let j: number = Math.floor(Math.random() * (i + 1));
+      tmp = this.deckCards[i];
+      this.deckCards[i] = this.deckCards[j];
+      this.deckCards[j] = tmp;
     }
+    return;
   }
 
   private makeDeckCards(tmpCard: number[], lengthCard: number, properties: number): void{
