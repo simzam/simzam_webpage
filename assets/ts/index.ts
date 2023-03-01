@@ -1,4 +1,4 @@
-import { Application, Container } from "pixi.js"
+import { Application, Graphics, Container } from "pixi.js"
 
 const app = new Application({
   view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -35,7 +35,8 @@ class Board extends Container {
   //private numberCards: number;
   // private tableCards: Graphics[];
   private deckCards: number[][] = [];
-  // private colorShapes: Graphics[];
+  private colorShapes: Graphics[] = [];
+  public fig: Graphics;
 
   constructor() {
     super();
@@ -45,12 +46,63 @@ class Board extends Container {
 
     this.makeDeckCards([], 4, 3);
     this.shuffleCards();
-    console.log(this.deckCards);
+    //console.log(this.deckCards);
     this.makeColorShapes(colors);
+
+    let testFig: Graphics = new Graphics;
+    //testFig.beginFill(colors[1]);
+    testFig.beginFill(colors[0]);
+    testFig.lineStyle(8, colors[2], 1);
+    testFig.drawEllipse(60, 90, 50, 20);
+    testFig.beginFill(colors[1], 0.5);
+    testFig.drawRect(0,0,120,180);
+    testFig.endFill();
+
+
+    testFig.x = 200;
+    testFig.y = 200;
+
+    this.fig = testFig;
+    this.addChild(this.fig);
+
+    let testFig2: Graphics = testFig.clone();
+    testFig2.beginFill(0xFF0F0A);
+    testFig2.drawCircle(200,200,30);
+    testFig2.x = 400;
+    testFig2.y = 600;
+
+    this.addChild(testFig2);
   }
 
   private makeColorShapes(colors: number[]): void {
+    let shape1: Graphics = new Graphics();
+    let shape2: Graphics = new Graphics();
+    let shape3: Graphics = new Graphics();
+    let shapes: Graphics[] = [shape1, shape2, shape3];
+
     console.log(colors);
+    console.log(shapes);
+
+    for (let i = 0; i < colors.length; i++) {
+      for (let j = 0; j < shapes.length; j++) {
+        let card1: Graphics = new Graphics();
+        card1.beginFill(colors[i]);
+        card1.lineStyle(5, colors[i], 1);
+        card1.drawEllipse(0, 0, 100, 40);
+        card1.endFill();
+        this.colorShapes.push(card1);
+
+        let card2: Graphics = new Graphics();
+        card2.beginFill(0xFFFFFF);
+        card2.lineStyle(5, colors[i], 1);
+        card2.endFill();
+        this.colorShapes.push(card2);
+
+        let card3: Graphics = new Graphics()
+        this.colorShapes.push(card2);
+        this.colorShapes.push(card3);
+      }
+    }
   }
 
   private shuffleCards(): void {
@@ -78,6 +130,5 @@ class Board extends Container {
   }
 }
 
-
-new Board()
-console.log(app);
+let board: Board = new Board();
+app.stage.addChild(board);
