@@ -1,28 +1,41 @@
-import { Application, Sprite } from "pixi.js"
+import { Application, Sprite, Container } from "pixi.js"
 
 const app = new Application({
-    view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
-    resolution: window.devicePixelRatio || 1,
-    autoDensity: true,
-    backgroundColor: 0x6495ed,
-    width: 2000,
-    height: 1000
+  view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
+  resolution: window.devicePixelRatio || 1,
+  autoDensity: true,
+  backgroundColor: 0x6495ed,
+  width: 1200,
+  height: 800
 });
 
-const clampy: Sprite = Sprite.from("../static/images/dimzam.png");
-const dimmy: Sprite = Sprite.from("../static/images/clampy.png");
+class Board extends Container {
+  constructor(app: Application) {
+    super();
+    const clampy: Sprite = Sprite.from("../static/images/clampy.png");
+    const dimmy: Sprite = Sprite.from("../static/images/dimzam.png");
+    clampy.x = 100;
+    clampy.y = 0;
 
-clampy.anchor.set(0.5);
+    // dimmy.anchor.set(0.5);
 
-clampy.x = app.screen.width / 2;
-clampy.y = app.screen.height / 2;
+    dimmy.x = 0;
+    dimmy.y = 0;
 
-app.stage.addChild(clampy)
+    dimmy.addChild(clampy);
+    app.stage.addChild(dimmy);
+    console.log(app.screen);
+  }
+  dummy() {
+    let t: Number = 4;
+    console.log('rude!', t);
+  }
+}
 
+// clampy.anchor.set(0.5);
+// DOIES A COMMENT CHENAGE ANYTHING
 
-dimmy.anchor.set(0.5);
+// app.stage.addChild(clampy);
+// MAKING CHANGES
 
-dimmy.x = app.screen.width / 2;
-dimmy.y = app.screen.height / 2;
-
-app.stage.addChild(dimmy);
+new Board(app);

@@ -76,7 +76,7 @@ DATABASES = {
 WEBPACK_LOADER = {
     'DEFAULT': {
         'CACHE': not DEBUG,
-        'BUNDLE_DIR_NAME': 'webpack_bundles/',
+        # 'BUNDLE_DIR_NAME': 'webpack_bundles/',
         'STATS_FILE': str(BASE_DIR.joinpath('webpack-stats.json')),
         'POLL_INTERVAL': 0.1,
         'TIMEOUT': None,

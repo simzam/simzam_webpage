@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
         // Settings for the compiler
-        "outDir": "./dist/",
+        "outDir": "./static/",
         "sourceMap": true,
-        "target": "es2015",
+        "target": "ES6",
         "module": "ESNext",
 
         // Rules for your code
@@ -23,11 +23,13 @@
         "experimentalDecorators": true,
 
     },
-    // Folder for your code
-    "include": [
-        "./asssets/ts/*"
-    ]
-}// {
+    //Folder for your code
+    //"include": [
+    //   "./asssets/ts/index.ts"
+    //]
+}
+
+// {
 //   "compilerOptions": {
 //     "typeRoots": ["./node_modules"],
 //     "types": ["pixi.js"],

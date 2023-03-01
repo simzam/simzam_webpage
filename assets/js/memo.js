@@ -106,12 +106,12 @@ function drawGrid(width, height) {
 
 // console.log(app.screen.height, app.screen.width);
 
-let width = app.screen.width;
-let heigth = app.screen.height;
+//let width = app.screen.width;
+//let heigth = app.screen.height;
 
 //app.stage.addChild(drawGrid(width, heigth));
 
 new Game(app.screen.width, app.screen.heigth);
 
-app.stage.addChild (makeExampleCard(10, 10, 90, 120));
-app.stage.addChild (makeExampleCard(10, 830, 90, 120));
+//app.stage.addChild (makeExampleCard(10, 10, 90, 120));
+//app.stage.addChild (makeExampleCard(10, 830, 90, 120));

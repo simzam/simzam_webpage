@@ -20,6 +20,9 @@ module.exports = {
     chunkFilename: "[name]-[fullhash]",
     clean: true
   },
+  plugins: [
+    new BundleTracker({filename: './webpack-stats.json'})
+  ],
   module: {
     rules: [
       {
