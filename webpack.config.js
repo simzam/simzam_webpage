@@ -43,18 +43,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.tsx', '.ts',],
   },
-  plugins: [
-    new BundleTracker({filename:"./webpack-stats.json"}),
-    new HtmlWebpackPlugin({
-      title: 'Output Management',
-      inject: false
-    })
-  ],
-  watchOptions: {
-    aggregateTimeout: 200,
-    poll: 1000,
-    ignored: /node_modules/,
-  },
   optimization: {
     // TODO: for some reason the line below creates a lot of uneccessary loading
     // runtimeChunk: 'single',

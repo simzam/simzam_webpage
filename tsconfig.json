@@ -1,12 +1,41 @@
 {
-  "compilerOptions": {
-    "typeRoots": ["./node_modules"],
-    "types": ["pixi.js"],
-     "noImplicitAny": true,
-    "module": "es6",
-    "target": "es5",
-    "jsx": "react",
-    "allowJs": true,
-    "moduleResolution": "node"
-  }
-}
+    "compilerOptions": {
+        // Settings for the compiler
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "target": "es2015",
+        "module": "ESNext",
+
+        // Rules for your code
+        "strict": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noUnusedParameters": true,
+        "noUnusedLocals": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitOverride": true,
+
+        // Settings for linking source files
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+
+    },
+    // Folder for your code
+    "include": [
+        "./asssets/ts/*"
+    ]
+}// {
+//   "compilerOptions": {
+//     "typeRoots": ["./node_modules"],
+//     "types": ["pixi.js"],
+//      "noImplicitAny": true,
+//     "module": "es6",
+//     "target": "es5",
+//     "jsx": "react",
+//     "allowJs": true,
+//     "moduleResolution": "node"
+//   }
+// }

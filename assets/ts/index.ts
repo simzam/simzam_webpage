@@ -1,19 +1,28 @@
-import { subtract } from "./app";
+import { Application, Sprite } from "pixi.js"
 
-function init() {
-    const form = document.querySelector("form");
-    form?.addEventListener("submit", submitHandler);
-  }
+const app = new Application({
+    view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
+    resolution: window.devicePixelRatio || 1,
+    autoDensity: true,
+    backgroundColor: 0x6495ed,
+    width: 2000,
+    height: 1000
+});
 
-  function submitHandler(e: Event) {
-    e.preventDefault();
-    const num1 = document.querySelector("input[name='firstnumber']") as HTMLInputElement;
-    const num2 = document.querySelector("input[name='secondnumber']") as HTMLInputElement;
-    const result = subtract(Number(num1.value), Number(num2.value));
-    const resultElement = document.querySelector("p");
-    if (resultElement) {
-      resultElement.textContent = result.toString();
-    }
-  }
+const clampy: Sprite = Sprite.from("../static/images/dimzam.png");
+const dimmy: Sprite = Sprite.from("../static/images/clampy.png");
 
-  init();
+clampy.anchor.set(0.5);
+
+clampy.x = app.screen.width / 2;
+clampy.y = app.screen.height / 2;
+
+app.stage.addChild(clampy)
+
+
+dimmy.anchor.set(0.5);
+
+dimmy.x = app.screen.width / 2;
+dimmy.y = app.screen.height / 2;
+
+app.stage.addChild(dimmy);

@@ -16,7 +16,7 @@ const app = new Application({
     // width: window.innerWidth - 20,
     // height: window.innerHeight - 100, //parent.innerHeigth,
     autoResize: true,
-    resizeTo: parent,
+    //resizeTo: parent,
 });
 
 // ALL cards are represented
@@ -26,8 +26,9 @@ class Game extends Container {
         this.width = screenWidth;
         this.height = screenHeight;
 
-        this.cardSize = false;
         this.gridSize = this.setGridSize();
+        this.cardSize = this.setCardSize();
+        this.offset = this.setOffset();
     }
 
     setGridSize() {
@@ -40,7 +41,17 @@ class Game extends Container {
             cols = 3;
             rows = 4;
         }
+        return [cols, rows];
+    }
+
+    setOffset() {
         return 1;
+    }
+
+    setCardSize() {
+        let cardWidth = this.width / this.gridSize[0];
+        let cardHeight = this.height / this.gridSize[1];
+        console.log("card size: ", cardWidth, cardHeight);
     }
 }
 
@@ -59,20 +70,20 @@ function makeExampleCard(x1, y1, x2, y2) {
 function drawGrid(width, height) {
     const ex = new Graphics();
 
-    let cols = 20;
-    let rows = 15;
+    let cols = 4;
+    let rows = 3;
     if (width < height) {
-        tmp = cols;
+        let tmp = cols;
         cols = rows;
         rows = tmp;
     }
     console.log("hei");
-    ex.lineStyle(5, 0x0F0FAA, 1);
+    ex.lineStyle(5, 0x0FBF3A, 1);
     let cardBoxWidth = width / cols;
     let cardBoxHeight = height / rows;
 
     let i = 1;
-    for (i = 1; i <= cols; i++) {
+    for (i = 1; i < cols; i++) {
         let x = i * cardBoxWidth;
         ex.moveTo(x, 0);
         ex.lineTo(x, height);
@@ -98,8 +109,9 @@ function drawGrid(width, height) {
 let width = app.screen.width;
 let heigth = app.screen.height;
 
-app.stage.addChild(drawGrid(width, heigth));
+//app.stage.addChild(drawGrid(width, heigth));
 
 new Game(app.screen.width, app.screen.heigth);
 
-app.stage.addChild (makeExampleCard(200, 30, 120, 180));
+app.stage.addChild (makeExampleCard(10, 10, 90, 120));
+app.stage.addChild (makeExampleCard(10, 830, 90, 120));
