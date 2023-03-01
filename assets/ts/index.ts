@@ -1,4 +1,4 @@
-import { Application, Sprite, Container } from "pixi.js"
+import { Application, Container } from "pixi.js"
 
 const app = new Application({
   view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -6,36 +6,83 @@ const app = new Application({
   autoDensity: true,
   backgroundColor: 0x6495ed,
   width: 1200,
-  height: 800
+  height: 1000
 });
 
+// class OpenCard extends ParticleContainer {
+//   private card: Graphics;
+
+//   constructor(shape: number,
+//               numberShapes: number,
+//               color: number,
+//               fill: number,
+//               cardSize: number[]) {
+//     super();
+//     this.card = new Graphics();
+//     this.createCard(cardSize);
+//   }
+//   createCard(cardSize: number[]) {
+//     this.card.beginFill(0xFFFFFF);
+//     this.card.lineStyle(6, 0x000000, 2);
+//     this.card.drawRoundedRect(0, 0, cardSize[0], cardSize[1], 20);
+//   }
+//   makeShapes(shape: number, numberShapes) {
+
+//   }
+// }
+
 class Board extends Container {
-  constructor(app: Application) {
+  private numberCards: number;
+  // private tableCards: Graphics[];
+  private deckCards: number[][] = [];
+  // private colorShapes: Graphics[];
+
+  constructor() {
     super();
-    const clampy: Sprite = Sprite.from("../static/images/clampy.png");
-    const dimmy: Sprite = Sprite.from("../static/images/dimzam.png");
-    clampy.x = 100;
-    clampy.y = 0;
 
-    // dimmy.anchor.set(0.5);
+    this.numberCards = 12;
 
-    dimmy.x = 0;
-    dimmy.y = 0;
+    this.makeDeckCards([], 4, 3);
+    this.shuffleCards();
 
-    dimmy.addChild(clampy);
-    app.stage.addChild(dimmy);
-    console.log(app.screen);
+    for (let i = 0; i < this.numberCards; i++) {
+
+    }
+    let colors: number[] = [0xFF00AF, 0xAAFF00, 0x00AA03];
+    this.makeColorShapes(colors);
   }
-  dummy() {
-    let t: Number = 4;
-    console.log('rude!', t);
+
+  private makeColorShapes(colors: number[]): void {
+    console.log(colors);
+  }
+
+  private shuffleCards(): void {
+    let currentIndex: number = this.numberCards;
+    let randomIndex: number;
+
+    while (currentIndex != 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [this.deckCards[currentIndex], this.deckCards[randomIndex]] = [
+        this.deckCards[randomIndex], this.deckCards[currentIndex]
+      ];
+    }
+  }
+
+  private makeDeckCards(tmpCard: number[], lengthCard: number, properties: number): void{
+    if (tmpCard.length < lengthCard) {
+      for (let i = 0; i < properties; i++) {
+        this.makeDeckCards(tmpCard.concat([i]), lengthCard, properties);
+      }
+    } else {
+      // console.log(tmpCard);
+      this.deckCards.push(tmpCard);
+    }
+    return;
   }
 }
 
-// clampy.anchor.set(0.5);
-// DOIES A COMMENT CHENAGE ANYTHING
 
-// app.stage.addChild(clampy);
-// MAKING CHANGES
-
-new Board(app);
+new Board()
+console.log(app);
