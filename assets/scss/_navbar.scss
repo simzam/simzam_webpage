@@ -78,4 +78,11 @@
 
 .navbar-toggler {
     background-color: turquoise;
+    overflow: hidden;
+}
+
+.sticky {
+    position: fixed;
+    top: 2vh;
+    left: 2vw;
 }

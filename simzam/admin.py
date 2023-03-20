@@ -26,5 +26,6 @@ admin.site.register(Drawing,
                     fields=('title',
                             'show_drawing',
                             'drawing',
+                            'text',
                             'background_color'),
                     readonly_fields=('show_drawing',))

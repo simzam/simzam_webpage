@@ -6,7 +6,9 @@ crossing files and lowers the complexities regarding migrating the database.
 All tables are explictly named.
 
 """
+import uuid
 from django.db import models
+from django.core.paginator import Paginator
 from django.contrib.admin.decorators import display
 from django.urls import reverse
 from django.utils.text import slugify
@@ -81,10 +83,12 @@ class Project(models.Model):
 
 class Drawing(models.Model):
     """ A drawing contains a drawing in jpg format."""
-
-
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False)
     title = models.CharField('tittel', max_length=255, blank=True)
-    slug = models.SlugField(max_length=255, editable=True, blank=True)
+    text = models.TextField()
 
     published_date = models.DateField('publisert', default=now)
     drawing = models.ImageField('Tegning', upload_to='drawing')
@@ -112,6 +116,5 @@ class Drawing(models.Model):
         self.slug = slugify(self.title)
         super(Drawing, self).save(*args, **kwargs)
 
-
     def get_absolute_url(self):
-        return reverse('simzam:drawing_detail', kwargs={'slug': self.slug})
+        return reverse('simzam:drawing_detail', kwargs={'uuid': self.id})

@@ -30,9 +30,15 @@ $color-gray-dark: rgba($color-black, .15);
 * {
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     padding-bottom: 20px;
     background-color: var(--color-page-background);
+    // height: 100vh;
+    overflow-y: hidden;
 }
 
 main {
@@ -40,5 +46,20 @@ main {
 }
 
 img {
-    width: 100%;
+    max-width: 100%;
+    // max-width: 100vw;
+}
+
+.drawings {
+    max-height: 100vh;
+    overflow-y: scroll;
+    // scroll-snap-type: proximity;
+    // scroll-snap-points-y: repeat(0.2rem);
+    // scroll-snap-type: y proximity;
+}
+
+.drawing {
+    justify-content: center;
+    // scroll-snap-align: start;
+    margin-bottom: 5vh;
 }

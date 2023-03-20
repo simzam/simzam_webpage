@@ -11,7 +11,8 @@ from django.shortcuts import get_list_or_404
 def index(request: HttpRequest) -> HttpResponse:
     """Test view."""
     template = 'simzam/index.html'
-    context = {}
+    drawing_uuids = Drawing.objects.all()
+    context = {'drawings': drawing_uuids}
 
     return render(request, template, context)
 
@@ -27,10 +28,10 @@ def drawing_index(request: HttpRequest) -> HttpRequest:
 
 
 @require_GET
-def drawing_detail(request: HttpRequest, slug: str) -> HttpRequest:
+def drawing_detail(request: HttpRequest, uuid: str) -> HttpRequest:
     """Show a drawing."""
     template = 'simzam/drawing_detail.html'
-    selected = get_object_or_404(Drawing, slug=slug)
+    selected = get_object_or_404(Drawing, id=uuid)
     context = {'title': selected.title,
                'url': selected.drawing.url}
 

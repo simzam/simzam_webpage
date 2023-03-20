@@ -1,6 +1,18 @@
 {% extends 'simzam/base.html' %}
-
+{% load static   %}
 {% block main-content %}
-    {% for drawing in drawings %}
-    {% endfor %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class='drawings'>
+                    {% for drawing in drawings %}
+                        <div class='drawing'>
+                            <img src='{{ drawing.drawing.url }}'>
+                            {{ drawing.text  }}
+                        </div>
+                    {% endfor %}
+                        </div>
+                </div>
+            </div>
+        </div>
 {% endblock main-content %}
