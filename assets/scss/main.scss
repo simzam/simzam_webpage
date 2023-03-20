@@ -11,7 +11,7 @@ $color-gray-dark: rgba($color-black, .15);
     --color-border: pink;
     --color-article-background: #{$color-white};
     --color-article-shadow: #{$color-gray-dark};
-    --color-page-elements: #BFBFBF;
+    --color-page-elements: whitesmoke;
 }
 
 .dark {
@@ -20,7 +20,7 @@ $color-gray-dark: rgba($color-black, .15);
     --color-border: hsl(20, 80%, 30%);
     --color-article-background: #{$color-gray-light};
     --color-article-shadow: #{$color-gray-dark};
-    --color-page-elements: #A0AA31;
+    --color-page-elements: hsl(210, 50%, 20%);
 }
 
 * {
@@ -46,36 +46,13 @@ img {
 
 // TODO: remove after testing. Just the testtext on index page.
 article {
-    padding: 0rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    margin-right: 1.2rem;
     background-color: var(--color-border);
     box-shadow: 12px 12px 0 0 grey;
 }
 
-#logo {
-    $lt: 1vh;
-    width: $lt * 12;
-    height: $lt * 12;
-    $cx: $lt * 6;
-    $cy: $lt * 6;
-    #outer_circle {
-        r: $lt * 6;
-        fill: var(--color-text);
-        cx: $cx;
-        cy: $cy;
-    }
-    #middle_circle {
-        r: $lt * 4;
-        fill: var(--color-page-background);
-        cx: $cx;
-        cy: $cy;
-    }
-    #inner_circle {
-        r: $lt * 2;
-        fill: var(--color-border);
-        cx: $cx;
-        cy: $cy;
-    }
-}
 
 .color-btn {
     margin: 0 auto;
@@ -98,6 +75,16 @@ article {
         // padding: 3vw;
         background-color: var(--color-page-background);
         // width: 98%;
+    }
+}
+
+.drawing-index {
+    img {
+        display: block;
+        margin: auto;
+        margin-bottom: 10vh;
+        max-width: 796px;
+        box-shadow: 12px 12px 0 0 var(--color-border);
     }
 }
 

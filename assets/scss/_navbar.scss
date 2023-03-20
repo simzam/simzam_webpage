@@ -1,9 +1,10 @@
 #logo {
-    $lt: 1vh;
+    $lt: 0.8vh;
     width: $lt * 12;
     height: $lt * 12;
     $cx: $lt * 6;
     $cy: $lt * 6;
+    margin-bottom: 2vh;
     #outer_circle {
         r: $lt * 6;
         fill: var(--color-text);
@@ -26,9 +27,9 @@
 
 #hamburger-menu {
     // background-size: contains;
-    background: var(--color-page-background);
-    width: 5vw;
-    height: 5vw;
+    background: var(--color-border);
+    width: 5vh;
+    height: 5vh;
     padding: 0.5vw;
     //border: 4px solid var(--color-border);
     //box-shadow: 0px 0px 22px 22px var(--color-page-background);
@@ -37,20 +38,20 @@
     }
 
     #hamburger-line-2 {
-        y: 1.8vw;
+        y: 1.8vh;
     }
 
     #hamburger-line-3 {
-        y: 2.7vw;
+        y: 3.5vh;
     }
 
     .hamburger-line {
-        x: 0.2vw;
-        y: 1vw;
-        height: 0.5vw;
-        width: 4vw;
+        x: 0.5vh;
+        y: 0.2vh;
+        height: 0.8vh;
+        width: 4vh;
         fill: var(--color-text);
-        stroke: var(--color-border);
+        // stroke: var(--color-border);
         stroke-width: 0.3vw;
     }
 }
@@ -69,31 +70,20 @@
 }
 
 .nav-item {
-    width: 200px;
-    // border-top: 1px solid blue;
-    // border-bottom: 1px solid pink;
+    width: 400px;
     cursor:pointer;
-    font-size: 3rem;
+    font-size: 1.2rem;
     font-weight: 500;
     margin: 0.1vw;
+    padding-left: 1vw;
 
     &:hover {
-        font-size: 3.2rem;
+        font-size: 1.2em;
         background-color: var(--color-border);
         cursor: pointer;
         transition: all 0.1s ease-in;
     }
 }
-
-.nav-item a {
-    display: block;;
-}
-
-.nav-item a:hover {
-    background: var(--color-border);
-    // background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
-}
-
 
 
 /* Nav Trigger */
@@ -124,10 +114,10 @@ label[for="nav-trigger"] {
 }
 
 .nav-trigger:checked + label {
-    left: 215px;
+    left: 315px;
 }
 
 .nav-trigger:checked ~ .site-wrap {
-    left: 200px;
+    left: 300px;
     //box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
 }

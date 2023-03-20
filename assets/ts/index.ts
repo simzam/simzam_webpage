@@ -40,7 +40,6 @@ class Board extends Container {
 
   constructor() {
     super();
-
     //this.numberCards = 12;
     let colors: number[] = [0xFF00AF, 0xAAFF00, 0x00AA03];
 
@@ -54,10 +53,12 @@ class Board extends Container {
     testFig.beginFill(colors[0]);
     testFig.lineStyle(8, colors[2], 1);
     testFig.drawEllipse(60, 90, 50, 20);
-    testFig.beginFill(colors[1], 0.5);
+    testFig.lineStyle(2, colors[2], 1);
+    testFig.endFill();
+    testFig.beginFill(colors[1], 1);
+    // testFig.drawCircle(200,200,10);
     testFig.drawRect(0,0,120,180);
     testFig.endFill();
-
 
     testFig.x = 200;
     testFig.y = 200;
@@ -66,8 +67,8 @@ class Board extends Container {
     this.addChild(this.fig);
 
     let testFig2: Graphics = testFig.clone();
-    testFig2.beginFill(0xFF0F0A);
-    testFig2.drawCircle(200,200,30);
+    testFig2.beginFill(0x0);
+    testFig2.drawCircle(60,90,10);
     testFig2.x = 400;
     testFig2.y = 600;
 

@@ -39,8 +39,9 @@ def drawing_detail(request: HttpRequest, slug: str) -> HttpRequest:
 
 @require_GET
 def memo(request: HttpRequest) -> HttpRequest:
+    # TODO: Reverse
     if request.htmx:
-        template = 'simzam/partials/memo.html'
+        template = 'simzam/partials.html'
     else:
         template = 'simzam/memo.html'
     return render(request, template)
