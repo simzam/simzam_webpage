@@ -1,9 +1,0 @@
-{% extends 'simzam/base.html' %}
-{% load static %}
-{% load render_bundle from webpack_loader %}
-{% block body-content %}
-<div class="site-wrap" id='pixi-content'>
-    <canvas id='pixi-canvas'></canvas>
-</div>
-{% render_bundle 'memo' 'js' %}
-{% endblock body-content %}

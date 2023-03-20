@@ -8,9 +8,9 @@ from django.shortcuts import get_list_or_404
 
 
 @require_GET
-def detail(request: HttpRequest) -> HttpResponse:
+def index(request: HttpRequest) -> HttpResponse:
     """Test view."""
-    template = 'simzam/base.html'
+    template = 'simzam/index.html'
     context = {}
 
     return render(request, template, context)
@@ -35,13 +35,3 @@ def drawing_detail(request: HttpRequest, slug: str) -> HttpRequest:
                'url': selected.drawing.url}
 
     return render(request, template, context)
-
-
-@require_GET
-def memo(request: HttpRequest) -> HttpRequest:
-    # TODO: Reverse
-    if request.htmx:
-        template = 'simzam/partials.html'
-    else:
-        template = 'simzam/memo.html'
-    return render(request, template)

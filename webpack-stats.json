@@ -5,23 +5,59 @@
       "name": "bundle-55cbe4880039834ccc53.js",
       "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-55cbe4880039834ccc53.js"
     },
+    "bundle-6f12bc67dbb1ae62f7c8.js": {
+      "name": "bundle-6f12bc67dbb1ae62f7c8.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-6f12bc67dbb1ae62f7c8.js"
+    },
+    "bundle-a437ccffb3ce82b4b19e.js": {
+      "name": "bundle-a437ccffb3ce82b4b19e.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-a437ccffb3ce82b4b19e.js"
+    },
+    "bundle-c5752a79851a88e2b938.js": {
+      "name": "bundle-c5752a79851a88e2b938.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-c5752a79851a88e2b938.js"
+    },
     "style-55cbe4880039834ccc53.js": {
       "name": "style-55cbe4880039834ccc53.js",
       "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-55cbe4880039834ccc53.js"
     },
+    "style-6f12bc67dbb1ae62f7c8.js": {
+      "name": "style-6f12bc67dbb1ae62f7c8.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-6f12bc67dbb1ae62f7c8.js"
+    },
+    "style-a437ccffb3ce82b4b19e.js": {
+      "name": "style-a437ccffb3ce82b4b19e.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-a437ccffb3ce82b4b19e.js"
+    },
+    "style-c5752a79851a88e2b938.js": {
+      "name": "style-c5752a79851a88e2b938.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-c5752a79851a88e2b938.js"
+    },
     "vendors-55cbe4880039834ccc53.js": {
       "name": "vendors-55cbe4880039834ccc53.js",
       "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/vendors-55cbe4880039834ccc53.js"
+    },
+    "vendors-6f12bc67dbb1ae62f7c8.js": {
+      "name": "vendors-6f12bc67dbb1ae62f7c8.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/vendors-6f12bc67dbb1ae62f7c8.js"
+    },
+    "vendors-a437ccffb3ce82b4b19e.js": {
+      "name": "vendors-a437ccffb3ce82b4b19e.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/vendors-a437ccffb3ce82b4b19e.js"
+    },
+    "vendors-c5752a79851a88e2b938.js": {
+      "name": "vendors-c5752a79851a88e2b938.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/vendors-c5752a79851a88e2b938.js"
     }
   },
   "chunks": {
     "bundle": [
-      "vendors-55cbe4880039834ccc53.js",
-      "bundle-55cbe4880039834ccc53.js"
+      "vendors-6f12bc67dbb1ae62f7c8.js",
+      "bundle-6f12bc67dbb1ae62f7c8.js"
     ],
     "style": [
-      "vendors-55cbe4880039834ccc53.js",
-      "style-55cbe4880039834ccc53.js"
+      "vendors-6f12bc67dbb1ae62f7c8.js",
+      "style-6f12bc67dbb1ae62f7c8.js"
     ]
   }
 }

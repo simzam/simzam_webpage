@@ -10,14 +10,13 @@
         {% render_bundle 'style' 'css' %}
     </head>
     <body>
-        {% include 'navbar.html' %}
+        {#% include 'navbar.html' %#}
         {% include 'logo.html' %}
 
         {% block body-content %}
         <div class="site-wrap">
             <main id='homepage-content'>
                 {% block main-content %}
-                    {% include 'testtext.html' %}
                 {% endblock main-content %}
             </main>
         </div>

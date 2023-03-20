@@ -22,7 +22,7 @@ from . import settings
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('baksiden', admin.site.urls),
     path('tinymce/', include("tinymce.urls")),
     path("robots.txt", TemplateView.as_view(template_name="robots.txt",
                                             content_type="text/plain")),
