@@ -1,5 +1,5 @@
-@use 'navbar';
-
+@import "~bootstrap/scss/bootstrap.scss";
+@import '_navbar.scss';
 
 // TODO: Clean up colors
 $color-black: rgb(0,0,0);
@@ -29,6 +29,7 @@ $color-gray-dark: rgba($color-black, .15);
 }
 
 body {
+    padding-bottom: 20px;
 }
 
 main {
@@ -38,4 +39,3 @@ main {
 img {
     width: 100%;
 }
-

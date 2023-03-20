@@ -8,23 +8,23 @@
         <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
         <title>simzam!</title>
         {% render_bundle 'style' 'css' %}
+        {% block head-fields %}
+        {% endblock head-fields %}
+        {% block head-import %}
+        {% endblock head-import %}
     </head>
     <body>
-        {#% include 'navbar.html' %#}
-        {% include 'logo.html' %}
-
-        {% block body-content %}
-        <div class="site-wrap">
-            <main id='homepage-content'>
-                {% block main-content %}
-                {% endblock main-content %}
-            </main>
-        </div>
-        {% endblock body-content %}
+        <main id='homepage-content'>
+            {% include 'navbar.html' %}
+            {% block main-content %}
+            {% endblock main-content %}
+        </main>
         <footer>
             {% include 'footer.html' %}
         </footer>
         {% render_bundle 'style' 'js' %}
         {% render_bundle 'bundle' 'js' %}
+        {% block footer-import %}
+        {% endblock footer-import %}
     </body>
 </html>
