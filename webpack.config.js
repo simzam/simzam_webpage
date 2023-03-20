@@ -8,10 +8,10 @@ module.exports = {
   devtool: "eval-cheap-module-source-map",
   mode: "production",
   entry: {
-    ts: ["./assets/ts/index.ts"],
+    // ts: ["./assets/ts/index.ts"],
     bundle: ["./assets/js/index.js"],
     style: ["./assets/scss/main.scss"],
-    memo: ["./assets/js/memo.js"]
+    // memo: ["./assets/js/memo.js"]
   },
   output: {
     path: path.resolve(__dirname, "simzam", "static", "webpack_bundles"),

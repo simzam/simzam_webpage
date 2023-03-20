@@ -1,43 +1,27 @@
 {
   "status": "done",
   "assets": {
-    "bundle-767a5f2f15de715ba352.js": {
-      "name": "bundle-767a5f2f15de715ba352.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-767a5f2f15de715ba352.js"
+    "bundle-55cbe4880039834ccc53.js": {
+      "name": "bundle-55cbe4880039834ccc53.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/bundle-55cbe4880039834ccc53.js"
     },
-    "memo-767a5f2f15de715ba352.js": {
-      "name": "memo-767a5f2f15de715ba352.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/memo-767a5f2f15de715ba352.js"
+    "style-55cbe4880039834ccc53.js": {
+      "name": "style-55cbe4880039834ccc53.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-55cbe4880039834ccc53.js"
     },
-    "style-767a5f2f15de715ba352.js": {
-      "name": "style-767a5f2f15de715ba352.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/style-767a5f2f15de715ba352.js"
-    },
-    "ts-767a5f2f15de715ba352.js": {
-      "name": "ts-767a5f2f15de715ba352.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/ts-767a5f2f15de715ba352.js"
-    },
-    "vendors-767a5f2f15de715ba352.js": {
-      "name": "vendors-767a5f2f15de715ba352.js",
-      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/vendors-767a5f2f15de715ba352.js"
+    "vendors-55cbe4880039834ccc53.js": {
+      "name": "vendors-55cbe4880039834ccc53.js",
+      "path": "/home/sim/Desktop/simzam_webpage/simzam/static/webpack_bundles/vendors-55cbe4880039834ccc53.js"
     }
   },
   "chunks": {
     "bundle": [
-      "vendors-767a5f2f15de715ba352.js",
-      "bundle-767a5f2f15de715ba352.js"
-    ],
-    "memo": [
-      "vendors-767a5f2f15de715ba352.js",
-      "memo-767a5f2f15de715ba352.js"
+      "vendors-55cbe4880039834ccc53.js",
+      "bundle-55cbe4880039834ccc53.js"
     ],
     "style": [
-      "vendors-767a5f2f15de715ba352.js",
-      "style-767a5f2f15de715ba352.js"
-    ],
-    "ts": [
-      "vendors-767a5f2f15de715ba352.js",
-      "ts-767a5f2f15de715ba352.js"
+      "vendors-55cbe4880039834ccc53.js",
+      "style-55cbe4880039834ccc53.js"
     ]
   }
 }
