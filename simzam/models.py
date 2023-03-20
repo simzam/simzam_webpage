@@ -82,7 +82,8 @@ class Project(models.Model):
 class Drawing(models.Model):
     """ A drawing contains a drawing in jpg format."""
 
-    title = models.CharField('tittel', max_length=255)
+
+    title = models.CharField('tittel', max_length=255, blank=True)
     slug = models.SlugField(max_length=255, editable=True, blank=True)
 
     published_date = models.DateField('publisert', default=now)

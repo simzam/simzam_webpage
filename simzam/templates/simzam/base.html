@@ -13,7 +13,8 @@
         {% block head-import %}
         {% endblock head-import %}
     </head>
-    <body>
+    <body
+        hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
         <main id='homepage-content'>
             {% include 'navbar.html' %}
             {% block main-content %}
