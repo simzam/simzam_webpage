@@ -1,6 +1,5 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
-
 // TODO: Clean up colors
 $color-black: rgb(0,0,0);
 $color-white: rgb(255,255,255);
@@ -14,6 +13,7 @@ $color-gray-dark: rgba($color-black, .15);
     --color-article-background: #{$color-white};
     --color-article-shadow: #{$color-gray-dark};
     --color-page-elements: whitesmoke;
+    --color-text: rgb(2,2,2);
 }
 
 .dark {
@@ -23,6 +23,7 @@ $color-gray-dark: rgba($color-black, .15);
     --color-article-background: #{$color-gray-light};
     --color-article-shadow: #{$color-gray-dark};
     --color-page-elements: hsl(210, 50%, 20%);
+    --color-text: whitesmoke;
 }
 
 @import '_navbar.scss';
@@ -35,31 +36,28 @@ html {
 }
 
 body {
+    color: var(--color-text);
     padding-bottom: 20px;
+    margin-bottomL: 4vh;
     background-color: var(--color-page-background);
-    // height: 100vh;
-    overflow-y: hidden;
 }
 
 main {
     margin: auto;
+    margin-bottom: 4vh;
 }
+
+
 
 img {
     max-width: 100%;
-    // max-width: 100vw;
 }
 
 .drawings {
     max-height: 100vh;
-    overflow-y: scroll;
-    // scroll-snap-type: proximity;
-    // scroll-snap-points-y: repeat(0.2rem);
-    // scroll-snap-type: y proximity;
 }
 
 .drawing {
     justify-content: center;
-    // scroll-snap-align: start;
     margin-bottom: 5vh;
 }
