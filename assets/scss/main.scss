@@ -14,6 +14,7 @@ $color-gray-dark: rgba($color-black, .15);
     --color-article-shadow: #{$color-gray-dark};
     --color-page-elements: whitesmoke;
     --color-text: rgb(2,2,2);
+    --color-offcanvas: yellow;
 }
 
 .dark {
@@ -24,6 +25,7 @@ $color-gray-dark: rgba($color-black, .15);
     --color-article-shadow: #{$color-gray-dark};
     --color-page-elements: hsl(210, 50%, 20%);
     --color-text: whitesmoke;
+    --color-offcanvas: teal;
 }
 
 @import '_navbar.scss';

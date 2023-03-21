@@ -1,29 +1,43 @@
-#logo {
+
+#logo-btn {
+    margin: 0;
+    padding: 0;
     $lt: 0.8vh;
-    width: $lt * 12;
-    height: $lt * 12;
-    $cx: $lt * 6;
-    $cy: $lt * 6;
-    margin-bottom: 2vh;
-    #outer_circle {
-        r: $lt * 6;
-        fill: var(--color-text);
-        cx: $cx;
-        cy: $cy;
-    }
-    #middle_circle {
-        r: $lt * 4;
-        fill: var(--color-page-background);
-        cx: $cx;
-        cy: $cy;
-    }
-    #inner_circle {
-        r: $lt * 2;
-        fill: var(--color-border);
-        cx: $cx;
-        cy: $cy;
+    width: $lt * 12.5;
+    height: $lt * 12.5;
+    background-color: var(--color-offcanvas);
+    overflow: hidden;
+    border-style: none;
+    #logo-svg {
+        $lt: 0.8vh;
+        width: $lt * 12;
+        height: $lt * 12;
+
+        $cx: $lt * 6;
+        $cy: $lt * 6;
+        margin-bottom: 2vh;
+        // background-color: red;
+        #outer_circle {
+            r: $lt * 6;
+            fill: var(--color-text);
+            cx: $cx;
+            cy: $cy;
+        }
+        #middle_circle {
+            r: $lt * 4;
+            fill: var(--color-page-background);
+            cx: $cx;
+            cy: $cy;
+        }
+        #inner_circle {
+            r: $lt * 2;
+            fill: var(--color-border);
+            cx: $cx;
+            cy: $cy;
+        }
     }
 }
+
 
 .bd-placeholder-img {
     font-size: 1.125rem;
@@ -77,16 +91,10 @@
 }
 
 #offcanvas-navbar {
-    background-color: yellow;
+    background-color: var(--color-offcanvas);
 }
 
 .navbar-toggler {
-    background-color: turquoise;
+    background-color: var(--color-offcanvas);
     overflow: hidden;
-}
-
-.sticky {
-    position: fixed;
-    top: 2vh;
-    left: 2vw;
 }
