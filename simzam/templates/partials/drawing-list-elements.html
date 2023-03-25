@@ -1,0 +1,11 @@
+{% for drawing in drawings %}
+    {% if forloop.last %}
+        <div hx-get='{% url 'simzam:home' %}?page={{ page_obj.number|add:1 }}' hx-trigger='revealed' hx-swap='afterend' hx-target='this'>
+
+        </div>
+    {% else %}
+        <div class='drawing'>
+            <img class='drawing-img' src='{{ drawing.drawing.url }}'>
+        </div>
+    {% endif %}
+{% endfor %}

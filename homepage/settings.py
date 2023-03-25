@@ -86,6 +86,7 @@ WEBPACK_LOADER = {
 
 # Configuration for "django-tinymce". TinyMCE provides a richer text editing
 # experience.
+# TODO: make tinymce work for fields in drawings.
 TINYMCE_DEFAULT_CONFIG = {
     'cleanup_on_startup': True,
     'custom_undo_redo_levels': 20,

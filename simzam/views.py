@@ -5,14 +5,19 @@ from django.views.decorators.http import require_GET
 from . models import Drawing
 from django.shortcuts import get_object_or_404
 from django.shortcuts import get_list_or_404
+from django.core.paginator import Paginator
 
+# TODO Redesign of page!
 
 @require_GET
 def index(request: HttpRequest) -> HttpResponse:
     """Test view."""
     template = 'simzam/index.html'
     drawing_uuids = Drawing.objects.all()
-    context = {'drawings': drawing_uuids}
+    paginator = Paginator(drawing_uuids, 3)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    context = {'drawings': page_obj}
 
     return render(request, template, context)
 

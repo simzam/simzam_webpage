@@ -1,9 +1,0 @@
-{% load static %}
-<div class='drawing-index'>
-    {% for item in drawings %}
-        <img src="{{ item.drawing.url }}"
-             alt=""
-             style="background-color: {{ item.background_color }};">
-            </>
-    {% endfor %}
-</div>
