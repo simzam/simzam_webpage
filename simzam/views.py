@@ -12,7 +12,7 @@ from django.core.paginator import Paginator
 @require_GET
 def index(request: HttpRequest) -> HttpResponse:
     """Test view."""
-    template = 'simzam/index.html'
+    template = 'index.html'
     drawing_uuids = Drawing.objects.all()
     paginator = Paginator(drawing_uuids, 3)
     page_number = request.GET.get('page')

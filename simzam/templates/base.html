@@ -16,14 +16,14 @@
     <body
         hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
         <main id='homepage-content'>
-            {% include 'navbar.html' %}
+            {% include 'partials/navbar.html' %}
             <div class='position-absolute top-0 start-50'>
             </div>
             {% block main-content %}
             {% endblock main-content %}
         </main>
         <footer>
-            {% include 'footer.html' %}
+            {% include 'partials/footer.html' %}
         </footer>
         {% render_bundle 'style' 'js' %}
         {% render_bundle 'bundle' 'js' %}
