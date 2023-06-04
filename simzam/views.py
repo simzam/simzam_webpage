@@ -2,12 +2,32 @@
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
 from django.views.decorators.http import require_GET
-from . models import Drawing
+
 from django.shortcuts import get_object_or_404
 from django.shortcuts import get_list_or_404
 from django.core.paginator import Paginator
+from django.views.generic import TemplateView, ListView
+
+from simzam.models import Drawing
+from django.conf import settings
 
 # TODO Redesign of page!
+class IndexView(TemplateView):
+    template_name = 'index.html'
+
+
+class DrawingList(ListView):
+    template_name = 'drawings.html'
+    model = Drawing
+    paginate_by = settings.PAGINATE_BY
+
+    context_object_name = 'drawings'
+
+    def get_template_names(self):
+        if self.request.htmx:
+            return 'partials/drawing-list-elements.html'
+        return 'drawings.html'
+
 
 @require_GET
 def index(request: HttpRequest) -> HttpResponse:

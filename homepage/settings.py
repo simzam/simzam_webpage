@@ -24,8 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'webpack_loader',
+    'django.contrib.staticfiles',
     'tinymce',
     'storages',
     'django_htmx',
@@ -61,6 +61,8 @@ TEMPLATES = [
         },
     },
 ]
+
+PAGINATE_BY = 1
 
 WSGI_APPLICATION = 'homepage.wsgi.application'
 

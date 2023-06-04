@@ -80,7 +80,6 @@ class Project(models.Model):
 #     def __str__(self):
 #         return self.title
 
-
 class Drawing(models.Model):
     """ A drawing contains a drawing in jpg format."""
     id = models.UUIDField(
