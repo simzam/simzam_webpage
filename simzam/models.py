@@ -14,14 +14,15 @@ from django.urls import reverse
 from django.utils.text import slugify
 from django.utils.timezone import now
 from django.template.loader import get_template
-from tinymce import models as tinymce_models
+# from tinymce import models as tinymce_models
 
 
 class Project(models.Model):
     """A project is defined connected collection of elements of some sort."""
 
     title = models.CharField('tittel', unique=True, primary_key=True, max_length=255)
-    description = tinymce_models.HTMLField('beskrivelse')
+    # description = tinymce_models.HTMLField('beskrivelse')
+    description = models.TextField()
 
     created_date = models.DateField('opprettet', default=now)
     updated_date = models.DateField('oppdatert', default=now)
@@ -35,7 +36,6 @@ class Project(models.Model):
 
     slug = models.SlugField(max_length=255, blank=True, editable=False)
     logo = models.ImageField(upload_to='project_logos/', null=True, blank=True)
-    #logo_t = models.ImageField(upload_to='project_logos_thumbnails/', null=True, blank=True)
 
     class Meta:
         """Sort projects by last updated project."""
@@ -80,6 +80,7 @@ class Project(models.Model):
 #     def __str__(self):
 #         return self.title
 
+
 class Drawing(models.Model):
     """ A drawing contains a drawing in jpg format."""
     id = models.UUIDField(
@@ -115,5 +116,5 @@ class Drawing(models.Model):
         self.slug = slugify(self.title)
         super(Drawing, self).save(*args, **kwargs)
 
-    def get_absolute_url(self):
-        return reverse('simzam:drawing_detail', kwargs={'uuid': self.id})
+    # def get_absolute_url(self):
+    #     return reverse('simzam:drawing-detail', kwargs={'uuid': self.id})

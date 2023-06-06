@@ -1,0 +1,20 @@
+{% block main-content %}
+    <div class="drawings">
+        {% for drawing in page_obj %}
+            {% url 'simzam:drawing' uuid=drawing.id %}
+            <div>
+                HI
+            </div>
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+            <div class="load-more-drawings"
+                 hx-get="{% url 'simzam:drawings' %}?page={{ page_obj.number|add:1 }}"
+                 hx-trigger="revealed"
+                 hx-swap="afterend"
+                 hx-target="this">
+                <!-- Loading indicator or button text goes here -->
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

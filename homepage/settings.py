@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'webpack_loader',
     'django.contrib.staticfiles',
-    'tinymce',
+    # 'tinymce',
     'storages',
     'django_htmx',
     'simzam',
@@ -62,7 +62,7 @@ TEMPLATES = [
     },
 ]
 
-PAGINATE_BY = 1
+PAGINATE_BY = 100
 
 WSGI_APPLICATION = 'homepage.wsgi.application'
 
@@ -89,29 +89,29 @@ WEBPACK_LOADER = {
 # Configuration for "django-tinymce". TinyMCE provides a richer text editing
 # experience.
 # TODO: make tinymce work for fields in drawings.
-TINYMCE_DEFAULT_CONFIG = {
-    'cleanup_on_startup': True,
-    'custom_undo_redo_levels': 20,
-    'selector': 'textarea',
-    'theme': 'silver',
-    'height': 700,
-    'width': 500,
-    'plugins': '''
-            save link image media preview codesample contextmenu
-            table code lists fullscreen  insertdatetime  nonbreaking
-            contextmenu directionality searchreplace wordcount visualblocks
-            visualchars code fullscreen autolink lists  charmap print  hr
-            anchor pagebreak
-            ''',
-    'toolbar1': '''
-            fullscreen bold | fontselect,
-            fontsizeselect  |
-            indent outdent | bullist numlist |
-            | link image | codesample | code |
-            ''',
-    'menubar': True,
-    'statusbar': False,
-}
+# TINYMCE_DEFAULT_CONFIG = {
+#     'cleanup_on_startup': True,
+#     'custom_undo_redo_levels': 20,
+#     'selector': 'textarea',
+#     'theme': 'silver',
+#     'height': 700,
+#     'width': 500,
+#     'plugins': '''
+#             save link image media preview codesample contextmenu
+#             table code lists fullscreen  insertdatetime  nonbreaking
+#             contextmenu directionality searchreplace wordcount visualblocks
+#             visualchars code fullscreen autolink lists  charmap print  hr
+#             anchor pagebreak
+#             ''',
+#     'toolbar1': '''
+#             fullscreen bold | fontselect,
+#             fontsizeselect  |
+#             indent outdent | bullist numlist |
+#             | link image | codesample | code |
+#             ''',
+#     'menubar': True,
+#     'statusbar': False,
+# }
 
 AUTH_PASSWORD_VALIDATORS = [
     {

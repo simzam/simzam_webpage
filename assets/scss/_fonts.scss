@@ -1,0 +1,48 @@
+// Import Lato font
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/Lato-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+// Add other font variations as needed
+// @font-face {
+//   font-family: 'Lato';
+//   font-style: italic;
+//   font-weight: 400;
+//   src: url('../fonts/Lato-Italic.ttf') format('truetype');
+// }
+
+// Add more font variations as needed
+// ...
+
+// Define font classes
+.body-font {
+  font-family: 'Lato', sans-serif;
+}
+
+.heading-font {
+  font-family: 'Montserrat', sans-serif;
+}

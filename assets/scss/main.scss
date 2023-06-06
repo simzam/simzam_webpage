@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap.scss";
+@import "fonts";
 
 // TODO: Clean up colors
 $color-black: rgb(0,0,0);
@@ -7,7 +8,7 @@ $color-gray-light: rgba($color-white, .15);
 $color-gray-dark: rgba($color-black, .15);
 
 :root {
-    --color-page-background: whitesmoke;
+    --color-page-background: white;
     --color-text: #{$color-black};
     --color-border: pink;
     --color-article-background: #{$color-white};
@@ -54,104 +55,36 @@ main {
 img {
     max-width: 100%;
 }
-// #drawings {
-//   .drawing {
-//     h2 {
-//       text-align: center;
-//     }
 
-//     .image-container {
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//       min-height: 200px; /* Adjust the height as needed */
-//       max-height: 80vh; /* Adjust the maximum height as needed */
-
-//       img {
-//         max-width: 100%;
-//         max-height: 100%;
-//       }
-//     }
-
-//     p {
-//       text-align: center;
-//     }
-//   }
-// }
-
-// .drawings {
-//     .drawing {
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         flex-direction: column;
-//         img {
-//             @extend .img-fluid;
-//             max-width: 100%;
-//             max-height: 100%;
-
-//             // Center the image within its container
-//             display: block;
-//             margin-left: auto;
-//             margin-right: auto;
-//         }
-//     }
-// }
-
-// .drawings {
-//   .drawing {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-//     margin-bottom: 30px;
-
-//     h2 {
-//       font-size: 24px;
-//       font-weight: bold;
-//       margin-bottom: 10px;
-//     }
-
-//     img {
-//       @extend .img-fluid;
-//       max-width: 100%;
-//       max-height: 80vh;
-//       margin-bottom: 10px;
-//     }
-
-//     p {
-//       font-size: 16px;
-//       line-height: 1.5;
-//       margin-bottom: 20px;
-//     }
-//   }
-// }
 .drawings {
-  .drawing {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 30px;
+    .drawing {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
 
-    h2 {
-      @extend .h2;
-      margin-bottom: 10px;
-    }
+        h2 {
+            @extend .h2;
+            margin-bottom: 10px;
+        }
 
-    img {
-      @extend .img-fluid;
-      max-width: 100%;
-      max-height: 80vh;
-      margin-bottom: 10px;
-    }
+        img {
+            @extend .img-fluid;
+            max-width: 100%;
+            max-height: 80vh;
+            margin-bottom: 10px;
+        }
 
-    p {
-      @extend .lead;
-      margin-bottom: 20px;
+        p {
+            hyphens: auto;
+            padding: 1rem;
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 80ch; /* Limit to around 80 characters */
+        }
     }
-  }
 }
+
 
 #scrollToTopBtn {
     background-color: var(--color-page-background);
@@ -161,6 +94,8 @@ img {
     max-height: 120px;
     width: 12vw;
     max-width: 60px;
+
+
     margin-top: 5vh;
     svg {
         fill: var(--color-text);
