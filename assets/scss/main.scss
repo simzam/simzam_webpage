@@ -1,37 +1,32 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import "fonts";
 
-// TODO: Clean up colors
-$color-black: rgb(0,0,0);
-$color-white: rgb(255,255,255);
-$color-gray-light: rgba($color-white, .15);
-$color-gray-dark: rgba($color-black, .15);
-
 :root {
-    --color-page-background: white;
-    --color-text: #{$color-black};
-    --color-border: pink;
-    --color-article-background: #{$color-white};
-    --color-article-shadow: #{$color-gray-dark};
+    --color-page-background: pink;
+    --color-text: 0, 0, 0;
+    --color-border: turquoise;
+    --color-article-background: lime;
+    --color-article-shadow: black;
     --color-page-elements: whitesmoke;
-    --color-text: rgb(2,2,2);
+    --color-text: black;
     --color-offcanvas: yellow;
 }
 
 .dark {
     --color-page-background: hsl(210, 50%, 20%);
-    --color-text: #{$color-white};
+    --color-text: 234, 222, 100;
     --color-border: hsl(20, 80%, 30%);
-    --color-article-background: #{$color-gray-light};
-    --color-article-shadow: #{$color-gray-dark};
+    --color-article-background: olive;
+    --color-article-shadow: #111111;
     --color-page-elements: hsl(210, 50%, 20%);
-    --color-text: whitesmoke;
-    --color-offcanvas: teal;
+    --color-text: #f5f5f5;
+    --color-offcanvas: lime;
 }
 
 @import '_navbar.scss';
 
 * {
+    // Add your custom styles for all elements here
 }
 
 html {
@@ -50,8 +45,6 @@ main {
     margin-bottom: 4vh;
 }
 
-
-
 img {
     max-width: 100%;
 }
@@ -61,48 +54,64 @@ img {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 30px;
-
-        h2 {
-            @extend .h2;
-            margin-bottom: 10px;
-        }
+        margin-bottom: 2.4em;
 
         img {
             @extend .img-fluid;
             max-width: 100%;
             max-height: 80vh;
-            margin-bottom: 10px;
+            margin: 1em;
+            // box-shadow: 0 2em 3.2em rgba(var(--color-text), 0.9);
+            // border: 5px solid var(--color-article-shadow);
         }
-
-        p {
-            hyphens: auto;
-            padding: 1rem;
-            margin-right: auto;
-            margin-left: auto;
-            max-width: 80ch; /* Limit to around 80 characters */
+        .drawing-text {
+            margin-top: 0.4em;
+            p {
+                hyphens: auto;
+                padding: 1rem;
+                margin-right: auto;
+                margin-left: auto;
+                max-width: 80ch; /* Limit to around 80 characters */
+                background-color: var(--color-article-background);
+            }
+            h3 {
+                @extend .h3;
+                background-color: var(--color-article-background);
+                padding: 0.4em;
+            }
         }
     }
 }
 
+.btn-round {
+    @extend .btn;
+    @extend .btn-dark;
+    @extend .rounded-circle;
+    background-color: var(--color-text);
+    width: 2em;
+    height: 2em;
+    display: flex;
+    // align-items: center;
+    // justify-content: center;
+}
+
+
 
 #scrollToTopBtn {
-    background-color: var(--color-page-background);
+    @extend .btn;
+    @extend .btn-light;
+    @extend .rounded-circle;
     border: none;
     cursor: pointer;
     height: 24wh;
     max-height: 120px;
     width: 12vw;
     max-width: 60px;
-
-
     margin-top: 5vh;
+
     svg {
         fill: var(--color-text);
-        stroke: black;
-        // stroke-width: 1rem;
     }
-
 }
 
 footer {

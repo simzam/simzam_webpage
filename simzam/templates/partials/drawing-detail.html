@@ -1,3 +1,20 @@
 <div class='drawing'>
-    <img src="{{ uuid }}"/>
+    <img src="{{ drawing.drawing.url }}"
+         style="background-color: {{ drawing.background_color }}"/>
+
+    {% if drawing.text %}
+        <button type="button"
+                class="btn-round"
+                data-bs-toggle="collapse"
+                href="#drawing-text-{{ drawing.id }}"
+                role="button"
+                aria-expanded="false"
+                aria-controls='drawing-text-{{ drawing.id }}'>
+        </button>
+        <div id='drawing-text-{{ drawing.id }}' class="collapse drawing-text">
+            <h3> {{ drawing.title }} </h3>
+            <p> {{ drawing.text  }} </p>
+        </div>
+
+    {% endif %}
 </div>

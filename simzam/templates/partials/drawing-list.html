@@ -1,10 +1,7 @@
 {% block main-content %}
     <div class="drawings">
         {% for drawing in page_obj %}
-            {% url 'simzam:drawing' uuid=drawing.id %}
-            <div>
-                HI
-            </div>
+            {% include 'partials/drawing-detail.html' %}
         {% endfor %}
 
         {% if page_obj.has_next %}
@@ -13,7 +10,6 @@
                  hx-trigger="revealed"
                  hx-swap="afterend"
                  hx-target="this">
-                <!-- Loading indicator or button text goes here -->
             </div>
         {% endif %}
     </div>

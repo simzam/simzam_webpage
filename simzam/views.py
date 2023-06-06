@@ -37,6 +37,10 @@ class DrawingDetailView(DetailView):
     template_name = 'partials/drawing.html'
     context_object_name = 'drawing'
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        return queryset.filter(published_date__lte=timezone.now())
+    slug_field = 'uuid'
+    slug_url_kwarg = 'uuid'
+
+    def get_template_names(self):
+        if self.request.htmx:
+            return 'partials/drawing-list.html'
+        return 'drawings.html'
