@@ -2,7 +2,7 @@
 
 from django.db import migrations, models
 import django.utils.timezone
-import tinymce.models
+# import tinymce.models
 
 
 class Migration(migrations.Migration):
@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
             name='Project',
             fields=[
                 ('title', models.CharField(max_length=255, primary_key=True, serialize=False, unique=True, verbose_name='tittel')),
-                ('description', tinymce.models.HTMLField(verbose_name='beskrivelse')),
+                # ('description', tinymce.models.HTMLField(verbose_name='beskrivelse')),
                 ('created_date', models.DateField(default=django.utils.timezone.now, verbose_name='opprettet')),
                 ('updated_date', models.DateField(default=django.utils.timezone.now, verbose_name='oppdatert')),
                 ('state', models.CharField(choices=[('SKETCHED', 'På tapetet'), ('TODO', 'På bordet'), ('HOLD', 'I skuffen'), ('DONE', 'I arkivet')], default='IDEA', max_length=30, verbose_name='tilstand')),

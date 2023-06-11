@@ -1,107 +1,171 @@
+// $circle-size: 3em; // Adjust as needed
+// $close-btn-size: 2.5rem; // Adjust as needed
 
-#logo-btn {
-    margin: 0;
-    padding: 0;
-    $lt: 0.8vh;
-    width: $lt * 12.5;
-    height: $lt * 12.5;
-    background-color: var(--color-offcanvas);
-    overflow: hidden;
-    border-style: none;
-    #logo-svg {
-        $lt: 0.8vh;
-        width: $lt * 12;
-        height: $lt * 12;
+// #logo-btn {
+//     width: 3.2em; // Adjust as needed
+//     height: 3.2em; // Adjust as needed
+//     background-color: var(--color-offcanvas);
+//     overflow: hidden;
+//     border: none;
 
-        $cx: $lt * 6;
-        $cy: $lt * 6;
-        margin-bottom: 2vh;
-        // background-color: red;
-        #outer_circle {
-            r: $lt * 6;
-            fill: var(--color-text);
-            cx: $cx;
-            cy: $cy;
+//     #logo-svg {
+//         width: $circle-size;
+//         height: $circle-size;
+//         margin-bottom: 2vh;
+
+//         circle {
+//             &[id='outer_circle'] {
+//                 r: $circle-size / 2;
+//                 fill: var(--color-text);
+//                 cx: $circle-size / 2;
+//                 cy: $circle-size / 2;
+//             }
+
+//             &[id='middle_circle'] {
+//                 r: $circle-size / 3;
+//                 fill: var(--color-page-background);
+//                 cx: $circle-size / 2;
+//                 cy: $circle-size / 2;
+//             }
+
+//             &[id='inner_circle'] {
+//                 r: $circle-size / 6;
+//                 fill: var(--color-border);
+//                 cx: $circle-size / 2;
+//                 cy: $circle-size / 2;
+//             }
+//         }
+//     }
+// }
+
+// #offcanvas-navbar {
+//     background-color: var(--color-offcanvas);
+
+//     .offcanvas-header {
+//         button.btn-close {
+//             font-size: $close-btn-size;
+//             padding: 0;
+//             line-height: 1;
+//             color: var(--color-text); // Change to desired color
+//             opacity: 0.7; // Adjust as needed
+
+//             &:hover {
+//                 color: var(--color-text); // Change to desired hover color
+//                 opacity: 1; // Adjust as needed
+//             }
+//         }
+
+//     }
+// }
+
+
+// #navbar-toggler {
+//     position: fixed;
+//     background-color: var(--color-offcanvas);
+//     height: 3em;
+//     width: 3em;
+//     margin-top: 4em;
+//     border: 0.4em solid var(--color-article-shadow);
+// }
+
+// .nav-scroller {
+//     height: 2.75rem;
+//     overflow-y: hidden;
+// }
+
+// .nav-scroller .nav {
+
+//     display: flex;
+//     flex-wrap: nowrap;
+//     padding-bottom: 1rem;
+//     margin-top: -1px;
+//     overflow-x: auto;
+//     text-align: center;
+//     white-space: nowrap;
+//     -webkit-overflow-scrolling: touch;
+// }
+$circle-size: 7em; // Adjust as needed
+$close-btn-size: 2.5rem; // Adjust as needed
+
+.navbar {
+    #navbar-toggler {
+        position: fixed;
+        background-color: var(--color-offcanvas);
+        height: 3em;
+        width: 3em;
+        margin-top: 4em;
+        border: 0.4em solid var(--color-article-shadow);
+    }
+
+    .offcanvas-header {
+        button.btn-close {
+            font-size: $close-btn-size;
+            padding: 0;
+            line-height: 1;
+            color: var(--color-text); // Change to desired color
+            opacity: 0.7; // Adjust as needed
+
+            &:hover {
+                color: var(--color-text); // Change to desired hover color
+                opacity: 1; // Adjust as needed
+            }
         }
-        #middle_circle {
-            r: $lt * 4;
-            fill: var(--color-page-background);
-            cx: $cx;
-            cy: $cy;
-        }
-        #inner_circle {
-            r: $lt * 2;
-            fill: var(--color-border);
-            cx: $cx;
-            cy: $cy;
+
+        #logo-btn {
+            width: $circle-size * 1.1; // Adjust as needed
+            height: $circle-size * 1.1; // Adjust as needed
+            background-color: var(--color-offcanvas);
+            overflow: hidden;
+            border: none;
+
+            #logo-svg {
+                width: $circle-size;
+                height: $circle-size;
+                margin-bottom: 2vh;
+
+                circle {
+                    &[id='outer_circle'] {
+                        r: $circle-size / 2;
+                        fill: var(--color-text);
+                        cx: $circle-size / 2;
+                        cy: $circle-size / 2;
+                    }
+
+                    &[id='middle_circle'] {
+                        r: $circle-size / 3;
+                        fill: var(--color-page-background);
+                        cx: $circle-size / 2;
+                        cy: $circle-size / 2;
+                    }
+
+                    &[id='inner_circle'] {
+                        r: $circle-size / 6;
+                        fill: var(--color-border);
+                        cx: $circle-size / 2;
+                        cy: $circle-size / 2;
+                    }
+                }
+            }
         }
     }
-}
 
-
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-}
-
-@media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
+    #offcanvas-navbar {
+        background-color: var(--color-offcanvas);
     }
-}
 
-.b-example-divider {
-    height: 3rem;
-    background-color: rgba(23, 200, 100, .4);
-    border: solid rgba(0, 0, 0, .15);
-    border-width: 1px 0;
-    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-}
+    .nav-scroller {
+        height: 2.75rem;
+        overflow-y: hidden;
+    }
 
-.b-example-vr {
-    flex-shrink: 0;
-    width: 1.5rem;
-    height: 100vh;
-}
-
-.bi {
-    vertical-align: -.125em;
-    fill: currentColor;
-}
-
-.nav-scroller {
-    position: relative;
-    z-index: 2;
-    height: 2.75rem;
-    overflow-y: hidden;
-}
-
-.nav-scroller .nav {
-    display: flex;
-    flex-wrap: nowrap;
-    padding-bottom: 1rem;
-    margin-top: -1px;
-    overflow-x: auto;
-    text-align: center;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-}
-
-#offcanvas-navbar {
-    background-color: var(--color-offcanvas);
-}
-
-#navbar-toggler {
-    position: fixed;
-    background-color: var(--color-offcanvas);
-    //overflow: hidden;
-    // border: solid 2px
-    //;
-    height: 3em;
-    width: 3em;
-    margin-top: 4em;
-    border: 0.4em solid var(--color-article-shadow);
+    .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
 }
