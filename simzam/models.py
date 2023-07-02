@@ -9,12 +9,20 @@ All tables are explictly named.
 import uuid
 from django.db import models
 from django.core.paginator import Paginator
+from django.conf import settings
 from django.contrib.admin.decorators import display
 from django.urls import reverse
 from django.utils.text import slugify
 from django.utils.timezone import now
 from django.template.loader import get_template
 # from tinymce import models as tinymce_models
+
+from django.db import models
+from PIL import Image
+from io import BytesIO
+from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.core.files.base import ContentFile
+from django.conf import settings
 
 
 class Project(models.Model):
@@ -91,7 +99,18 @@ class Drawing(models.Model):
     text = models.TextField()
 
     published_date = models.DateField('publisert', default=now)
-    drawing = models.ImageField('Tegning', upload_to='drawing')
+    # drawing = models.ImageField('Tegning', upload_to='drawing')
+
+    small_image = models.ImageField('Liten tegning',
+                                    upload_to='drawing/',
+                                    blank=True)
+    medium_image = models.ImageField('Medium tegning',
+                                     upload_to='drawing',
+                                     blank=True)
+    large_image = models.ImageField('Stor tegning',
+                                    upload_to='drawing',
+                                    blank=True)
+
 
     # Add validator
     background_color = models.CharField(max_length=7, default="#FFFFFF")
@@ -115,6 +134,28 @@ class Drawing(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Drawing, self).save(*args, **kwargs)
+
+        if self.drawing:
+            self.create_image_versions()
+
+    def create_image_versions(self):
+        with Image.open(self.drawing.path) as img:
+            # Generate different versions of the image
+            for version, size in settings.IMAGE_VERSIONS_SIZES.items():
+                self.create_image_version(img, version, size)
+
+    def create_image_version(self, img, version, size):
+        img.thumbnail(size, Image.ANTIALIAS)
+        buffer = BytesIO()
+        img.save(buffer, 'JPEG')  # Change the format as needed (JPEG, PNG, etc.)
+        buffer.seek(0)
+        filename = f"{self.drawing.name.rsplit('.', 1)[0]}_{version}.jpg"
+        content_file = ContentFile(buffer.read())
+        self.drawing.storage.save(filename, content_file)
+        buffer.close()
+
+        return filename
+
 
     # def get_absolute_url(self):
     #     return reverse('simzam:drawing-detail', kwargs={'uuid': self.id})

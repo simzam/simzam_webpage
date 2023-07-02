@@ -133,6 +133,14 @@ TIME_ZONE = 'Europe/Berlin'
 USE_I18N = True
 USE_TZ = True
 
+
+# Used when storing images. The images are NOT forced into squares.
+IMAGE_VERSIONS_SIZES = {
+    'small': (200, 200),
+    'medium': (600, 600),
+    'large': (1000, 1000),
+}
+
 # Set the proper settings for AWS
 if env.bool('USE_S3'):
     AWS_ACCESS_KEY_ID = env.str('AWS_ACCESS_KEY_ID')
