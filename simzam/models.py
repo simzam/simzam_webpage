@@ -25,49 +25,49 @@ from django.core.files.base import ContentFile
 from django.conf import settings
 
 
-class Project(models.Model):
-    """A project is defined connected collection of elements of some sort."""
+# class Project(models.Model):
+#     """A project is defined connected collection of elements of some sort."""
 
-    title = models.CharField('tittel', unique=True, primary_key=True, max_length=255)
-    # description = tinymce_models.HTMLField('beskrivelse')
-    description = models.TextField()
+#     title = models.CharField('tittel', unique=True, primary_key=True, max_length=255)
+#     # description = tinymce_models.HTMLField('beskrivelse')
+#     description = models.TextField()
 
-    created_date = models.DateField('opprettet', default=now)
-    updated_date = models.DateField('oppdatert', default=now)
+#     created_date = models.DateField('opprettet', default=now)
+#     updated_date = models.DateField('oppdatert', default=now)
 
-    project_states = (("SKETCHED", "På tapetet"),
-                      ("TODO", "På bordet"),
-                      ("HOLD", "I skuffen"),
-                      ("DONE", "I arkivet"))
-    state = models.CharField('tilstand', max_length=30, choices=project_states,
-                             default="IDEA")
+#     project_states = (("SKETCHED", "På tapetet"),
+#                       ("TODO", "På bordet"),
+#                       ("HOLD", "I skuffen"),
+#                       ("DONE", "I arkivet"))
+#     state = models.CharField('tilstand', max_length=30, choices=project_states,
+#                              default="IDEA")
 
-    slug = models.SlugField(max_length=255, blank=True, editable=False)
-    logo = models.ImageField(upload_to='project_logos/', null=True, blank=True)
+#     slug = models.SlugField(max_length=255, blank=True, editable=False)
+#     logo = models.ImageField(upload_to='project_logos/', null=True, blank=True)
 
-    class Meta:
-        """Sort projects by last updated project."""
+#     class Meta:
+#         """Sort projects by last updated project."""
 
-        db_table = 'project'
-        ordering = ['updated_date']
+#         db_table = 'project'
+#         ordering = ['updated_date']
 
-    @display(description='Preview')
-    def show_logo(self):
-        """Allow previewing of images on the admin page."""
-        return get_template('admin/drawing_thumbnail_template.html').render({
+#     @display(description='Preview')
+#     def show_logo(self):
+#         """Allow previewing of images on the admin page."""
+#         return get_template('admin/drawing_thumbnail_template.html').render({
 
-            'field_name': 'logo',
-            'src': self.logo.url if self.logo else None,
-        })
+#             'field_name': 'logo',
+#             'src': self.logo.url if self.logo else None,
+#         })
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+#     def save(self, *args, **kwargs):
+#         self.slug = slugify(self.title)
 
-        super(Project, self).save(*args, **kwargs)
+#         super(Project, self).save(*args, **kwargs)
 
 
-    def __str__(self):
-        return self.title
+#     def __str__(self):
+#         return self.title
 
 
 # class Entry(models.Model):
@@ -99,7 +99,8 @@ class Drawing(models.Model):
     text = models.TextField()
 
     published_date = models.DateField('publisert', default=now)
-    # drawing = models.ImageField('Tegning', upload_to='drawing')
+
+    drawing = models.ImageField('Tegning', upload_to='drawing')
 
     small_image = models.ImageField('Liten tegning',
                                     upload_to='drawing/',
@@ -122,7 +123,7 @@ class Drawing(models.Model):
         return get_template('admin/drawing_thumbnail_template.html').render({
             'field_name': 'drawing',
             'background_color': self.background_color,
-            'src': self.drawing.url if self.drawing else None,
+            'src': self.drawing.url if self.medium_image else None,
         })
 
     def __str__(self):
@@ -150,6 +151,7 @@ class Drawing(models.Model):
         img.save(buffer, 'JPEG')  # Change the format as needed (JPEG, PNG, etc.)
         buffer.seek(0)
         filename = f"{self.drawing.name.rsplit('.', 1)[0]}_{version}.jpg"
+        print(filename)
         content_file = ContentFile(buffer.read())
         self.drawing.storage.save(filename, content_file)
         buffer.close()

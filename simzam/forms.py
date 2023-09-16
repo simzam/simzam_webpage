@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-from django import forms
+#from django import forms
 # from tinymce.widgets import TinyMCE
 from django.forms import ModelForm
-from .models import Project
+#from .models import Project
 #from .models import Drawing
 from django.forms.widgets import TextInput
 
