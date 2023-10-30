@@ -1,0 +1,8 @@
+/node_modules/
+/.venv
+*.pyc
+package-lock.json
+**/__pycache__/
+**/static/
+*.env
+/media/
