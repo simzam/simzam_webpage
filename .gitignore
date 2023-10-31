@@ -6,3 +6,4 @@ package-lock.json
 **/static/
 *.env
 /media/
+*.sqlite3
