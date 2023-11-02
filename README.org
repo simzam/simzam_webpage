@@ -28,10 +28,11 @@ The initial version of "simzam.com" was hosted on "PythonAnywhere." It was a con
 I have struggled with coding functionality for handling both image and text content. It has been a hassle and Wagtail CMS solves this very neatly. Wagtail also separates the content and the code in a very nice way. Even though code and content is both made by me, the separation is comfortable.
 
 *** Current tasks
-**** TODO add django-environs to hide sensitive variables in an .env file
+**** DONE [#B] add django-environs to hide sensitive Evariables in an .env file
 Also add .env.example explain how to set these variables.
-**** TODO add functionality for dealing with AWS S3 file storage
-Only use S3 in production. Not necessary to transfer to S3 during development or testing
-**** TODO Set up testing framework
+**** TODO Add functionality for dealing with AWS S3 file storage
+consider doing something about large image sizes
+
+**** DONE Set up testing framework
 I have little experience in testing django applications. I need figure out how to deal with it.
-**** TODO Install and integrate HTMX
+***** TODO Install and integrate HTMX
