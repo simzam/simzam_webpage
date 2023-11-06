@@ -35,4 +35,7 @@ consider doing something about large image sizes
 
 **** DONE Set up testing framework
 I have little experience in testing django applications. I need figure out how to deal with it.
-***** TODO Install and integrate HTMX
+**** TODO Install and integrate HTMX
+**** frontend
+***** TODO Add webpack
+****** TODO
