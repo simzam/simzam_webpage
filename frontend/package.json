@@ -4,14 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config webpack.config.js --mode development",
-    "build": "webpack serve --config webpack.config.js --mode development"
+    "start": "webpack serve --config webpack.config.js --mode development",
+    "build": "webpack --config webpack.config.js --mode production"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "htmx": "^0.0.2",
     "webpack": "^5.89.0",
     "webpack-bundle-tracker": "^2.0.1",
     "webpack-cli": "^5.1.4",

@@ -49,8 +49,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # deveeloper included apps
+    # deveeloper included modules
     "storages",
+    "django_htmx",
     # developer written apps
     "blog",
 ]
@@ -64,6 +65,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
+    # developer incluided modules
+    "django_htmx.middleware.HtmxMiddleware",
 ]
 
 ROOT_URLCONF = "simzam.urls"
