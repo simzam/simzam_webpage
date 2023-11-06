@@ -1,5 +1,7 @@
 console.log("testing testing");
 // Import the htmx library (make sure it's included in your HTML)
+import '../styles/main.scss'
+
 import 'htmx.org';
 
 window.htmx = require('htmx.org');
