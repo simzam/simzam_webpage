@@ -1,7 +1,7 @@
 from .base import *
 
 
-DEBUG = env.bool("DEBUG", default=False)
+DEBUG = True  # env.bool("DEBUG", default=False)
 
 SECRET_KEY = env("SECRET_KEY")
 
@@ -12,7 +12,7 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 WEBPACK_LOADER = {
     "DEFAULT": {
         "CACHE": not DEBUG,
-        "STATS_FILE": os.path.join(BASE_DIR, "webpack-stats.json"),
+        "STATS_FILE": os.path.join(BASE_DIR, "../frontend/webpack-stats.json"),
         "POLL_INTERVAL": 0.1,
         "IGNORE": [r".+\.hot-update.js", r".+\.map"],
     }

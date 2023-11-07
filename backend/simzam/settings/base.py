@@ -17,16 +17,14 @@ import os
 env = Env()
 env.read_env()
 
+# TODO set frontend dir in settings file
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-
 # Application definition
-
 INSTALLED_APPS = [
     "home",
     "search",
@@ -52,6 +50,7 @@ INSTALLED_APPS = [
     # deveeloper included modules
     "storages",
     "django_htmx",
+    "webpack_loader",
     # developer written apps
     "blog",
 ]
@@ -124,7 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
-
+# FIXME set correct language and tz
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
@@ -139,27 +138,29 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATICFILES_FINDERS = [
-    "django.contrib.staticfiles.finders.FileSystemFinder",
-    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
-]
+# TODO figure out if I need these.
+# STATICFILES_FINDERS = [
+#     "django.contrib.staticfiles.finders.FileSystemFinder",
+#     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+# ]
 
-STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, "static"),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(PROJECT_DIR, "static"),
+# ]
 
 # ManifestStaticFilesStorage is recommended in production, to prevent outdated
 # JavaScript / CSS assets being served from cache (e.g. after a Wagtail upgrade).
 # See https://docs.djangoproject.com/en/4.2/ref/contrib/staticfiles/#manifeststaticfilesstorage
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATIC_URL = "/static/"
+# STATIC_ROOT = os.path.join("../../../frontend", "static")
+# STATIC_URL = "/static/"
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = "/media/"
+# MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+# MEDIA_URL = "/media/"
 
 # Set the proper settings for AWS
+# FIXME dont need a separate variable for using S3. Always use S3 in production
 if env.bool("USE_S3"):
     DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
     AWS_ACCESS_KEY_ID = env.str("AWS_ACCESS_KEY_ID")
@@ -175,6 +176,7 @@ if env.bool("USE_S3"):
     DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
     STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 else:
+    # FIXME restructure according frontend and backend split. This should be in development
     STATIC_ROOT = os.path.join(BASE_DIR, "static")
     STATIC_URL = "/static/"
     MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -183,7 +185,6 @@ else:
 
 
 # Wagtail settings
-
 WAGTAIL_SITE_NAME = "simzam"
 
 # Search
@@ -196,4 +197,5 @@ WAGTAILSEARCH_BACKENDS = {
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
+# TODO whats this and should I set it differently
 WAGTAILADMIN_BASE_URL = "http://example.com"

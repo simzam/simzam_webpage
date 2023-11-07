@@ -1,5 +1,5 @@
 {% load static wagtailcore_tags wagtailuserbar %}
-
+{% load render_bundle from webpack_loader %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,8 +24,9 @@
         {% endif %}
 
         {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/simzam.css' %}">
-
+        <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/simzam.css' %}"> -->
+        {% render_bundle 'styles' %}
+        {% render_bundle 'bundle' %}
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}

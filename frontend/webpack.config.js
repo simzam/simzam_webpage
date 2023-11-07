@@ -6,11 +6,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   context: __dirname, // The base directory for resolving entry and output paths
   entry: {
-    main: './assets/js/index.js', // Entry point for your application
+    bundle: ['./assets/js/index.js'], // Entry point for your application
+    style: ['./assets/styles/main.scss'],
   },
   output: {
     path: path.resolve('assets/webpack_bundles'), // Output directory for your bundle
-    filename: 'bundle.[contenthash].js', // Output bundle file name
+    filename: '[name].[contenthash].js', // Output bundle file name
+    clean: true
   },
   module: {
     rules: [
