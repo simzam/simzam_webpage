@@ -122,16 +122,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
-# FIXME set correct language and tz
-LANGUAGE_CODE = "en-us"
-
-TIME_ZONE = "UTC"
+LANGUAGE_CODE = "nb"
+TIME_ZONE = "Europe/Berlin"
 
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
@@ -197,5 +192,9 @@ WAGTAILSEARCH_BACKENDS = {
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
+<<<<<<< HEAD
 # TODO whats this and should I set it differently
 WAGTAILADMIN_BASE_URL = "http://example.com"
+=======
+WAGTAILADMIN_BASE_URL = "http://simzam.com"
+>>>>>>> e858e79 (Prepare for separation of production and development.)
