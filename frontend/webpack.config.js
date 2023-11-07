@@ -11,7 +11,7 @@ module.exports = {
   },
   output: {
     path: path.resolve('assets/webpack_bundles'), // Output directory for your bundle
-    filename: '[name].js', // Output bundle file name
+    filename: '[name]-[contenthash].js', // Output bundle file name
   },
   module: {
     rules: [
