@@ -7,12 +7,11 @@ module.exports = {
   context: __dirname, // The base directory for resolving entry and output paths
   entry: {
     bundle: ['./assets/js/index.js'], // Entry point for your application
-    style: ['./assets/styles/main.scss'],
+    style: ['./assets/style/main.scss'],
   },
   output: {
     path: path.resolve('assets/webpack_bundles'), // Output directory for your bundle
-    filename: '[name].[contenthash].js', // Output bundle file name
-    clean: true
+    filename: '[name].js', // Output bundle file name
   },
   module: {
     rules: [
@@ -28,6 +27,6 @@ module.exports = {
   },
   plugins: [
     new BundleTracker({ filename: 'webpack-stats.json' }), // Generates a stats file for webpack-bundle-tracker
-    new MiniCssExtractPlugin({ filename: 'styles.[contenthash].css' })
+    new MiniCssExtractPlugin({ filename: 'style.css' })
   ],
 };

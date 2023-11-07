@@ -5,6 +5,6 @@ package-lock.json
 **/__pycache__/
 **/static/
 *.env
-/media/
+**/media/
 *.sqlite3
 webpack_bundles/

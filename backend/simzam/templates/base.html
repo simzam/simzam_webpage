@@ -1,6 +1,7 @@
 {% load static wagtailcore_tags wagtailuserbar %}
 {% load render_bundle from webpack_loader %}
 <!DOCTYPE html>
+<!-- TODO still missin navbar and footer -->
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -23,25 +24,23 @@
         <base target="_blank">
         {% endif %}
 
-        {# Global stylesheets #}
-        <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/simzam.css' %}"> -->
-        {% render_bundle 'styles' %}
-        {% render_bundle 'bundle' %}
+        {% render_bundle 'style' %}
+        <!-- <script src="{% static 'webpack_bundles/bundle.js' %}"></script> -->
         {% block extra_css %}
-        {# Override this in templates to add extra stylesheets #}
         {% endblock %}
     </head>
 
-    <body class="{% block body_class %}{% endblock %}" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+    <body class="{% block body_class %}{% endblock %}"
+          hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
         {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
 
-        {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/simzam.js' %}"></script>
+        {% render_bundle 'style' 'js' %}
+        {% render_bundle 'bundle' 'js' %}
 
         {% block extra_js %}
-        {# Override this in templates to add extra javascript #}
         {% endblock %}
     </body>
 </html>
