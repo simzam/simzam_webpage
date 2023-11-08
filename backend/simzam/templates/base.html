@@ -37,18 +37,8 @@
         <main>
             {% include 'partials/navbar.html' %}
             <div class="container">
-                <div class="row">
-                    <div class ="col" id="content">
-                        {% block content %}
-                        {% endblock %}
-                    </div>
-                    <div class ="col" id="content2">
-                        MY FRIENDS
-                    </div>
-                    <div class = "col" id="content3">
-                        alksjdf';aklsdjfaskldfjasdl;fjasdlfkasdfasfdasdkfjsa;dklfjas;ldfkjasdflkjasd;lfkjasdfl;kjasf;lkasjfas;lkjfasl;kfjasl;kfjasl;dkfjasl;dfj
-                    </div>
-                </div>
+                {% block content %}
+                {% endblock %}
             </div>
         </main>
 

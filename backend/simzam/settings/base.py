@@ -60,6 +60,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "simzam.urls"
 
+print(PROJECT_DIR)
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -77,6 +79,8 @@ TEMPLATES = [
         },
     },
 ]
+
+print(TEMPLATES)
 
 WSGI_APPLICATION = "simzam.wsgi.application"
 

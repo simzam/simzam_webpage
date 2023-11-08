@@ -35,6 +35,25 @@ class BlogPostPage(Page):
     ]
 
 
+class ReceipePostPage(Page):
+    # Title of the blog post.
+    blog_post_title = models.CharField(max_length=200, blank=True)
+
+    # Main content of the blog post.
+    body = RichTextField(blank=True)
+
+    # Date when the blog post was published.
+    date_published = models.DateTimeField()
+
+    # Featured image for the blog post.
+
+    content_panels = Page.content_panels + [
+        FieldPanel("title"),
+        FieldPanel("body", classname="full"),
+        FieldPanel("date_published"),
+    ]
+
+
 class BlogPageGalleryImage(Orderable):
     """
     Example related image
