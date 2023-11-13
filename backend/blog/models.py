@@ -19,6 +19,10 @@ class ImageBlock(blocks.StructBlock):
     alt = blocks.CharBlock(require=False)
 
 
+class TextBlogBlock(blocks.StructBlock):
+    text = blocks.RichTextBlock(features=["h3", "bold", "italic", "link", "code"])
+
+
 class BlogPostPage(Page):
     # Title of the blog post.
     blog_post_title = models.CharField(max_length=200, blank=True)
@@ -28,7 +32,8 @@ class BlogPostPage(Page):
         [
             ("heading", blocks.CharBlock()),
             ("image", ImageBlock(required=False)),
-            ("text", blocks.TextBlock(required=False)),
+            ("text", TextBlogBlock(required=False)),
+            ("images", blocks.ListBlock(ImageBlock, required=False)),
         ],
         blank=True,
         null=True,

@@ -2,16 +2,30 @@
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
 {% block content %}
-<div class="container">
-  <!-- <h1>{{ page.title }}</h1> -->
-  {% for block in page.body %}
+<div class="row">
+  <div class="col-sm-12">
+
+    <!-- <h1>{{ page.title }}</h1> -->
+    {% for block in page.body %}
     {% if block.block_type == 'heading' %}
     <h1> {{ block.value }} </h1>
     {% elif block.block_type == 'image' %}
-      {% image block.value.image width-900 %}
+    {% srcset_image block.value.image width-{200,700} as drawing %}
+    <img
+      src="{{ drawing.url }}"
+      alt="{{ drawing.alt }}"
+      width="{{ drawing.renditions.0.width }}"
+      height="{{ drawing.renditions.0.height }}"
+      alt="{{ drawing.renditions.0.alt }}"
+      srcset="{{ drawing.renditions.0.url }} 200w, {{ drawing.renditions.1.url }} 400w"
+      sizes="100vw"
+      class="my-custom-class">
+
     {% elif block.block_type == 'text' %}
-    <p>{{ block.value }}</p>
+    {{ block.value.text }}
+    {% else %}
     {% endif %}
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}
