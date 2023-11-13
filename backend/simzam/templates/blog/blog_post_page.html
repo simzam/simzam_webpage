@@ -4,28 +4,29 @@
 {% block content %}
 <div class="row">
   <div class="col-sm-12">
-
-    <!-- <h1>{{ page.title }}</h1> -->
-    {% for block in page.body %}
-    {% if block.block_type == 'heading' %}
-    <h1> {{ block.value }} </h1>
-    {% elif block.block_type == 'image' %}
-    {% srcset_image block.value.image width-{200,700} as drawing %}
-    <img
-      src="{{ drawing.url }}"
-      alt="{{ drawing.alt }}"
-      width="{{ drawing.renditions.0.width }}"
-      height="{{ drawing.renditions.0.height }}"
-      alt="{{ drawing.renditions.0.alt }}"
-      srcset="{{ drawing.renditions.0.url }} 200w, {{ drawing.renditions.1.url }} 400w"
-      sizes="100vw"
-      class="my-custom-class">
-
-    {% elif block.block_type == 'text' %}
-    {{ block.value.text }}
-    {% else %}
-    {% endif %}
-    {% endfor %}
+    <div class="blog-post">
+      <!-- <h1>{{ page.title }}</h1> -->
+      {% for block in page.body %}
+      {% if block.block_type == 'heading' %}
+      <h1> {{ block.value }} </h1>
+      {% elif block.block_type == 'image' %}
+      {% srcset_image block.value.image width-{500,700} sizes="{max-width: 1500px} 400px, 80vw" %}
+      <!-- <img
+           src="{{ drawing.url }}"
+           alt="{{ drawing.alt }}"
+           width="{{ drawing.renditions.1.width }}"
+           height="{{ drawing.renditions.1.height }}"
+           alt="{{ drawing.renditions.1.alt }}"
+           srcset="{{ drawing.renditions.0.url }} 200w, {{ drawing.renditions.1.url }} 400w"
+           sizes="100vw"
+           class="my-custom-class">
+      -->
+      {% elif block.block_type == 'text' %}
+      {{ block.value.text }}
+      {% else %}
+      {% endif %}
+      {% endfor %}
+    </div>
   </div>
 </div>
 {% endblock %}

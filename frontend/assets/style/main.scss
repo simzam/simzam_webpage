@@ -66,6 +66,22 @@ img {
     max-width: 100%;
 }
 
+
+.blog-post {
+    font-size: 1em;
+    line-height: calc(1ex / 0.38);
+    width: 80ch;
+    max-width: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
+    background-color: whitesmoke;
+    hyphens: auto;
+ }
+
+.my-custom-class {
+
+}
+
 .drawings {
     .drawing {
         display: flex;
