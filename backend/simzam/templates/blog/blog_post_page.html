@@ -4,28 +4,39 @@
 {% block content %}
 <div class="row">
   <div class="col-sm-12">
-    <div class="blog-post">
+    <div class="d-flex justify-content-center align-items-center">
       <!-- <h1>{{ page.title }}</h1> -->
-      {% for block in page.body %}
-      {% if block.block_type == 'heading' %}
-      <h1> {{ block.value }} </h1>
-      {% elif block.block_type == 'image' %}
-      {% srcset_image block.value.image width-{500,700} sizes="{max-width: 1500px} 400px, 80vw" %}
-      <!-- <img
-           src="{{ drawing.url }}"
-           alt="{{ drawing.alt }}"
-           width="{{ drawing.renditions.1.width }}"
-           height="{{ drawing.renditions.1.height }}"
-           alt="{{ drawing.renditions.1.alt }}"
-           srcset="{{ drawing.renditions.0.url }} 200w, {{ drawing.renditions.1.url }} 400w"
-           sizes="100vw"
-           class="my-custom-class">
-      -->
-      {% elif block.block_type == 'text' %}
-      {{ block.value.text }}
-      {% else %}
-      {% endif %}
-      {% endfor %}
+      <div class="blog-post">
+
+        {% for block in page.body %}
+        {% if block.block_type == 'heading' %}
+        <div class="text-center">
+          <h1> {{ block.value }} </h1>
+        </div>
+        {% elif block.block_type == 'image' %}
+        {% image block.value.image width-1000 %}
+        <!-- {% srcset_image block.value.image width-{500,700} sizes="{max-width: 1500px} 400px, 80vw" %} -->
+        <!-- <img
+             src="{{ drawing.url }}"
+             alt="{{ drawing.alt }}"
+             width="{{ drawing.renditions.1.width }}"
+             height="{{ drawing.renditions.1.height }}"
+             alt="{{ drawing.renditions.1.alt }}"
+             srcset="{{ drawing.renditions.0.url }} 200w, {{ drawing.renditions.1.url }} 400w"
+             sizes="100vw"
+             class="my-custom-class">
+        -->
+        {% elif block.block_type == 'images' %}
+          {% for img_block in block.value %}
+            {% image img_block.image width-1200 %}
+        {% endfor %}
+        {% elif block.block_type == 'text' %}
+        <div class="blog-post-text">
+          {{ block.value.text }}
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>

@@ -1,31 +1,51 @@
-# simzam.com
+#+TITLE:simzam.com
 
 * simzam.com
-
-Welcome to the source code for simzam.com! A creative project that explores and documents my journey as a fullscale developer. A changing canvas for experimentation with various web technologies and continuous skill development. During the COVID-19 pandemic, I rediscovered my passion for drawing after many years. simzam.com showcase and catalog my evolving artwork. It's an ever-evolving learning platform, where I can experiment with web technologies. 
+Welcome to the source code for *simzam.com*! This project serves as a testing
+ground to explore and familiarize myself with different web technologies in a
+somewhat production-looking environment. The project will evolve and change as I
+learn. During the COVID years, I rediscovered my interest in drawing, and I use
+*simzam.com* to catalog my drawings. sMy goal is to hone my skills and establish
+a functioning stack. The web is an ever-changing world with fast-evolving
+standards and libraries. I am looking for a solid durable stack. So far I have
+fallen in love with Wagtail and HTMX
 
 ** Technology Stack
-The project's technology stack is intentionally designed to be minimal and straightforward, focusing on essential components:
+I have earlier done
 
-*** Backend:
-- **Django:** This Python-based web framework forms the core of simzam.com.
-- **Wagtail CMS:** For content management. A developer-friendly CMS built on Django.
-- **SQLite:** A lightweight and serverless relational database for data storage.
+The project's technology stack is intentionally designed to be minimal and
+straqightforward, focusing on essential components:
 
-*** Frontend:
-- **Webpack:** A module bundler that efficiently manages JavaScript and assets.
-- **JavaScript:** Enhancing interactivity and dynamic behavior throughout our web pages.
-- **HTMX:** Enabling powerful AJAX requests and dynamic HTML content updates for responsive user experiences.
-- **Bootstrap:** A widely-used frontend framework that simplifies responsive web design and UI development.
-- **SCSS (Sass):** Our CSS preprocessor for improved maintainability and organization.
+1. Backend:
+- *Django:* This Python-based web framework forms the core of simzam.com.
+- *Wagtail CMS:* A developer-friendly content management system built on Django.
+  I have struggled with implementing functionality for handling image content.
+  It has proven cumbersome to generate flexible compositions of images,
+  drawings, text, and source code. Wagtail CMS solves this very neatly and makes
+  a very tidy separation between source code and content.
+- *SQLite:* The project has few security requirements so far and no change of
+  concurrent writes to the database. Making SQLite a comfortable and solid
+  choice. It has also significantly eased my journey and reading time.
 
-*** File Storage:
-- **Amazon S3 (Simple Storage Service):** Our project relies on Amazon S3, a cloud-based object storage service, to securely store and serve images for our web application.
+2. Frontend:
+ - *Webpack:* A module bundler that efficiently manages JavaScript and
+ - *JavaScript:* Enhancing interactivity and dynamic behavior throughout our web
+   pages.
 
-** Development status
-The initial version of "simzam.com" was hosted on "PythonAnywhere." It was a convenient choice, but it hid most of the infrastructure for hosting. As a result, I've decided to move the domain and explore hosting options on either AWS EC2 or Lightsail. 
+ *updates for responsive user experiences. Bootstrap:* A widely-used frontend
+ *framework that simplifies responsive web design and UI development. SCSS
+ *(Sass):* Our CSS preprocessor for improved maintainability and organization.
 
-I have struggled with coding functionality for handling both image and text content. It has been a hassle and Wagtail CMS solves this very neatly. Wagtail also separates the content and the code in a very nice way. Even though code and content is both made by me, the separation is comfortable.
+3. File Storage:
+- *Amazon S3 (Simple Storage Service):* Our project relies on
+Amazon S3, a cloud-based object storage service, to securely store and serve
+media and static files for the project. The previous hosting solution was
+geographically far away and slow.
+
+** Deployment details
+The initial version of "simzam.com" was hosted on "PythonAnywhere." It was a
+convenient choice, but it hid most of the infrastructure for hosting. As a
+result, I've decided to move the hosting to AWS EC2.
 
 *** Current tasks
 **** DONE [#B] add django-environs to hide sensitive Evariables in an .env file
@@ -34,8 +54,64 @@ Also add .env.example explain how to set these variables.
 consider doing something about large image sizes
 
 **** DONE Set up testing framework
-I have little experience in testing django applications. I need figure out how to deal with it.
+I have little experience in testing django applications. I need figure out how
+to deal with it.
 **** TODO Install and integrate HTMX
 **** frontend
 ***** TODO Add webpack
 ****** TODO
+#+TITLE: simzam.com
+
+* Welcome to simzam.com
+
+** Technology Stack
+   The project's technology stack is intentionally designed to be minimal and
+   straightforward, focusing on essential components:
+
+*** Backend
+
+   - *Django:* Python-based web framework at the core of simzam.com.
+   - *Wagtail CMS:* Developer-friendly CMS built on Django for content management.
+   - *SQLite:* Lightweight and serverless relational database for data storage.
+
+*** Frontend
+
+   - *Webpack:* Module bundler efficiently managing JavaScript.
+   - *JavaScript:* Enhancing interactivity and dynamic behavior throughout web
+     pages.
+   - *Bootstrap:* Widely-used frontend framework simplifying responsive web
+     design and UI development for responsive user experiences.
+   - *SCSS (Sass):* CSS preprocessor for improved maintainability and organization.
+
+*** File Storage
+
+   - *Amazon S3 (Simple Storage Service):* Cloud-based object storage service
+     securely storing and serving images for the web application.
+
+** Development Status
+
+   The initial version of "simzam.com" was hosted on "PythonAnywhere." However,
+   this choice concealed most of the hosting infrastructure. As a result, I've
+   decided to move the domain and explore hosting options on either AWS EC2 or
+   Lightsail.
+
+   I have encountered challenges in coding functionality for handling both image
+   and text content. It has been a hassle, and Wagtail CMS neatly solves this
+   issue. Wagtail also separates content and code in a comfortable way, despite
+   both being created by me.
+
+*** Current Tasks
+
+**** DONE [#B] Add django-environs to hide sensitive variables in an .env file. Also, add .env.example to explain how to set these variables.
+
+**** TODO Add functionality for dealing with AWS S3 file storage. Consider addressing large image sizes.
+
+**** DONE Set up testing framework. I have little experience in testing Django applications and need to figure out how to deal with it.
+
+**** TODO Install and integrate HTMX.
+
+***** Frontend
+
+****** TODO Add webpack.
+
+******* TODO

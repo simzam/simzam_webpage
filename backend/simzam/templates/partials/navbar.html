@@ -1,19 +1,24 @@
 <nav class="navbar" aria-label="offcanvas navbar">
     <div class="container-fluid">
-        <button type="button" id="navbar-toggler" class="btn-round"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvas-navbar"
-                aria-controls="offcanvasNavbarLight">
+        <button
+            type="button"
+            id="navbar-toggler"
+            class="btn-round"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvas-navbar"
+            aria-controls="offcanvasNavbarLight">
+            <!-- Consider uncommenting the line below if you want to display a default navbar-toggler-icon -->
             <!-- <span class="navbar-toggler-icon"></span> -->
         </button>
         <div class="offcanvas offcanvas-start" id="offcanvas-navbar" tabindex="-1" aria-labelledby="offcanvasNavbarLightLabel">
             <div class="offcanvas-header">
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                {% include 'partials/logo.html' %}
+                {% include 'partials/breadcrumb.html' with ancestors=self.get_ancestors current_page=self %}
             </div>
             <div class="offcanvas-body">
-                <!-- Add your offcanvas content here -->
             </div>
+
+                {% include 'partials/logo.html' %}
         </div>
+
     </div>
 </nav>
