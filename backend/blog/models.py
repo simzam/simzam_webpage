@@ -25,12 +25,13 @@ class TextBlogBlock(blocks.StructBlock):
 
 class BlogPostPage(Page):
     # Title of the blog post.
-    blog_post_title = models.CharField(max_length=200, blank=True)
+    # blog_post_title = models.CharField(max_length=200, blank=True)
 
     # Main content of the blog post.
     body = StreamField(
         [
             ("heading", blocks.CharBlock()),
+            ("intro", TextBlogBlock(required=False, max_length=800)),
             ("image", ImageBlock(required=False)),
             ("text", TextBlogBlock(required=False)),
             ("images", blocks.ListBlock(ImageBlock, required=False)),
@@ -42,16 +43,6 @@ class BlogPostPage(Page):
     )
     # Date when the blog post was published.
     date_published = models.DateTimeField()
-
-    # Featured image for the blog post.
-    # images = StreamField(
-    #     [
-    #         ("image", ImageChooserBlock()),
-    #     ],
-    #     use_json_field=True,
-    #     blank=True,
-    #     null=True,
-    # )
 
     content_panels = Page.content_panels + [
         FieldPanel("title"),

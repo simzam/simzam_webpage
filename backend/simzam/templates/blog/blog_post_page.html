@@ -7,25 +7,18 @@
     <div class="d-flex justify-content-center align-items-center">
       <!-- <h1>{{ page.title }}</h1> -->
       <div class="blog-post">
-
+        {% include 'partials/titlebanner.html' with title=self.title %}
         {% for block in page.body %}
-        {% if block.block_type == 'heading' %}
-        <div class="text-center">
-          <h1> {{ block.value }} </h1>
+        {% if block.block_type == 'intro' %}
+        <div  class="blog-post-intro">
+            {{ block.value.text }}
         </div>
+        {% elif block.block_type == 'heading' %}
+          <div class="text-center">
+            <h1> {{ block.value }} </h1>
+          </div>
         {% elif block.block_type == 'image' %}
-        {% image block.value.image width-1000 %}
-        <!-- {% srcset_image block.value.image width-{500,700} sizes="{max-width: 1500px} 400px, 80vw" %} -->
-        <!-- <img
-             src="{{ drawing.url }}"
-             alt="{{ drawing.alt }}"
-             width="{{ drawing.renditions.1.width }}"
-             height="{{ drawing.renditions.1.height }}"
-             alt="{{ drawing.renditions.1.alt }}"
-             srcset="{{ drawing.renditions.0.url }} 200w, {{ drawing.renditions.1.url }} 400w"
-             sizes="100vw"
-             class="my-custom-class">
-        -->
+          {% image block.value.image width-1000 %}
         {% elif block.block_type == 'images' %}
           {% for img_block in block.value %}
             {% image img_block.image width-1200 %}
