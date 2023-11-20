@@ -2,35 +2,48 @@
 {% load wagtailcore_tags %}
 {% load wagtailimages_tags %}
 {% block content %}
-<div class="row">
-  <div class="col-sm-12">
-    <div class="d-flex justify-content-center align-items-center">
-      <!-- <h1>{{ page.title }}</h1> -->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12">
       <div class="blog-post">
-        {% include 'partials/titlebanner.html' with title=self.title %}
+        <div class="blog-post-title">
+          <h1>{{ self.title }}</h1>
+        </div>
         {% for block in page.body %}
-        {% if block.block_type == 'intro' %}
-        <div  class="blog-post-intro">
-            {{ block.value.text }}
-        </div>
-        {% elif block.block_type == 'heading' %}
-          <div class="text-center">
-            <h1> {{ block.value }} </h1>
-          </div>
-        {% elif block.block_type == 'image' %}
-          {% image block.value.image width-1000 %}
-        {% elif block.block_type == 'images' %}
-          {% for img_block in block.value %}
-            {% image img_block.image width-1200 %}
-        {% endfor %}
-        {% elif block.block_type == 'text' %}
-        <div class="blog-post-text">
-          {{ block.value.text }}
-        </div>
-        {% endif %}
+          {% if block.block_type == 'intro' %}
+            <div class="blog-post-intro">
+              {{ block.value.text }}
+            </div>
+          {% elif block.block_type == 'heading' %}
+            <div class="text-center">
+              <h1> {{ block.value }} </h1>
+            </div>
+          {% elif block.block_type == 'text' %}
+            <div class="blog-post-text">
+              {{ block.value.text }}
+            </div>
+          {% elif block.block_type == 'image' %}
+            <div class="blog-post-image">
+              {% image block.value.image width-700 %}
+            </div>
+          {% elif block.block_type == 'images' %}
+            {% for img_block in block.value %}
+              <div class="blog-post-gallery-image">
+                {% image img_block.image width-800 %}
+             </div>
+            {% endfor %}
+          {% endif %}
         {% endfor %}
       </div>
     </div>
   </div>
 </div>
+{% endblock %}
+
+{% block cc %}
+  SIMON SIMON
+{% endblock %}
+
+{% block navbarcontent %}
+  <h1>du du du dudududu</h1>
 {% endblock %}

@@ -8,13 +8,17 @@
             data-bs-target="#offcanvas-navbar"
             aria-controls="offcanvasNavbarLight">
         </button>
-        <div class="offcanvas offcanvas-start" id="offcanvas-navbar" tabindex="-1" aria-labelledby="offcanvasNavbarLightLabel">
+        <div class="offcanvas offcanvas-start" id="offcanvas-navbar"
+             tabindex="-1"
+             aria-labelledby="offcanvasNavbarLightLabel">
             <div class="offcanvas-header">
                 {% include 'partials/breadcrumb.html' with ancestors=self.get_ancestors current_page=self %}
             </div>
             <div class="offcanvas-body">
+                {% block navbarcontent %}
+                dksldk
+                {% endblock %}
             </div>
-
                 {% include 'partials/logo.html' %}
         </div>
 

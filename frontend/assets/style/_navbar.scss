@@ -2,6 +2,20 @@ $circle-size: 7em; // Adjust as needed
 $close-btn-size: 2.5rem; // Adjust as needed
 
 .navbar {
+
+    .btn-round {
+        @extend .btn;
+        @extend .btn-dark;
+        @extend .rounded-circle;
+        background-color: var(--color-text);
+        width: 2em;
+        height: 2em;
+        display: flex;
+        // align-items: center;
+        // justify-content: center;
+    }
+
+
     #navbar-toggler {
         position: fixed;
         background-color: var(--color-offcanvas);
