@@ -1,0 +1,12 @@
+<!-- breadcrumb.html -->
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        {% if ancestors %}
+            {% for ancestor in ancestors %}
+                    <li class="breadcrumb-item"><a href="{{ ancestor.url }}">{{ ancestor.title }}</a></li>
+            {% endfor %}
+        {% endif %}
+        <li> {{ current_page.title }}</li>
+    </ol>
+</nav>

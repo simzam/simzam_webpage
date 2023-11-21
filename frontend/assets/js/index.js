@@ -1,4 +1,4 @@
-import bootstrap from 'bootstrap';
+//import bootstrap from 'bootstrap';
 // Import the htmx library (make sure it's included in your HTML)
 // import '../style/main.scss'
 
