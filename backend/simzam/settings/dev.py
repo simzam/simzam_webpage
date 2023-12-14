@@ -41,7 +41,6 @@ else:
     ]
     STATICFILES_DIRS = [os.path.join(BASE_DIR, "frontend_assets")]
 
-
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 WEBPACK_LOADER = {
