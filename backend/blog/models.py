@@ -13,7 +13,7 @@ from modelcluster.fields import ParentalKey
 
 class BlogPostPage(Page):
     # Title of the blog post.
-    blog_post_title = models.CharField(max_length=200, blank=True)
+    # blog_post_title = models.CharField(max_length=200, blank=True)
 
     # Main content of the blog post.
     body = RichTextField(blank=True)
