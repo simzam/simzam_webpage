@@ -39,7 +39,8 @@ else:
         "django.contrib.staticfiles.finders.FileSystemFinder",
         "django.contrib.staticfiles.finders.AppDirectoriesFinder",
     ]
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, "frontend_assets/webpack_bundles")]
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, "frontend_assets")]
+
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
