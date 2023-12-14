@@ -9,7 +9,7 @@ services:
         - ./frontend:/app
     environment:
       - NODE_ENV=development
-    command: npm start
+    command: npx webpack --mode=development --watch
 
   backend:
     build:
