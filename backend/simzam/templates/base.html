@@ -26,6 +26,24 @@
 
         {% render_bundle 'style' 'css' %}
         {% block extra_css %}
+            <!-- Include jQuery -->
+            <!-- Include jQuery -->
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+            <script>
+                 $(document).ready(function() {
+                     // Function to generate a random RGB color
+                     function getRandomColor() {
+                         return 'rgb(' + random(256) + ',' + random(256) + ',' + random(256) + ')';
+                     }
+
+                     // Apply random background color to each box
+                     $('.box1').each(function(index) {
+                         $(this).css('background-color', getRandomColor());
+                     });
+                 });
+            </script>
+
         {% endblock %}
     </head>
 
@@ -33,10 +51,14 @@
           hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
         {% wagtailuserbar %}
 
-        {% include 'partials/navbar.html' %}
+        {#% include 'partials/navbar.html' %#}
         <main>
+            <div class="wrapper">
+                {% for i in "x"|rjust:12 %}
+                    <div class="box1">i</div>
+                {% endfor %}
+            </div>
             {% block content %}
-
             {% endblock %}
         </main>
 
@@ -44,6 +66,23 @@
         {% render_bundle 'bundle' 'js' %}
 
         {% block extra_js %}
+            <!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    // Function to generate a random RGB color
+    function getRandomColor() {
+      return 'rgb(' + random(256) + ',' + random(256) + ',' + random(256) + ')';
+    }
+
+    // Apply random background color to each box
+    $('.box1').each(function(index) {
+      $(this).css('background-color', getRandomColor());
+    });
+  });
+</script>
+
         {% endblock %}
     </body>
 </html>
