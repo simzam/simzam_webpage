@@ -1,0 +1,29 @@
+# General
+.git/
+.gitignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.env
+*.sqlite3
+.dockerignore
+Dockerfile*
+docker-compose*.yml
+
+# Backend specific
+backend/db.sqlite3
+backend/*.log
+backend/__pycache__/
+backend/.env
+
+# Frontend specific
+frontend/node_modules/
+frontend/build/
+frontend/*.log
+frontend/__pycache__/
+frontend/.env
+
+# Dockerfiles directory
+Dockerfiles/
