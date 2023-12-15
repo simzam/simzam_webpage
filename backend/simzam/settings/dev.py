@@ -39,7 +39,7 @@ else:
         "django.contrib.staticfiles.finders.FileSystemFinder",
         "django.contrib.staticfiles.finders.AppDirectoriesFinder",
     ]
-    STATICFILES_DIRS = [os.path.join(FRONTEND_DIR, "assets")]
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, "frontend_assets")]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
@@ -47,7 +47,9 @@ WEBPACK_LOADER = {
     "DEFAULT": {
         # "BUNDLE_DIR_NAME": WEBPACK_BUNDLE_DIR,
         "CACHE": not DEBUG,
-        "STATS_FILE": os.path.join(WEBPACK_BUNDLE_DIR, "webpack-stats.json"),
+        "STATS_FILE": os.path.join(
+            BASE_DIR, "frontend_assets/webpack_bundles/webpack-stats.json"
+        ),
         "POLL_INTERVAL": 0.1,
         "IGNORE": [r".+\.hot-update.js", r".+\.map"],
     }

@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+        context: .
+        dockerfile: Dockerfiles/Dockerfile.frontend.dev
+    volumes:
+        - ./frontend:/app
+    environment:
+      - NODE_ENV=development
+    command: npx webpack --mode=development --watch
+
+  backend:
+    build:
+        context: .
+        dockerfile: Dockerfiles/Dockerfile.backend.dev
+    volumes:
+      - ./backend:/app
+      - ./frontend/assets:/app/frontend_assets
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_ENV=development
+    command: python manage.py runserver 0.0.0.0:8000

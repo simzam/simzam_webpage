@@ -16,16 +16,23 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.s[ac]ss$/i,
         use: [
-          MiniCssExtractPlugin.loader,
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
           'css-loader',
+          // Compiles Sass to CSS
           'sass-loader',
+<<<<<<< HEAD
         ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         type: 'asset/resource',
+=======
+        ],
+>>>>>>> rewrite
       }
     ]
   },
