@@ -24,15 +24,11 @@ module.exports = {
           'css-loader',
           // Compiles Sass to CSS
           'sass-loader',
-<<<<<<< HEAD
         ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         type: 'asset/resource',
-=======
-        ],
->>>>>>> rewrite
       }
     ]
   },
