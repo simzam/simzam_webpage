@@ -1,20 +1,21 @@
-version: '3.8'
-
+version: '2'
 services:
   frontend:
     build:
-        context: .
-        dockerfile: Dockerfiles/Dockerfile.frontend.dev
+      context: .
+      dockerfile: Dockerfiles/Dockerfile.frontend.dev
     volumes:
-        - ./frontend:/app
+      - ./frontend:/app
     environment:
       - NODE_ENV=development
     command: npx webpack --mode=development --watch
+    mem_limit: 1g
+    cpus: 1.5
 
   backend:
     build:
-        context: .
-        dockerfile: Dockerfiles/Dockerfile.backend.dev
+      context: .
+      dockerfile: Dockerfiles/Dockerfile.backend.dev
     volumes:
       - ./backend:/app
       - ./frontend/assets:/app/frontend_assets
@@ -23,3 +24,5 @@ services:
     environment:
       - DJANGO_ENV=development
     command: python manage.py runserver 0.0.0.0:8000
+    mem_limit: 512m
+    cpus: 1.0
