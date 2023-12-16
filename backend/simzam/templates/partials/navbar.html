@@ -1,26 +1,17 @@
-<nav class="navbar" aria-label="offcanvas navbar">
-    <div class="container-fluid" id="nav-line">
-        <button
-            type="button"
-            id="navbar-toggler"
-            class="btn-round"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvas-navbar"
-            aria-controls="offcanvasNavbarLight">
-        </button>
-        <div class="offcanvas offcanvas-start" id="offcanvas-navbar"
-             tabindex="-1"
-             aria-labelledby="offcanvasNavbarLightLabel">
-            <div class="offcanvas-header">
-                {% include 'partials/breadcrumb.html' with ancestors=self.get_ancestors current_page=self %}
-            </div>
-            <div class="offcanvas-body">
-                {% block navbarcontent %}
-                dksldk
-                {% endblock %}
-            </div>
-                {% include 'partials/logo.html' %}
+<nav class="navbar">
+    <div class="navbar-left">
+        <a href="/" class="navbar-logo">YourLogo</a>
+        <!-- Breadcrumb -->
+        <div class="navbar-breadcrumb">
+            <!-- Breadcrumb items (update dynamically based on the page) -->
+            <a href="/">Home</a> / <span>Current Page</span>
         </div>
+    </div>
 
+    <div class="navbar-right">
+        <!-- Off-canvas Navbar Toggle Button -->
+        <button class="navbar-toggle" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </div>
 </nav>

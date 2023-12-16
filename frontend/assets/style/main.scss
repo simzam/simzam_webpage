@@ -1,11 +1,12 @@
 // @import '~bootstrap/dist/css/bootstrap';
 // @import "~bootstrap/scss/bootstrap.scss";
 @import '_navbar.scss';
+@import '_footer.scss';
 
-@font-face {
-    font-family: 'hattricks';
-    src: url('../fonts/Teko-Bold.ttf') format('ttf');
-}
+// @font-face {
+    // font-family: 'hattricks';
+    // src: url('../fonts/Teko-Bold.ttf') format('ttf');
+// }
 
 :root {
     --color-page-background: #111222;      /* Light pink */
@@ -47,57 +48,12 @@ main {
     // margin-bottom: 4vh;
 }
 
-@mixin randomBackgroundColor {
-  background-color: rgb(random(256), random(256), random(256));
-}
-
-.wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(100px, 1fr));
-    grid-template-rows: repeat(autofit, 100px);
-    gap: 100px;
-    background-color: black;
-    .box1 {
-        display: flex;
-        justify-content: center;
-        // background-color: yellow;
-        text-align: center;
-        align-items: center;
-        font-size: 24px;
-        font-weight: 800;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.7) 0px 18px 36px -18px inset;
-        background-color: whitesmoke;
-    }
-
-    .box2 {
-        background-color: blueviolet;
-        grid-column-start: 1;
-        grid-column-end: span 3;
-
-    }
-
-    .box3 {
-        background-color: limegreen;
-        grid-area: 3 / 3 / 7 / 7;
-    }
-    .box4 {
-        background-color: pink;
-        grid-column: 9 / 12;
-        grid-row: 9 / 12;
-    }
-}
-
 img {
     max-width: 100%;
 }
 
 .blog-post {
     background-color: var(--color-page-elements);
-    // hyphens: auto;
-    // display: block;
-
-    // text-align: center;
-    // padding: 1em;
 
     .blog-text {
 
