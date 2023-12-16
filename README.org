@@ -1,30 +1,43 @@
 #+TITLE: simzam.com
 
 * Welcome to simzam.com
-Welcome to the source code for *simzam.com* (currently not hosted anywhere)!
-This project serves as a testing ground to explore and familiarize myself with
-different web technologies. The project is meant to evolve and change.
+Welcome to the source code for *simzam.com*! This project serves as a testing
+ground to explore web technologies. The project is meant to evolve and change as
+I learn. Eventually to establish a functioning stack. So far, I have fallen in
+love with Wagtail and HTMX.
 
 I rediscovered my interest in drawing, and I use *simzam.com* to catalog and
-present my drawings. My goal is to hone my skills and establish a functioning
-stack. The web is an ever-changing world with fast-evolving standards and
-libraries. So far, I have fallen in love with Wagtail and HTMX.
+present my drawings. Combining the physical drawings in a digital format fascinates me.
 
 ** Technology Stack
 *** Backend
-   - *Django:* Python-based web framework at the core of simzam.com.
-   - *Wagtail CMS:* Developer-friendly CMS built on Django for content management.
-   - *SQLite:* Lightweight and serverless relational database for data storage.
+**** Django:
+Python-based web framework at the core of simzam.com.
+**** Wagtail CMS:
+Developer-friendly CMS built on Django for content management.
+**** SQLite:
+Lightweight and serverless relational database for data storage.
 
 *** Frontend
-   - *Webpack:* Module bundler efficiently managing JavaScript.
-   - *JavaScript:* Enhancing interactivity and dynamic behavior throughout web pages.
-   - *HTMX:* Allows for dynamic content updates without full page reloads, enhancing the user experience.
-   - *SCSS (Sass):* CSS preprocessor for improved maintainability and organization.
+**** Webpack:
+Module bundler efficiently managing JavaScript
+**** JavaScript:
+Enhancing interactivity and dynamic behavior throughout web pages.
+**** HTMX:
+Allows for dynamic content updates without full page reloads, enhancing the user experience.
+**** SCSS (Sass):
+CSS preprocessor for improved maintainability and organization.
 
 *** File Storage
-   - *Amazon S3 (Simple Storage Service):* Cloud-based object storage service
-     securely storing and serving images and other media files.
+**** Amazon S3 (Simple Storage Service):
+Cloud-based object storage service securely storing and serving images and other
+media files.
+
+*** Containerization
+**** Docker:
+Utilizing Docker to create, deploy, and run applications by using containers.
+This ensures consistency across multiple development and release cycles,
+standardizing your environment.
 
 ** Development Status
 The initial version of "simzam.com" was hosted on "PythonAnywhere." However,
