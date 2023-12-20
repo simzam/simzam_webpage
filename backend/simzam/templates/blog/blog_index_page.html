@@ -1,25 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-{% load wagtailcore_tags wagtailimages_tags %}
-<div id="content">
-  <h2>{{ page.title }}</h2>
-  <div class="blog-posts">
-s    {% for blog_post in blog_posts %}
-    <div class="blog-post">
-      <h4><a href="{{ blog_post.url }}">{{ blog_post.title }}</a></h4>
-      <p class="blog-post-date">{{ blog_post.date_published|date:"F j, Y" }}</p>
-    </div>
-    {% if blog_post.images %}
-      {% for image in blog_post.images %}
-        <h3>{{ image.title }}</h3>
-        {% image image width-700 %}
+  {% load wagtailcore_tags wagtailimages_tags %}
+  <div id="content">
+    <h2>{{ page.title }}</h2>
+    <div class="blog-posts">
+      {% for blog_post in blog_posts %}
+        <div class="blog-post">
+          <h4><a href="{{ blog_post.url }}">{{ blog_post.title }}</a></h4>
+          <p class="blog-post-date">{{ blog_post.date_published|date:"F j, Y" }}</p>
+        </div>
+        {{ blog_post.body }}
       {% endfor %}
-    {% else %}
-      <h3>NO IMAGES</h3>
-    {% endif %}
-    {{ blog_post.body | safe}}
-    {% endfor %}
     </div>
   </div>
-</div>
+  </div>
 {% endblock %}
