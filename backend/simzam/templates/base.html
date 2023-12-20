@@ -25,6 +25,8 @@
         {% endif %}
 
         {% render_bundle 'style' 'css' %}
+        {% render_bundle 'style' 'js' %}
+        {% render_bundle 'bundle' 'js' %}
 
         {% block extra_css %}
         {% endblock %}
@@ -42,8 +44,6 @@
 
         {% include 'partials/footer.html' %}
 
-        {% render_bundle 'style' 'js' %}
-        {% render_bundle 'bundle' 'js' %}
 
         {% block extra_js %}
         {% endblock %}

@@ -1,10 +1,25 @@
 <nav class="navbar">
     <div class="navbar-left">
-        <a href="/" class="navbar-logo">YourLogo</a>
-        <!-- Breadcrumb -->
+        <!-- Nested ball inside a ball logo -->
+        <button class="v-button" onclick="rotateOnClick()">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+                <path d="M10,10 L90,45 L10,90" fill="none" stroke="#ffffff" stroke-width="20" />
+            </svg>
+        </button>
+
         <div class="navbar-breadcrumb">
-            <!-- Breadcrumb items (update dynamically based on the page) -->
-            <a href="/">Home</a> / <span>Current Page</span>
+            <div class="breadcrumb-content">
+                {% if self.get_ancestors|length > 1 %}
+                    <ul class="breadcrumb">
+                        {% for p in self.get_ancestors %}
+                            {% if p.is_root == False %}
+                                <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        <li class="active">{{ self.title }}</li>
+                    </ul>
+                {% endif %}
+            </div>
         </div>
     </div>
 
@@ -15,3 +30,16 @@
         </button>
     </div>
 </nav>
+
+<!-- <script type="text/javascript">
+     // Function to handle rotation on click
+     function rotateOnClick() {
+     const button = document.querySelector('.v-button');
+
+     // Toggle a class to rotate the button by 180 degrees
+     button.classList.toggle('rotate180');
+
+     // Reset the class after the rotation animation completes
+     // Adjust the duration to match your animation duration (1 second in this example)
+     }
+     </script> -->

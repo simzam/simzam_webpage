@@ -23,7 +23,6 @@
                     text-decoration: none;
 
                     &:hover {
-                        text-decoration: underline;
                     }
                 }
             }
@@ -31,21 +30,3 @@
     }
 }
 
-@media (max-width: 768px) {
-    .footer {
-        flex-direction: column;
-        text-align: center;
-
-        .footer-right {
-            margin-top: 1rem;
-
-            .footer-links {
-                flex-direction: column;
-
-                li {
-                    margin: 0.5rem 0;
-                }
-            }
-        }
-    }
-}

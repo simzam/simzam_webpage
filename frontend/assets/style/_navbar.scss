@@ -1,37 +1,77 @@
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background-color: #126562;
-    color: #fff;
 
-    .navbar-left {
+    .v-button {
+        width: 100px; /* Set the desired width */
+        height: 100px; /* Set the desired height */
+        background-color: rgba(52, 152, 219, 0); /* Transparent background color */
         display: flex;
+        justify-content: center;
         align-items: center;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s;
 
-        .navbar-logo {
-            margin-right: 20px;
-            font-size: 1.5rem;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .navbar-breadcrumb {
-            a {
-                color: #fff;
-                text-decoration: none;
-            }
-        }
-    }
-
-    .navbar-right {
-        .navbar-toggle {
-            background: none;
-            border: none;
-            // Style your toggle button icon here
+        /* Add styles for the SVG V shape */
+        svg {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s; /* Add a smooth transition effect for the transform property */
         }
     }
 }
 
+/* Add a class for the click-based rotation */
+.rotate180 {
+    transform: rotate(180deg) !important; /* Rotate the button by 180 degrees */
+    transition: transform 1s; /* Add a smooth transition effect for the transform property */
+}
+
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+
+    // Style for the navbar logo container
+    .navbar-logo-container {
+        margin-right: 20px;
+
+        // Style for the outer ball
+        .outer-ball {
+            width: 50px; // Adjust the size as needed
+            height: 50px; // Adjust the size as needed
+            background-color: #3498db; // Change to the desired outer ball color
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s; // Add a smooth color transition on hover
+
+            // Style for the inner ball
+            .inner-ball {
+                width: 70%; // Adjust the size of the inner ball
+                height: 70%; // Adjust the size of the inner ball
+                background-color: #e74c3c; // Change to the desired inner ball color
+                border-radius: 50%;
+                transition: background-color 0.3s; // Add a smooth color transition on hover
+            }
+        }
+    }
+
+    .navbar-breadcrumb {
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
+.navbar-right {
+    .navbar-toggle {
+        background: none;
+        border: none;
+        // Style your toggle button icon here
+    }
+}
