@@ -1,41 +1,25 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags %}
-{% load wagtailimages_tags %}
+{% load partials %}
 {% block content %}
-<div class="container">
-  <div class="justify-content-center">
-    <div class="">
-      <div class="blog-post">
-        <div class="blog-post-title">
-          <h1>{{ self.title }}</h1>
-        </div>
-        {% for block in page.body %}
-          {% if block.block_type == 'intro' %}
-            <div class="blog-post-intro">
-              {{ block.value.text }}
-            </div>
-          {% elif block.block_type == 'heading' %}
-            <div class="text-center">
-              <h1> {{ block.value }} </h1>
-            </div>
-          {% elif block.block_type == 'text' %}
-            <div class="blog-post-text">
-              {{ block.value.text }}
-            </div>
-          {% elif block.block_type == 'image' %}
-            <div class="blog-post-image">
-              {% image block.value.image width-700 %}
-            </div>
-          {% elif block.block_type == 'images' %}
-            {% for img_block in block.value %}
-              <div class="blog-post-gallery-image">
-                {% image img_block.image width-800 %}
-             </div>
-            {% endfor %}
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <div class="intro">
+      {{ page.intro | richtext }}
+    </div>
+    {#% partial blog-post-partial %#}
+    <div class="blog-posts">
+      {% for blog_post in blog_posts %}
+        <div class="blog-post">
+          <h2><a href="{{ blog_post.url }}">{{ blog_post.title }}</a></h2>
+          <p class="blog-post-date">{{ blog_post.date_published|date:"F j, Y" }}</p>
+          {% if blog_post.featured_image %}
+            <img src="{{ blog_post.featured_image.url }}" alt="{{ blog_post.title }}">
           {% endif %}
-        {% endfor %}
-      </div>
+          {{ blog_post.body | richtext }}
+          her skulle kroppen bo
+        </div>
+      {% endfor %}
     </div>
   </div>
-</div>
 {% endblock %}

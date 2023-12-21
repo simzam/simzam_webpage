@@ -63,7 +63,6 @@ class BlogIndexPage(Page):
 
     def get_context(self, request):
         # Get the most recent blog posts.
-        blog_posts = BlogPostPage.objects.live().order_by("-date_published")
-        return {
-            "blog_posts": blog_posts,
-        }
+        context = super().get_context(request)
+        context["blog_posts"] = BlogPostPage.objects.live().order_by("-date_published")
+        return context

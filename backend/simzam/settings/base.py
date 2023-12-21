@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "storages",
     "django_htmx",
     "webpack_loader",
+    "template_partials",
     # developer written apps
     "blog",
 ]
@@ -59,6 +60,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "simzam.urls"
+
 
 TEMPLATES = [
     {
