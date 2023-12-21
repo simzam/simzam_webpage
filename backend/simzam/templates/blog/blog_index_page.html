@@ -2,17 +2,22 @@
 {% load wagtailcore_tags %}
 {% block content %}
   <div class="container">
-    <h1>
-      {{ page.title }}
+    <h1 class="blog-post-heading">
+      {{ page.title | richtext }}
     </h1>
 
-    <div class="intro">
+    <div class="blog-post-intro">
       {{ page.intro | richtext }}
     </div>
 
     <div class="blog-posts">
       {% for blog_post in blog_posts %}
-        {% include 'partials/_blog-body.html' with blog_body=blog_post.body %}
+        <div class="blog-post">
+          <h2 class="blog-post-title">
+            {{ blog_post.title }}
+          </h2>
+          {% include 'partials/_blog-body.html' with blog_body=blog_post.body %}
+        </div>
       {% endfor %}
     </div>
 
