@@ -2,12 +2,23 @@
 
 * Welcome to simzam.com
 Welcome to the source code for *simzam.com*! This project serves as a testing
-ground to explore web technologies. The project is meant to evolve and change as
-I learn. Eventually to establish a functioning stack. So far, I have fallen in
-love with Wagtail and HTMX.
+ground to explore and learn about various web technologies.The project is meant
+to evolve and change as I learn. Eventually to establish a functioning stack. So
+far, I have fallen in love with Wagtail and HTMX. I rediscovered my interest zin
+drawing, and I use *simzam.com* to catalog and present my drawings. Combining
+the physical drawings digitally in an efficient and appealing way is a challenge.
 
-I rediscovered my interest in drawing, and I use *simzam.com* to catalog and
-present my drawings. Combining the physical drawings in a digital format fascinates me.
+The Django framework was overwhelming at first. It felt like every migration
+broke the database. I barely dared to stare to long at my own source code in
+fear of breaking something. Nothing was commented and even less was tested
+making debugging demaing. But I somehow got something up and running using
+pythonanywhere.com's very forgiving hosting platform. What I got up and running
+was slow, big, and overwhelming. This time I will rely host at AWS instead using
+a Docker container. I will need to read on web servers. So far, the combination
+of nginx and gunicorn seems to be the most common.
+
+The code also needs testing. Testing a website is so far a little vague. There
+is a lot to test, but testing needs to start somewhere.
 
 ** Technology Stack
 *** Backend
@@ -20,13 +31,9 @@ Lightweight and serverless relational database for data storage.
 
 *** Frontend
 **** Webpack:
-Module bundler efficiently managing JavaScript
-**** JavaScript:
-Enhancing interactivity and dynamic behavior throughout web pages.
+Module bundler efficiently managing JavaScript and SCSS files.
 **** HTMX:
 Allows for dynamic content updates without full page reloads, enhancing the user experience.
-**** SCSS (Sass):
-CSS preprocessor for improved maintainability and organization.
 
 *** File Storage
 **** Amazon S3 (Simple Storage Service):
@@ -37,9 +44,11 @@ media files.
 **** Docker:
 Utilizing Docker to create, deploy, and run applications by using containers.
 This ensures consistency across multiple development and release cycles,
-standardizing your environment.
+standardizing the environment.
 
 ** Development Status
 The initial version of "simzam.com" was hosted on "PythonAnywhere." However,
 this choice concealed most of the hosting intricacies. simzam.com is in the
 process of being hosted on AWS EC2.
+
+I am in the process of moving the project to Docker.
