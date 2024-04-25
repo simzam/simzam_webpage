@@ -5,20 +5,16 @@ Welcome to the source code for *simzam.com*! This project serves as a testing
 ground to explore and learn about various web technologies.The project is meant
 to evolve and change as I learn. Eventually to establish a functioning stack. So
 far, I have fallen in love with Wagtail and HTMX. I rediscovered my interest zin
-drawing, and I use *simzam.com* to catalog and present my drawings. Combining
-the physical drawings digitally in an efficient and appealing way is a challenge.
+drawing, and I use *simzam.com* to catalog and present my drawings.
 
-The Django framework was overwhelming at first. It felt like every migration
-broke the database. I barely dared to stare to long at my own source code in
-fear of breaking something. Nothing was commented and even less was tested
-making debugging demaing. But I somehow got something up and running using
-pythonanywhere.com's very forgiving hosting platform. What I got up and running
-was slow, big, and overwhelming. This time I will rely host at AWS instead using
-a Docker container. I will need to read on web servers. So far, the combination
-of nginx and gunicorn seems to be the most common.
-
-The code also needs testing. Testing a website is so far a little vague. There
-is a lot to test, but testing needs to start somewhere.
+The Django framework was overwhelming at first. I barely dared to stare to long
+at my own source code in fear of breaking something. Nothing was documented and
+even less was tested. Debugging was tiresome and files were scattered out over a
+mess of folders. But I somehow got something up and running using
+pythonanywhere.com's very forgiving hosting platform. What I got up and running.
+It was enormous in size and load times. This time I will rely host at AWS
+instead using a Docker container. I will need to read on web servers. So far,
+the combination of nginx and gunicorn seems to be the most common.
 
 ** Technology Stack
 *** Backend
@@ -52,3 +48,48 @@ this choice concealed most of the hosting intricacies. simzam.com is in the
 process of being hosted on AWS EC2.
 
 I am in the process of moving the project to Docker.
+
+
+#+TITLE: simzam.com
+#+DESCRIPTION: Personal web project for tech exploration, showcasing drawings, and documenting my development journey.
+
+#+TITLE: simzam.com
+#+DESCRIPTION: Personal web project for tech exploration, showcasing drawings, and documenting my development journey.
+
+* Project Overview
+
+This is the source code for *simzam.com*, a dynamic personal website serving multiple purposes:
+
+* **Technology Exploration:** A playground to experiment with various web technologies.
+* **Drawing Portfolio:** A platform to catalog and showcase my artwork.
+* **Learning Log:** Documenting my journey as a developer, including challenges and successes.
+
+* Technology Stack
+
+**Backend:**
+
+* **Django:** Core Python-based web framework.
+* **Wagtail CMS:** Powerful and flexible CMS for content management.
+* **SQLite:** Lightweight database (suitable for development, may change in production).
+
+**Frontend:**
+
+* **Webpack:** Bundles JavaScript and SCSS efficiently.
+* **HTMX:** Enables dynamic updates for a smooth user experience.
+
+**Cloud Services:**
+
+* **Amazon S3:** Scalable object storage for images and media.
+
+**Deployment:**
+
+* **Docker:** Containerization for environment consistency and portability.
+
+* Development Notes
+
+* **Evolution:** The project started on PythonAnywhere (great for beginners), but is transitioning to AWS EC2 for greater control and real-world experience.
+
+* **Deployment Considerations:** Researching Nginx + Gunicorn as a common web server setup.
+
+* Contact
+Feel free to reach out with questions, collaborations, or just to say hello! [Add your preferred contact method]

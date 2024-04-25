@@ -9,10 +9,17 @@ module.exports = {
     bundle: ['./assets/js/index.js'], // Entry point for your application
     style: ['./assets/style/main.scss'],
   },
+  // output: {
+  //   path: path.resolve('assets/webpack_bundles'), // Output directory for your bundle
+  //   filename: '[name]-[contenthash].js', // Output bundle file name
+  // },
+
   output: {
-    path: path.resolve('assets/webpack_bundles'), // Output directory for your bundle
+    path: path.resolve("__dirname", '../backend/static/webpack_bundles'), // Output directory for your
+    publicPath: '/static/webpack_bundles/',
     filename: '[name]-[contenthash].js', // Output bundle file name
-  },
+},
+
   module: {
     rules: [
       {

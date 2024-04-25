@@ -1,15 +1,17 @@
 from .base import *
 
 
-DEBUG = env.bool("DEBUG", default=False)
+DEBUG = env.bool("DEBUG", default=True)
 
 
 SECRET_KEY = env("SECRET_KEY")
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["*"])
 
-FRONTEND_DIR = os.path.abspath(os.path.join(BASE_DIR, "../frontend/"))
-WEBPACK_BUNDLE_DIR = os.path.join(FRONTEND_DIR, "assets/webpack_bundles")
+# FRONTEND_DIR = os.path.abspath(os.path.join(BASE_DIR, "../frontend/"))
+# WEBPACK_BUNDLE_DIR = os.path.join(FRONTEND_DIR, "assets/webpack_bundles")
+WEBPACK_BUNDLE_DIR = os.path.join(BASE_DIR, "static/webpack_bundles")
+
 
 USE_AWS_S3 = env.bool("USE_S3", default=True)
 
@@ -39,22 +41,23 @@ else:
         "django.contrib.staticfiles.finders.FileSystemFinder",
         "django.contrib.staticfiles.finders.AppDirectoriesFinder",
     ]
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, "frontend_assets")]
+    STATICFILES_DIRS = [
+        os.path.join(WEBPACK_BUNDLE_DIR),
+                     ]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 WEBPACK_LOADER = {
     "DEFAULT": {
-        # "BUNDLE_DIR_NAME": WEBPACK_BUNDLE_DIR,
+        "BUNDLE_DIR_NAME": "webpack_bundles/",
         "CACHE": not DEBUG,
-        "STATS_FILE": os.path.join(
-            BASE_DIR, "frontend_assets/webpack_bundles/webpack-stats.json"
-        ),
+        "STATS_FILE": os.path.join(WEBPACK_BUNDLE_DIR, "webpack-stats.json"),
         "POLL_INTERVAL": 0.1,
         "IGNORE": [r".+\.hot-update.js", r".+\.map"],
     }
 }
-
+print("WEBPACK_LOADER", WEBPACK_LOADER)
+print("WEBPACK_BUNDLE_DIR", WEBPACK_BUNDLE_DIR)
 
 try:
     from .local import *

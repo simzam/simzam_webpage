@@ -1,0 +1,31 @@
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+<div class="blog-post-body">
+    {% for block in blog_body %}
+        {% if block.block_type == 'intro' %}
+            <div class="blog-post-intro">
+                {{ block.value.text | richtext }}
+            </div>
+        {% elif block.block_type == 'heading' %}
+            <div class="text-center">
+                <h3>
+                    {{ block.value }}
+                </h3>
+            </div>
+        {% elif block.block_type == 'text' %}
+            <div class="blog-post-text">
+                {{ block.value.text }}
+            </div>
+        {% elif block.block_type == 'image' %}
+            <div class="blog-post-image">
+                {% image block.value.image width-700 %}
+            </div>
+        {% elif block.block_type == 'images' %}
+            {% for img_block in block.value %}
+                <div class="blog-post-gallery-image">
+                    {#% image img_block.image width-800 %#}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+</div>
