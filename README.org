@@ -36,3 +36,5 @@ standardizing the environment.
 The initial version of "simzam.com" was hosted on "PythonAnywhere." However,
 this choice concealed most of the hosting intricacies. "simzam.com" is in the
 process of being hosted on AWS EC2.
+
+* TODO run locally.
